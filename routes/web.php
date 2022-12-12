@@ -32,10 +32,6 @@ Route::get('', function () {
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('abecedario', function()
-{
-    return view('student.abecedario'); 
-})->middleware('can:abecedario');
 
 Route::get('ejercicio1', function()
 {

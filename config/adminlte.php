@@ -284,14 +284,8 @@ return [
             'text' => 'Entrenamiento',
             'url'  => '#',
             'icon' => 'fas fa-thumbtack',
-            'can'  => ['abecedario', 'ejercicio1', 'ejercicio2', 'ejercicio3', 'ejercicio4'],
+            'can'  => [ 'ejercicio1', 'ejercicio2', 'ejercicio3', 'ejercicio4'],
             'submenu' => [
-                [
-                    'text' => 'Abecedario',
-                    'icon' => 'fas fa-sort-alpha-down',
-                    'url'  => 'abecedario',
-                    'can'  => 'abecedario',
-                ],
                 [
                     'text' => 'Ejercicio 1',
                     'icon' => 'fas fa-solid fa-dumbbell',
@@ -526,7 +520,7 @@ return [
             'files' => [
                 [
                     'type' => 'js',
-                    'asset' => false,
+                    'asset' => true,
                     'location' => '/js/app.js',
                 ],
             ],

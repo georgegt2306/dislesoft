@@ -480,9 +480,8 @@
             button.style.margin = "15px";
             button.style.cursor = "pointer";
             let img = document.createElement('img');
-            img.src =  `{{asset('img/ejercicios/ejercicio2/silabas/d')}}/${silabasd[i]}.jpg`;
-            img.classList.add('imagenes-ejercicio2');
-            button.append(img);
+            button.text =  silabasd[i];
+
             document.getElementById('botonesdsilaba').append(button);
         }
 

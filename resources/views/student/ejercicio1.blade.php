@@ -322,9 +322,10 @@
                 Swal.fire({
                     icon: 'success',
                     title: 'Excelente',
-                    text:'Felicidades, acertaste en todas',
-                    showConfirmButton: false,
-                    timer: 1000
+                    text:'Felicidades, acertaste en todas ' + (aciertos.length*3.33),
+                    confirmButtonColor: '#3085d6',
+                    confirmButtonText: 'OK'
+
                 })
             }
             else if(aciertos.length < palabras_correctasd.length && erroneos.length == 0)
@@ -332,9 +333,10 @@
                 Swal.fire({
                     icon: 'error',
                     title: 'Por poco lo logras',
-                    text:'Te faltaron respuestas',
-                    showConfirmButton: false,
-                    timer: 1000
+                    text:'Te faltaron respuestas ' + ((aciertos.length*3.33) - (erroneos.length*3.33)) ,
+                    confirmButtonColor: '#3085d6',
+                    confirmButtonText: 'OK'
+
                 })
             }
             else
@@ -342,9 +344,10 @@
                 Swal.fire({
                     icon: 'error',
                     title: 'Fallaste',
-                    text:'Debes entrenar un poco más',
-                    showConfirmButton: false,
-                    timer: 1000
+                    text:'Debes entrenar un poco más ' + ((aciertos.length*3.33) - (erroneos.length*3.33)) ,
+                    confirmButtonColor: '#3085d6',
+                    confirmButtonText: 'OK'
+                   
                 })
             }
 
@@ -919,4 +922,4 @@
         })
     </script>
 
-@stop
+@endsection
