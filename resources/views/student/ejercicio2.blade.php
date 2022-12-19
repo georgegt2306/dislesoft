@@ -82,11 +82,6 @@
                 <div class="row">
                     <div id="botonesdpalabra" class="col-8 botones"></div>
                     <div class="col-4">
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
                         <img id="modelod" style="height: 220px; width:220px;">
                     </div>
                 </div>
@@ -360,10 +355,8 @@
             button.classList.add('btn');
             button.style.margin = "15px";
             button.style.cursor = "pointer";
-            let img = document.createElement('img');
-            img.src =  `{{asset('img/ejercicios/ejercicio2/letras/d')}}/${letrasd[i]}.jpg`;
-            img.classList.add('imagenes-ejercicio2');
-            button.append(img);
+            button.text =  letrasd[i];
+
             document.getElementById('botonesd').append(button);
         }
 
@@ -479,7 +472,6 @@
             button.classList.add('btn');
             button.style.margin = "15px";
             button.style.cursor = "pointer";
-            let img = document.createElement('img');
             button.text =  silabasd[i];
 
             document.getElementById('botonesdsilaba').append(button);
@@ -572,7 +564,7 @@
 
         //inicio palabra
         let modelosd = ['dado', 'dedo', 'delfin', 'disco', 'doctor'];
-        let palabrasd = {"dedo": ['bebo', 'bedo', 'dado', 'debo', 'dedo', 'abeb', 'deldo', 'depo', 'dido', 'dode', 'duedo', 'gedo'], "dado": ['baba', 'babo', 'bado', 'bebe', 'boda', 'dada', 'dado', 'dedo', 'depe', 'gaba', 'gado', 'gogo', 'qipe', 'qopa'], "delfin": ['baltin', 'belfin', 'belfyn', 'delfin', 'dalton', 'dellfin', 'betfin', 'deltin', 'depe', 'detfin', 'pelon', 'qaltin'], "disco": ['besca', 'bisco', 'bisno', 'bizvo', 'dede', 'disco', 'disvo', 'disxo', 'dixco', 'jisno', 'listo', 'qisno'], "doctor": ['bartac', 'boclor', 'boctor', 'daclor', 'dactor', 'doclor', 'doctor', 'dorlor', 'lactar', 'loctor', 'toclor', 'tordoc', 'tractor']}
+        let palabrasd = {"dedo": ['bebo', 'bedo', 'dado', 'debo', 'dedo', 'abeb', 'deldo', 'depo', 'dido', 'dode', 'duedo', 'gedo'], "dado": ['baba', 'babo', 'bado', 'bebe', 'boda', 'dada', 'dado', 'dedo', 'depe', 'gaba', 'qipe', 'qopa'], "delfin": ['baltin', 'belfin', 'belfyn', 'delfin', 'dalton', 'dellfin', 'betfin', 'deltin', 'depe', 'detfin', 'pelon', 'qaltin'], "disco": ['besca', 'bisco', 'bisno', 'bizvo', 'dede', 'disco', 'disvo', 'disxo', 'dixco', 'jisno', 'listo', 'qisno'], "doctor": ['bartac', 'boctor', 'daclor', 'dactor', 'doclor', 'doctor', 'dorlor', 'lactar', 'loctor', 'toclor', 'tordoc', 'tractor']}
 
         let modelo_elegidod = modelosd[Math.floor(Math.random()*5)];
 
@@ -614,10 +606,9 @@
             button.classList.add('btn');
             button.style.margin = "15px";
             button.style.cursor = "pointer";
-            let img = document.createElement('img');
-            img.src =  `{{asset('img/ejercicios/ejercicio2/palabras/listapalabras/d/${modelo_elegidod}')}}/${palabrasd[modelo_elegidod][i]}.jpg`;
-            img.classList.add('imagenes-ejercicio2');
-            button.append(img);
+            button.style.fontSize = "20px";
+            
+            button.text =  palabrasd[modelo_elegidod][i];
             document.getElementById('botonesdpalabra').append(button);
         }
 
