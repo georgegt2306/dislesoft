@@ -1880,7 +1880,7 @@
     {{-- letra q --}}
     <script>
         //inicio letras
-        let letrasq = ['z', 'b2', 'y', 'g', 's', 'l', 'm', 'p','q','r', 'j', 'u', 'd', 'b'];
+        let letrasq = ['z', 'b', 'y', 'g', 's', 'l', 'm', 'p','q','r', 'j', 'u', 'd', 'b'];
         let correctasq = ['q'];
 
         if(Math.floor(Math.random()*10) > 5)
@@ -1908,10 +1908,10 @@
             button.classList.add('btn');
             button.style.margin = "15px";
             button.style.cursor = "pointer";
-            let img = document.createElement('img');
-            img.src =  `{{asset('img/ejercicios/ejercicio2/letras/q')}}/${letrasq[i]}.jpg`;
-            img.classList.add('imagenes-ejercicio2');
-            button.append(img);
+            button.style.fontSize = "20px";
+            button.style.width = "60px";
+            button.style.border = "1px black solid";
+            button.text =  letrasq[i];
             document.getElementById('botonesq').append(button);
         }
 
@@ -2120,7 +2120,7 @@
         //fin silabas
 
         //inicio palabra
-        let modelosq = ['queja', 'quemar', 'quena', 'queso', 'quimico'];
+        let modelosq = ['queja', 'quemar', 'quena', 'queso'];
         let palabrasq = {"queja": ['buega', 'dveja', 'dvijo', 'pueja', 'puejo', 'pveja', 'pvejo', 'quega', 'queja', 'qveja', 'qvejo'], "quemar": ['buemar', 'bvemor', 'duemar', 'dvenor', 'puemar', 'puemor', 'quemar', 'quemor', 'quenar', 'quenor', 'qvemar', 'qvenar'], "quena": ['bvena', 'guena', 'puema', 'puena', 'pvema', 'quema', 'quena', 'queno', 'qvema', 'qvena'], "queso": ['beso', 'buesa', 'dueso', 'pesa', 'peso', 'pueso', 'pveso', 'quesa', 'queso', 'quezo', 'qveso']}
 
         let modelo_elegidoq = modelosq[Math.floor(Math.random()*modelosq.length)];

@@ -320,7 +320,7 @@
             if(aciertos.length == palabras_correctasd.length && erroneos.length == 0)
             {
                 Swal.fire({
-                    icon: 'success',
+                    iconHtml: "<img src='{{asset('img/ejercicios/ejercicio1/estrella.jpg')}}' width='200px' height='100px'",
                     title: 'Excelente',
                     text:'Felicidades, acertaste en todas ' + (aciertos.length*3.33),
                     confirmButtonColor: '#3085d6',
@@ -468,7 +468,7 @@
             if(aciertos.length == palabras_correctasb.length && erroneos.length == 0)
             {
                 Swal.fire({
-                    icon: 'success',
+                    iconHtml: "{{asset('img/ejercicios/ejercicio1/estrella.jpg')}}",
                     title: 'Excelente',
                     text:'Felicidades, acertaste en todas',
                     showConfirmButton: false,
@@ -612,7 +612,7 @@
             if(aciertos.length == palabras_correctasq.length && erroneos.length == 0)
             {
                 Swal.fire({
-                    icon: 'success',
+                    iconHtml: "{{asset('img/ejercicios/ejercicio1/estrella.jpg')}}",
                     title: 'Excelente',
                     text:'Felicidades, acertaste en todas',
                     showConfirmButton: false,
