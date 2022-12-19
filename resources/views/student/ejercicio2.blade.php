@@ -197,11 +197,11 @@
             <div class="tab-pane fade" id="p" role="tabpanel" aria-labelledby="contact-tab">
                 <br><br>
                 <div class="row">
-                <div class="col-md-5">
-                    <div class="col-md-12" style="height:60px">
-                        <h5>ENCUENTRA Y DALE CLICK A LA LETRA "p" </h5>
-                    </div>
-                    <div id="botonesp" class="row botones">
+                    <div class="col-md-5">
+                        <div class="col-md-12" style="height:60px">
+                            <h5>ENCUENTRA Y DALE CLICK A LA LETRA "p" </h5>
+                        </div>
+                        <div id="botonesp" class="row botones"></div>
                     <br>
                     <button class="btn btn-primary" id="calificarbotonesp">Terminar</button>
                     <button class="btn btn-warning reiniciar">Reiniciar</button>
@@ -217,6 +217,7 @@
                     <button class="btn btn-primary" id="calificarbotonespsilaba">Terminar</button>
                     <button class="btn btn-warning reiniciar">Reiniciar</button>
                 </div>
+                </div>
                 <div class="col-md-12">
                 <br>
                 <h4 id="modelop_palabra">ENCUENTRA Y SELECCIONA LA PALABRA:</h4>
@@ -226,11 +227,11 @@
                     <div class="col-md-4" style="display: block;text-align:center; margin:0" >
                         <img id="modelop" style="height: 220px; width:220px;border-radius:40px">
                     </div>
-                </div> 
+                </div>
                 <br>
                 <button class="btn btn-primary" id="calificarbotonesppalabra">Terminar</button>
                 <button class="btn btn-warning reiniciar">Reiniciar</button>
-            </div>
+                </div>
             </div>
             {{-- fin cuarto subitem --}}
 
@@ -1119,7 +1120,7 @@
     {{-- letra c --}}
     <script>
         //inicio letras
-        let letrasc = ['z', 'v', 'cportuguesa', 'u', 't', 'p', 'q', 'r','c','o', 'g', 'cinvertida', 'a'];
+        let letrasc = ['z', 'v', 'a', 'u', 't', 'p', 'q', 'r','c','o', 'g', 'h', 'a'];
         let correctasc = ['c'];
 
         if(Math.floor(Math.random()*10) > 5)
@@ -1239,7 +1240,7 @@
         //fin letras
 
         //inicio silabas
-        let silabasc = ['be', 'ca', 'ce', 'ci', 'ic', 'ec', 'ic', 'oc', 'co', 'ac', 'uc', 'cu', 'da', 'mu', 'ne', 'ni', 're', 'sa', 'se', 'su', 'te', 'zo'];
+        let silabasc = ['be', 'ca', 'ce', 'ci', 'oc', 'co', 'ac', 'uc', 'cu', 'da', 'mu', 'ne', 'ni', 're', 'sa', 'se', 'su', 'te', 'zo'];
         let correctassilabasc = ['ca', 'ce', 'ci', 'co', 'cu'];
 
         if(Math.floor(Math.random()*10) > 5)
@@ -1360,7 +1361,7 @@
 
         //inicio palabra c
         let modelosc = ['cama', 'casa', 'circo', 'coco', 'conejo'];
-        let palabrasc = {"cama": ['cama', 'amac', 'cpor', 'emac', 'camo', 'cana', 'anac', 'onac', 'como', 'omoc', 'onca', 'onoc'], "casa": ['casa', 'asac', 'casaportuguesa', 'caso', 'casoinvertida', 'caza', 'cazainvertida', 'cora', 'coro', 'cosa', 'cosainvertida', 'cosoinvertida'], "circo": ['circa', 'circainverportu', 'circo', 'circoinverportu', 'circoinvertida', 'circoinvertida2', 'circoinvertida3', 'cirnainvertida', 'cirnoportuguesa', 'cirva', 'cirvoinvertida', 'cyrcainvertida', 'sirco'], "coco": ['caco invertida', 'caco2', 'cacoinvertida', 'caro', 'caroinvertida', 'coca', 'coco', 'cocoinvertida', 'cocoportuguesa', 'cono', 'coro', 'coroinvertida'], "conejo": ['cameja', 'camejo', 'camelo', 'canejoinvertida', 'canela', 'canelaportuguesa', 'carneportuguesa', 'comejoinvertido', 'conejo', 'conejoinvertida', 'conejoportuguesa', 'corneja', 'cortejoportuguesa']}
+        let palabrasc = {"cama": ['cama', 'amac', 'cpor', 'emac', 'camo', 'cana', 'anac', 'onac', 'como', 'omoc', 'onca', 'onoc'], "casa": ['casa', 'asac', 'saca', 'caso', 'casoinvertida', 'caza', 'cazainvertida', 'cora', 'coro', 'cosa', 'asoc', 'ocos'], "circo": ['circa', 'acric', 'circo', 'ocric', 'ocric', 'ocric', 'acirc', 'anric', 'onric', 'cirva', 'ovric', 'acryc', 'sirco'], "coco": ['acoc', 'caco', 'acoc', 'caro', 'orac', 'coca', 'coco', 'ococ', 'coc', 'cono', 'coro', 'oroc'], "conejo": ['cameja', 'camejo', 'camelo', 'ojenca', 'canela', 'alenca', 'enrac', 'ojemoc', 'conejo', 'ojenoc', 'conej', 'corneja', 'cortea']}
 
         let modelo_elegidoc = modelosc[Math.floor(Math.random()*5)];
 
@@ -1402,10 +1403,10 @@
             button.classList.add('btn');
             button.style.margin = "15px";
             button.style.cursor = "pointer";
-            let img = document.createElement('img');
-            img.src =  `{{asset('img/ejercicios/ejercicio2/palabras/listapalabras/c/${modelo_elegidoc}')}}/${palabrasc[modelo_elegidoc][i]}.jpg`;
-            img.classList.add('imagenes-ejercicio2');
-            button.append(img);
+            button.style.fontSize = "20px";
+            button.style.width = "100px";
+            button.style.border = "1px black solid";
+            button.text =  palabrasc[modelo_elegidoc][i];
             document.getElementById('botonescpalabra').append(button);
         }
 
@@ -1499,7 +1500,7 @@
     {{-- letra p --}}
     <script>
         //inicio letras
-        let letrasp = ['z', 'r', 'd', 'u', 'j', 'l', 'm', 'p','q','b2', 's', 'g', 'y', 'b'];
+        let letrasp = ['z', 'r', 'd', 'u', 'j', 'l', 'm', 'p','q', 's', 'g', 'y', 'b'];
         let correctasp = ['p'];
 
         if(Math.floor(Math.random()*10) > 5)
@@ -1527,10 +1528,10 @@
             button.classList.add('btn');
             button.style.margin = "15px";
             button.style.cursor = "pointer";
-            let img = document.createElement('img');
-            img.src =  `{{asset('img/ejercicios/ejercicio2/letras/p')}}/${letrasp[i]}.jpg`;
-            img.classList.add('imagenes-ejercicio2');
-            button.append(img);
+            button.style.fontSize = "20px";
+            button.style.width = "60px";
+            button.style.border = "1px black solid";
+            button.text =  letrasp[i];
             document.getElementById('botonesp').append(button);
         }
 
@@ -1646,10 +1647,10 @@
             button.classList.add('btn');
             button.style.margin = "15px";
             button.style.cursor = "pointer";
-            let img = document.createElement('img');
-            img.src =  `{{asset('img/ejercicios/ejercicio2/silabas/p')}}/${silabasp[i]}.jpg`;
-            img.classList.add('imagenes-ejercicio2');
-            button.append(img);
+            button.style.fontSize = "20px";
+            button.style.width = "60px";
+            button.style.border = "1px black solid";
+            button.text =  silabasp[i];
             document.getElementById('botonespsilaba').append(button);
         }
 
@@ -1782,10 +1783,10 @@
             button.classList.add('btn');
             button.style.margin = "15px";
             button.style.cursor = "pointer";
-            let img = document.createElement('img');
-            img.src =  `{{asset('img/ejercicios/ejercicio2/palabras/listapalabras/p/${modelo_elegidop}')}}/${palabrasp[modelo_elegidop][i]}.jpg`;
-            img.classList.add('imagenes-ejercicio2');
-            button.append(img);
+            button.style.fontSize = "20px";
+            button.style.width = "100px";
+            button.style.border = "1px black solid";
+            button.text =  palabrasp[modelo_elegidop][i];
             document.getElementById('botonesppalabra').append(button);
         }
 
