@@ -321,7 +321,7 @@
                 if(document.getElementById('volumend').getAttribute('palabra') == e.target.textContent)
                 {
                     Swal.fire({
-                        position: 'top-end',
+                        
                         icon: 'success',
                         title: 'Excelente',
                         showConfirmButton: false,
@@ -331,7 +331,7 @@
                 else
                 {
                     Swal.fire({
-                        position: 'top-end',
+                        
                         icon: 'error',
                         title: 'Error',
                         showConfirmButton: false,
@@ -486,7 +486,7 @@
                 if(document.getElementById('volumenb').getAttribute('palabra') == e.target.textContent)
                 {
                     Swal.fire({
-                        position: 'top-end',
+                        
                         icon: 'success',
                         title: 'Excelente',
                         showConfirmButton: false,
@@ -496,7 +496,7 @@
                 else
                 {
                     Swal.fire({
-                        position: 'top-end',
+                        
                         icon: 'error',
                         title: 'Error',
                         showConfirmButton: false,
@@ -653,7 +653,7 @@
                 if(document.getElementById('volumenm').getAttribute('palabra') == e.target.textContent)
                 {
                     Swal.fire({
-                        position: 'top-end',
+                        
                         icon: 'success',
                         title: 'Excelente',
                         showConfirmButton: false,
@@ -663,7 +663,7 @@
                 else
                 {
                     Swal.fire({
-                        position: 'top-end',
+                        
                         icon: 'error',
                         title: 'Error',
                         showConfirmButton: false,
@@ -819,20 +819,20 @@
                 if(document.getElementById('volumenp').getAttribute('palabra') == e.target.textContent)
                 {
                     Swal.fire({
-                        position: 'top-end',
+                        
                         icon: 'success',
                         title: 'Excelente',
-                        showConfirmButton: false,
+                        showConfirmButton: true,
                         timer: 1000
                     })
                 }
                 else
                 {
                     Swal.fire({
-                        position: 'top-end',
+                        
                         icon: 'error',
                         title: 'Error',
-                        showConfirmButton: false,
+                        showConfirmButton: true,
                         timer: 1000
                     })
                 }

@@ -64,93 +64,125 @@
         <div class="tab-content" id="myTabContent">
             {{-- primer subitem --}}
             <div class="tab-pane fade show active" id="d" role="tabpanel" aria-labelledby="home-tab">
-                <br><br>
-                <h4>ENCUENTRA Y DALE CLICK A LA LETRA "d"</h4>
+            <br><br>    
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="col-md-12" style="height:60px">
+                        <h5>ENCUENTRA Y DALE CLICK A LA LETRA "d"</h5>
+                    </div>
                 <div id="botonesd" class="row botones"></div>
                 <br>
                 <button class="btn btn-primary" id="calificarbotonesd">Terminar</button>
                 <button class="btn btn-warning reiniciar">Reiniciar</button>
-                <br><br>
-                <h4>ENCUENTRA Y DALE CLICK A LAS SILABAS CORRESPONDIENTES A LA LETRA "d"</h4>
-                <div id="botonesdsilaba" class="row botones"></div>
-                <br>
-                <button class="btn btn-primary" id="calificarbotonesdsilaba">Terminar</button>
-                <button class="btn btn-warning reiniciar">Reiniciar</button>
-                <br><br>
-                <h4 id="modelod_palabra">ENCUENTRA Y SELECCIONA LA PALABRA:</h4>
-                <br>
-                <div class="row">
-                    <div id="botonesdpalabra" class="col-8 botones"></div>
-                    <div class="col-4">
-                        <img id="modelod" style="height: 220px; width:220px;">
+                </div>
+                <div class="col-md-1">
+                </div>
+                <div class="col-md-5">
+                <div class="col-md-12" style="height:60px">
+                    <h5>ENCUENTRA Y DALE CLICK A LAS SILABAS CORRESPONDIENTES A LA LETRA "d"</h5></div>
+                    <div id="botonesdsilaba" class="row botones"></div>
+                    <br>
+                    <button class="btn btn-primary" id="calificarbotonesdsilaba">Terminar</button>
+                    <button class="btn btn-warning reiniciar">Reiniciar</button>
                     </div>
                 </div>
+                <div class="col-md-12">
                 <br>
-                <button class="btn btn-primary" id="calificarbotonesdpalabra">Terminar</button>
-                <button class="btn btn-warning reiniciar">Reiniciar</button>
+                    <h5 id="modelod_palabra">ENCUENTRA Y SELECCIONA LA PALABRA:</h5>
+                    
+                    <div class="row">
+                        <div id="botonesdpalabra" class="col-md-8 botones"></div>
+                        
+                        <div class="col-md-4" style="display: block;text-align:center; margin:0" >
+                            <img id="modelod" style="height: 220px; width:220px; border-radius:40px">
+                        </div>
+                    </div>
+                    <br>
+                    <button class="btn btn-primary" id="calificarbotonesdpalabra">Terminar</button>
+                    <button class="btn btn-warning reiniciar">Reiniciar</button>
+                </div>
             </div>
             {{-- fin primer subitem --}}
 
             {{-- segundo subitem --}}
             <div class="tab-pane fade" id="b" role="tabpanel" aria-labelledby="profile-tab">
-                <br><br>
-                <h4>ENCUENTRA Y DALE CLICK A LA LETRA "b"</h4>
+            <br><br>
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="col-md-12" style="height:60px">
+                        <h5>ENCUENTRA Y DALE CLICK A LA LETRA "b"</h5>
+                    </div>
                 <div id="botonesb" class="row botones"></div>
                 <br>
                 <button class="btn btn-primary" id="calificarbotonesb">Terminar</button>
                 <button class="btn btn-warning reiniciar">Reiniciar</button>
-                <br><br>
-                <h4>ENCUENTRA Y DALE CLICK A LAS SILABAS CORRESPONDIENTES A LA LETRA "b"</h4>
-                <div id="botonesbsilaba" class="row botones"></div>
-                <br>
+                </div>
+                <div class="col-md-1">
+                </div>
+                <div class="col-md-5">
+                    <div class="col-md-12" style="height:60px">
+                        <h5>ENCUENTRA Y DALE CLICK A LAS SILABAS CORRESPONDIENTES A LA LETRA "b"</h5>
+                    </div>
+                    <div id="botonesbsilaba" class="row botones"></div>
+                    <br>
                 <button class="btn btn-primary" id="calificarbotonesbsilaba">Terminar</button>
                 <button class="btn btn-warning reiniciar">Reiniciar</button>
-                <br><br>
-                <h4 id="modelob_palabra">ENCUENTRA Y SELECCIONA LA PALABRA:</h4>
+                </div>
+                </div>
+                
+                <div class="col-md-12">
+                <br>
+                <h5 id="modelob_palabra">ENCUENTRA Y SELECCIONA LA PALABRA:</h5>
                 <br>
                 <div class="row">
-                    <div id="botonesbpalabra" class="col-8 botones"></div>
-                    <div class="col-4">
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <img id="modelob" style="height: 220px; width:220px;">
+                    <div id="botonesbpalabra" class="col-md-8 botones"></div>
+                    <div class="col-md-4" style="display: block;text-align:center; margin:0" >
+                        <img id="modelob" style="height: 220px; width:220px;border-radius:40px">
                     </div>
                 </div>
                 <br>
                 <button class="btn btn-primary" id="calificarbotonesbpalabra">Terminar</button>
                 <button class="btn btn-warning reiniciar">Reiniciar</button>
+                </div>
             </div>
             {{-- fin segundo subitem --}}
 
             {{-- tercer subitem --}}
             <div class="tab-pane fade" id="c" role="tabpanel" aria-labelledby="contact-tab">
-                <br><br>
-                <h4>ENCUENTRA Y DALE CLICK A LA LETRA "c"</h4>
+            <br><br>
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="col-md-12" style="height:60px">
+                        <h5>ENCUENTRA Y DALE CLICK A LA LETRA "c"</h5>
+                        
+                    </div>
                 <div id="botonesc" class="row botones"></div>
                 <br>
                 <button class="btn btn-primary" id="calificarbotonesc">Terminar</button>
                 <button class="btn btn-warning reiniciar">Reiniciar</button>
-                <br><br>
-                <h4>ENCUENTRA Y DALE CLICK A LAS SILABAS CORRESPONDIENTES A LA LETRA "c"</h4>
-                <div id="botonescsilaba" class="row botones"></div>
+                
+                </div>
+                <div class="col-md-1">
+                </div>   
+                <div class="col-md-5">
+                    <div class="col-md-12" style="height:60px">
+                    <h4>ENCUENTRA Y DALE CLICK A LAS SILABAS CORRESPONDIENTES A LA LETRA "c"</h4>
+                    </div> 
+                    <div id="botonescsilaba" class="row botones"></div>
+                    <br>
+                    <button class="btn btn-primary" id="calificarbotonescsilaba">Terminar</button>
+                    <button class="btn btn-warning reiniciar">Reiniciar</button>
+                </div>
+            </div>
+
+            <div class="col-md-12">
                 <br>
-                <button class="btn btn-primary" id="calificarbotonescsilaba">Terminar</button>
-                <button class="btn btn-warning reiniciar">Reiniciar</button>
-                <br><br>
                 <h4 id="modeloc_palabra">ENCUENTRA Y SELECCIONA LA PALABRA:</h4>
                 <br>
                 <div class="row">
-                    <div id="botonescpalabra" class="col-8 botones"></div>
-                    <div class="col-4">
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <img id="modeloc" style="height: 220px; width:220px;">
+                    <div id="botonescpalabra" class="col-md-8 botones"></div>
+                    <div class="col-md-4" style="display: block;text-align:center; margin:0" >
+                        <img id="modeloc" style="height: 220px; width:220px;border-radius:40px">
                     </div>
                 </div>
                 
@@ -158,39 +190,47 @@
                 <button class="btn btn-primary" id="calificarbotonescpalabra">Terminar</button>
                 <button class="btn btn-warning reiniciar">Reiniciar</button>
             </div>
+            </div>
             {{-- fin tercer subitem --}}
 
             {{-- cuarto subitem --}}
             <div class="tab-pane fade" id="p" role="tabpanel" aria-labelledby="contact-tab">
                 <br><br>
-                <h4>ENCUENTRA Y DALE CLICK A LA LETRA "p"</h4>
-                <div id="botonesp" class="row botones"></div>
+                <div class="row">
+                <div class="col-md-5">
+                    <div class="col-md-12" style="height:60px">
+                        <h5>ENCUENTRA Y DALE CLICK A LA LETRA "p" </h5>
+                    </div>
+                    <div id="botonesp" class="row botones">
+                    <br>
+                    <button class="btn btn-primary" id="calificarbotonesp">Terminar</button>
+                    <button class="btn btn-warning reiniciar">Reiniciar</button>
+                </div>
+                <div class="col-md-1">
+                </div>  
+                <div class="col-md-5">
+                    <div class="col-md-12" style="height:60px">
+                        <h5>ENCUENTRA Y DALE CLICK A LAS SILABAS CORRESPONDIENTES A LA LETRA "p"</h5>
+                    </div>
+                    <div id="botonespsilaba" class="row botones"></div>
+                    <br>
+                    <button class="btn btn-primary" id="calificarbotonespsilaba">Terminar</button>
+                    <button class="btn btn-warning reiniciar">Reiniciar</button>
+                </div>
+                <div class="col-md-12">
                 <br>
-                <button class="btn btn-primary" id="calificarbotonesp">Terminar</button>
-                <button class="btn btn-warning reiniciar">Reiniciar</button>
-                <br><br>
-                <h4>ENCUENTRA Y DALE CLICK A LAS SILABAS CORRESPONDIENTES A LA LETRA "p"</h4>
-                <div id="botonespsilaba" class="row botones"></div>
-                <br>
-                <button class="btn btn-primary" id="calificarbotonespsilaba">Terminar</button>
-                <button class="btn btn-warning reiniciar">Reiniciar</button>
-                <br><br>
                 <h4 id="modelop_palabra">ENCUENTRA Y SELECCIONA LA PALABRA:</h4>
                 <br>
                 <div class="row">
-                    <div id="botonesppalabra" class="col-8 botones"></div>
-                    <div class="col-4">
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <img id="modelop" style="height: 220px; width:220px;">
+                    <div id="botonesppalabra" class="col-md-8 botones"></div>
+                    <div class="col-md-4" style="display: block;text-align:center; margin:0" >
+                        <img id="modelop" style="height: 220px; width:220px;border-radius:40px">
                     </div>
                 </div> 
                 <br>
                 <button class="btn btn-primary" id="calificarbotonesppalabra">Terminar</button>
                 <button class="btn btn-warning reiniciar">Reiniciar</button>
+            </div>
             </div>
             {{-- fin cuarto subitem --}}
 
@@ -327,7 +367,7 @@
     {{-- letra d --}}
     <script>
         //inicio letras d
-        let letrasd = ['q', 's', 'b2', 'p', 't', 'l', 'm', 'd', 'a', 'b', 'g'];
+        let letrasd = ['q', 's', 'b', 'p', 't', 'l', 'm', 'd', 'b', 'g'];
         let correctasd = ['d'];
 
         if(Math.floor(Math.random()*10) > 5)
@@ -355,6 +395,9 @@
             button.classList.add('btn');
             button.style.margin = "15px";
             button.style.cursor = "pointer";
+            button.style.fontSize = "20px";
+            button.style.width = "60px";
+            button.style.border = "1px black solid";
             button.text =  letrasd[i];
 
             document.getElementById('botonesd').append(button);
@@ -445,7 +488,7 @@
         //fin letras
 
         //inicio silabas
-        let silabasd = ['qu', 'ab2', 'te', 'bu', 'do', 'du', 'di', 'da', 'de', 'gu', 'la', 'pu', 'ab', 'bi', 'ub'];
+        let silabasd = ['qu', 'te', 'bu', 'do', 'du', 'di', 'da', 'de', 'gu', 'la', 'pu', 'ab', 'bi', 'ub'];
         let correctassilabasd = ['da', 'de', 'di', 'do', 'du'];
 
         if(Math.floor(Math.random()*10) > 5)
@@ -472,6 +515,10 @@
             button.classList.add('btn');
             button.style.margin = "15px";
             button.style.cursor = "pointer";
+            button.style.width = "60px";
+            button.style.fontSize = "20px";
+            button.style.border = "1px black solid";
+            
             button.text =  silabasd[i];
 
             document.getElementById('botonesdsilaba').append(button);
@@ -607,7 +654,8 @@
             button.style.margin = "15px";
             button.style.cursor = "pointer";
             button.style.fontSize = "20px";
-            
+            button.style.border = "1px black solid";
+            button.style.width = "100px";
             button.text =  palabrasd[modelo_elegidod][i];
             document.getElementById('botonesdpalabra').append(button);
         }
@@ -703,7 +751,7 @@
     {{-- Inicio letra b --}}
     <script>
         //inicio letras
-        let letrasb = ['a', 'z', 'd', 'e', 'u', 'l', 's', 'p', 'q', 'm', 'g', 'v', 'b'];
+        let letrasb = ['a', 'z', 'd', 'e', 'l', 's', 'p', 'q', 'm', 'g', 'v', 'b'];
         let correctasb = ['b'];
 
         if(Math.floor(Math.random()*10) > 5)
@@ -730,10 +778,11 @@
             button.classList.add('btn');
             button.style.margin = "15px";
             button.style.cursor = "pointer";
-            let img = document.createElement('img');
-            img.src =  `{{asset('img/ejercicios/ejercicio2/letras/b')}}/${letrasb[i]}.jpg`;
-            img.classList.add('imagenes-ejercicio2');
-            button.append(img);
+            button.style.fontSize = "20px";
+            button.style.width = "60px";
+            button.style.border = "1px black solid";
+            button.text =  letrasb[i];
+            
             document.getElementById('botonesb').append(button);
         }
 
@@ -822,7 +871,7 @@
         //fin letras
 
         //inicio silabas
-        let silabasb = ['ab', 'ad', 'ba', 'be', 'bi', 'bo', 'da', 'de', 'di', 'dy', 'ga', 'la', 'le', 'pa', 'qa', 'qu', 'te', 'ub2', 'ud'];
+        let silabasb = ['ab', 'ad', 'ba', 'be', 'bi', 'bo', 'di', 'dy', 'ga', 'la', 'qa', 'qu',  'ub', 'ud'];
         let correctassilabasb = ['ba', 'be', 'bi', 'bo', 'bu'];
 
         if(Math.floor(Math.random()*10) > 5)
@@ -849,10 +898,10 @@
             button.classList.add('btn');
             button.style.margin = "15px";
             button.style.cursor = "pointer";
-            let img = document.createElement('img');
-            img.src =  `{{asset('img/ejercicios/ejercicio2/silabas/b')}}/${silabasb[i]}.jpg`;
-            img.classList.add('imagenes-ejercicio2');
-            button.append(img);
+            button.style.fontSize = "20px";
+            button.style.width = "60px";
+            button.style.border = "1px black solid";
+            button.text =  silabasb[i];
             document.getElementById('botonesbsilaba').append(button);
         }
 
@@ -973,10 +1022,10 @@
             button.classList.add('btn');
             button.style.margin = "15px";
             button.style.cursor = "pointer";
-            let img = document.createElement('img');
-            img.src =  `{{asset('img/ejercicios/ejercicio2/palabras/listapalabras/b/${modelo_elegidob}')}}/${palabrasb[modelo_elegidob][i]}.jpg`;
-            img.classList.add('imagenes-ejercicio2');
-            button.append(img);
+            button.style.fontSize = "20px";
+            button.style.width = "100px";
+            button.style.border = "1px black solid";
+            button.text =  palabrasb[modelo_elegidob][i];
             document.getElementById('botonesbpalabra').append(button);
         }
 
@@ -1098,10 +1147,10 @@
             button.classList.add('btn');
             button.style.margin = "15px";
             button.style.cursor = "pointer";
-            let img = document.createElement('img');
-            img.src =  `{{asset('img/ejercicios/ejercicio2/letras/c')}}/${letrasc[i]}.jpg`;
-            img.classList.add('imagenes-ejercicio2');
-            button.append(img);
+            button.style.fontSize = "20px";
+            button.style.width = "60px";
+            button.style.border = "1px black solid";
+            button.text =  letrasc[i];
             document.getElementById('botonesc').append(button);
         }
 
@@ -1190,7 +1239,7 @@
         //fin letras
 
         //inicio silabas
-        let silabasc = ['be', 'ca', 'ce', 'ci', 'cinvertidaa', 'cinvertidae', 'cinvertidai', 'cinvertidao', 'co', 'cportuguesaa', 'cportuguesau', 'cu', 'da', 'mu', 'ne', 'ni', 're', 'sa', 'se', 'su', 'te', 'zo'];
+        let silabasc = ['be', 'ca', 'ce', 'ci', 'ic', 'ec', 'ic', 'oc', 'co', 'ac', 'uc', 'cu', 'da', 'mu', 'ne', 'ni', 're', 'sa', 'se', 'su', 'te', 'zo'];
         let correctassilabasc = ['ca', 'ce', 'ci', 'co', 'cu'];
 
         if(Math.floor(Math.random()*10) > 5)
@@ -1217,10 +1266,10 @@
             button.classList.add('btn');
             button.style.margin = "15px";
             button.style.cursor = "pointer";
-            let img = document.createElement('img');
-            img.src =  `{{asset('img/ejercicios/ejercicio2/silabas/c')}}/${silabasc[i]}.jpg`;
-            img.classList.add('imagenes-ejercicio2');
-            button.append(img);
+            button.style.fontSize = "20px";
+            button.style.width = "60px";
+            button.style.border = "1px black solid";
+            button.text =  silabasc[i];
             document.getElementById('botonescsilaba').append(button);
         }
 
@@ -1311,7 +1360,7 @@
 
         //inicio palabra c
         let modelosc = ['cama', 'casa', 'circo', 'coco', 'conejo'];
-        let palabrasc = {"cama": ['cama', 'camainvertida', 'camaportuguesa', 'cameinvertida', 'camo', 'cana', 'canainvertida', 'canoinvertida', 'como', 'comoinvertida', 'conaportuguesa', 'conoportuguesa'], "casa": ['casa', 'casainvertida', 'casaportuguesa', 'caso', 'casoinvertida', 'caza', 'cazainvertida', 'cora', 'coro', 'cosa', 'cosainvertida', 'cosoinvertida'], "circo": ['circa', 'circainverportu', 'circo', 'circoinverportu', 'circoinvertida', 'circoinvertida2', 'circoinvertida3', 'cirnainvertida', 'cirnoportuguesa', 'cirva', 'cirvoinvertida', 'cyrcainvertida', 'sirco'], "coco": ['caco invertida', 'caco2', 'cacoinvertida', 'caro', 'caroinvertida', 'coca', 'coco', 'cocoinvertida', 'cocoportuguesa', 'cono', 'coro', 'coroinvertida'], "conejo": ['cameja', 'camejo', 'camelo', 'canejoinvertida', 'canela', 'canelaportuguesa', 'carneportuguesa', 'comejoinvertido', 'conejo', 'conejoinvertida', 'conejoportuguesa', 'corneja', 'cortejoportuguesa']}
+        let palabrasc = {"cama": ['cama', 'amac', 'cpor', 'emac', 'camo', 'cana', 'anac', 'onac', 'como', 'omoc', 'onca', 'onoc'], "casa": ['casa', 'asac', 'casaportuguesa', 'caso', 'casoinvertida', 'caza', 'cazainvertida', 'cora', 'coro', 'cosa', 'cosainvertida', 'cosoinvertida'], "circo": ['circa', 'circainverportu', 'circo', 'circoinverportu', 'circoinvertida', 'circoinvertida2', 'circoinvertida3', 'cirnainvertida', 'cirnoportuguesa', 'cirva', 'cirvoinvertida', 'cyrcainvertida', 'sirco'], "coco": ['caco invertida', 'caco2', 'cacoinvertida', 'caro', 'caroinvertida', 'coca', 'coco', 'cocoinvertida', 'cocoportuguesa', 'cono', 'coro', 'coroinvertida'], "conejo": ['cameja', 'camejo', 'camelo', 'canejoinvertida', 'canela', 'canelaportuguesa', 'carneportuguesa', 'comejoinvertido', 'conejo', 'conejoinvertida', 'conejoportuguesa', 'corneja', 'cortejoportuguesa']}
 
         let modelo_elegidoc = modelosc[Math.floor(Math.random()*5)];
 

@@ -72,7 +72,7 @@
 
 </head>
 
-<body class="@yield('classes_body')" @yield('body_data')>
+<body class="hold-transition sidebar-mini layout-fixed sidebar-collapse">
 
     {{-- Body Content --}}
     @yield('body')
@@ -101,6 +101,26 @@
     @endif
 
     {{-- Custom Scripts --}}
+    <script>
+        
+      toastr.options = {
+      "closeButton": true,
+      "debug": false,
+      "newestOnTop": true,
+      "progressBar": true,
+      "positionClass": "toast-top-right",
+      "preventDuplicates": true,
+      "onclick": null,
+      "showDuration": "500",
+      "hideDuration": "1000",
+      "timeOut": "2000",
+      "extendedTimeOut": "1000",
+      "showEasing": "swing",
+      "hideEasing": "linear",
+      "showMethod": "fadeIn",
+      "hideMethod": "fadeOut"
+    }
+    </script>
     @yield('adminlte_js')
 
 </body>
