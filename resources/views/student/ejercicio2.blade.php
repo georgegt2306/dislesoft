@@ -237,104 +237,131 @@
 
             {{-- quinto subitem --}}
             <div class="tab-pane fade" id="q" role="tabpanel" aria-labelledby="contact-tab">
-                <br><br>
-                <h4>ENCUENTRA Y DALE CLICK A LA LETRA "q"</h4>
-                <div id="botonesq" class="row botones"></div>
-                <br>
-                <button class="btn btn-primary" id="calificarbotonesq">Terminar</button>
-                <button class="btn btn-warning reiniciar">Reiniciar</button>
-                <br><br>
-                <h4>ENCUENTRA Y DALE CLICK A LAS SILABAS CORRESPONDIENTES A LA LETRA "q"</h4>
-                <div id="botonesqsilaba" class="row botones"></div>
-                <br>
-                <button class="btn btn-primary" id="calificarbotonesqsilaba">Terminar</button>
-                <button class="btn btn-warning reiniciar">Reiniciar</button>
-                <br><br>
-                <h4 id="modeloq_palabra">ENCUENTRA Y SELECCIONA LA PALABRA:</h4>
-                <br>
-                <div class="row">
-                    <div id="botonesqpalabra" class="col-8 botones"></div>
-                    <div class="col-4">
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <img id="modeloq" style="height: 220px; width:220px;">
+            <br><br>
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="col-md-12" style="height:60px">
+                        <h5>ENCUENTRA Y DALE CLICK A LA LETRA "q"</h5>
                     </div>
+                    <div id="botonesq" class="row botones"></div>
+                    <br>
+                    <button class="btn btn-primary" id="calificarbotonesq">Terminar</button>
+                    <button class="btn btn-warning reiniciar">Reiniciar</button>
+                </div>    
+                <div class="col-md-1">
                 </div>
-                
-                <br>
-                <button class="btn btn-primary" id="calificarbotonesqpalabra">Terminar</button>
-                <button class="btn btn-warning reiniciar">Reiniciar</button>
+                <div class="col-md-5">
+                        <div class="col-md-12" style="height:60px">
+                            <h5>ENCUENTRA Y DALE CLICK A LAS SILABAS CORRESPONDIENTES A LA LETRA "q"</h5>
+                        </div>
+                        <div id="botonesqsilaba" class="row botones"></div>
+                          
+                        <br>
+                        <button class="btn btn-primary" id="calificarbotonesqsilaba">Terminar</button>
+                        <button class="btn btn-warning reiniciar">Reiniciar</button>
+                </div> 
+            </div> 
+                <div class="col-md-12">
+                    <br>
+                        <h4 id="modeloq_palabra">ENCUENTRA Y SELECCIONA LA PALABRA:</h4>
+                    <br>
+                    <div class="row">
+                        <div id="botonesqpalabra" class="col-md-8 botones"></div>
+                        <div class="col-md-4" style="display: block;text-align:center; margin:0" >
+                            <img id="modeloq" style="height: 220px; width:220px;border-radius:40px">
+                        </div>
+                    </div>
+                    <br>
+                    <button class="btn btn-primary" id="calificarbotonesqpalabra">Terminar</button>
+                    <button class="btn btn-warning reiniciar">Reiniciar</button>
+                </div>
             </div>
             {{-- fin quinto subitem --}}
 
             {{-- sexto subitem --}}
             <div class="tab-pane fade" id="f" role="tabpanel" aria-labelledby="contact-tab">
-                <br><br>
-                <h4>ENCUENTRA Y DALE CLICK A LA LETRA "f"</h4>
-                <div id="botonesf" class="row botones"></div>
+            <br><br>
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="col-md-12" style="height:60px">
+                        <h5>ENCUENTRA Y DALE CLICK A LA LETRA "f"</h5>
+                    </div>
+                    <div id="botonesf" class="row botones"></div>
+
                 <br>
                 <button class="btn btn-primary" id="calificarbotonesf">Terminar</button>
                 <button class="btn btn-warning reiniciar">Reiniciar</button>
-                <br><br>
-                <h4>ENCUENTRA Y DALE CLICK A LAS SILABAS CORRESPONDIENTES A LA LETRA "f"</h4>
-                <div id="botonesfsilaba" class="row botones"></div>
+                </div>
+                <div class="col-md-1">
+                </div>
+                <div class="col-md-5">
+                    <div class="col-md-12" style="height:60px">
+                        <h5>ENCUENTRA Y DALE CLICK A LAS SILABAS CORRESPONDIENTES A LA LETRA "f"</h4>
+                    </div>
+                    <div id="botonesfsilaba" class="row botones"></div>
+                    <br>
+                    <button class="btn btn-primary" id="calificarbotonesfsilaba">Terminar</button>
+                    <button class="btn btn-warning reiniciar">Reiniciar</button>                
+                </div>
+            </div>
+            <div class="col-md-12">
                 <br>
-                <button class="btn btn-primary" id="calificarbotonesfsilaba">Terminar</button>
-                <button class="btn btn-warning reiniciar">Reiniciar</button>
-                <br><br>
                 <h4 id="modelof_palabra">ENCUENTRA Y SELECCIONA LA PALABRA:</h4>
                 <br>
                 <div class="row">
-                    <div id="botonesfpalabra" class="col-8 botones"></div>
-                    <div class="col-4">
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <img id="modelof" style="height: 220px; width:220px;">
-                    </div>
+                    <div id="botonesfpalabra" class="col-md-8 botones"></div>
+                    <div class="col-md-4" style="display: block;text-align:center; margin:0" >
+                            <img id="modelof" style="height: 220px; width:220px;border-radius:40px">
+                        </div>
                 </div>
                 <br>
                 <button class="btn btn-primary" id="calificarbotonesfpalabra">Terminar</button>
                 <button class="btn btn-warning reiniciar">Reiniciar</button>
             </div>
+            </div>
             {{-- fin sexto subitem --}}
 
             {{-- septimo subitem --}}
             <div class="tab-pane fade" id="t" role="tabpanel" aria-labelledby="contact-tab">
-                <br><br>
-                <h4>ENCUENTRA Y DALE CLICK A LA LETRA "t"</h4>
+            <br><br>
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="col-md-12" style="height:60px">
+                        <h5>ENCUENTRA Y DALE CLICK A LA LETRA "t"</h5>
+                    </div>
                 <div id="botonest" class="row botones"></div>
                 <br>
                 <button class="btn btn-primary" id="calificarbotonest">Terminar</button>
                 <button class="btn btn-warning reiniciar">Reiniciar</button>
-                <br><br>
-                <h4>ENCUENTRA Y DALE CLICK A LAS SILABAS CORRESPONDIENTES A LA LETRA "t"</h4>
+                </div>
+                <div class="col-md-1">
+                </div>
+                <div class="col-md-5">
+                    <div class="col-md-12" style="height:60px">
+                        <h5>ENCUENTRA Y DALE CLICK A LAS SILABAS CORRESPONDIENTES A LA LETRA "t"</h5>
+                        </div>
                 <div id="botonestsilaba" class="row botones"></div>
                 <br>
                 <button class="btn btn-primary" id="calificarbotonestsilaba">Terminar</button>
                 <button class="btn btn-warning reiniciar">Reiniciar</button>
                 <br>
+                </div>
+                </div>
+
+                <div class="col-md-12">
+                <br>
                 <h4 id="modelot_palabra">ENCUENTRA Y SELECCIONA LA PALABRA:</h4>
                 <br>
-                <div class="row">
-                    <div id="botonestpalabra" class="col-8 botones"></div>
-                    <div class="col-4">
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <img id="modelot" style="height: 220px; width:220px;">
-                    </div>
+                    <div class="row">
+                    <div id="botonestpalabra" class="col-md-8 botones"></div>
+                    <div class="col-md-4" style="display: block;text-align:center; margin:0" >
+                            <img id="modelot" style="height: 220px; width:220px;border-radius:40px">
+                        </div>
                 </div>
                 <br>
                 <button class="btn btn-primary" id="calificarbotonestpalabra">Terminar</button>
                 <button class="btn btn-warning reiniciar">Reiniciar</button>
+            </div>
             </div>
             {{-- fin septimo subitem --}}
         </div>
@@ -2027,10 +2054,10 @@
             button.classList.add('btn');
             button.style.margin = "15px";
             button.style.cursor = "pointer";
-            let img = document.createElement('img');
-            img.src =  `{{asset('img/ejercicios/ejercicio2/silabas/q')}}/${silabasq[i]}.jpg`;
-            img.classList.add('imagenes-ejercicio2');
-            button.append(img);
+            button.style.fontSize = "20px";
+            button.style.width = "60px";
+            button.style.border = "1px black solid";
+            button.text =  silabasq[i];
             document.getElementById('botonesqsilaba').append(button);
         }
 
@@ -2163,10 +2190,10 @@
             button.classList.add('btn');
             button.style.margin = "15px";
             button.style.cursor = "pointer";
-            let img = document.createElement('img');
-            img.src =  `{{asset('img/ejercicios/ejercicio2/palabras/listapalabras/q/${modelo_elegidoq}')}}/${palabrasq[modelo_elegidoq][i]}.jpg`;
-            img.classList.add('imagenes-ejercicio2');
-            button.append(img);
+            button.style.fontSize = "20px";
+            button.style.width = "100px";
+            button.style.border = "1px black solid";
+            button.text =  palabrasq[modelo_elegidoq][i];
             document.getElementById('botonesqpalabra').append(button);
         }
 
@@ -2260,7 +2287,7 @@
     {{-- letra f --}}
     <script>
         //inicio letras
-        let letrasf = ['b', 'b2', 'd', 'f', 'j', 'l', 'm', 'p','q','r', 's', 'y', 'z'];
+        let letrasf = ['b', 'b', 'd', 'f', 'j', 'l', 'm', 'p','q','r', 's', 'y', 'z'];
         let correctasf = ['f'];
 
         if(Math.floor(Math.random()*10) > 5)
@@ -2288,10 +2315,10 @@
             button.classList.add('btn');
             button.style.margin = "15px";
             button.style.cursor = "pointer";
-            let img = document.createElement('img');
-            img.src =  `{{asset('img/ejercicios/ejercicio2/letras/f')}}/${letrasf[i]}.jpg`;
-            img.classList.add('imagenes-ejercicio2');
-            button.append(img);
+            button.style.fontSize = "20px";
+            button.style.width = "60px";
+            button.style.border = "1px black solid";
+            button.text =  letrasf[i];
             document.getElementById('botonesf').append(button);
         }
 
@@ -2407,10 +2434,10 @@
             button.classList.add('btn');
             button.style.margin = "15px";
             button.style.cursor = "pointer";
-            let img = document.createElement('img');
-            img.src =  `{{asset('img/ejercicios/ejercicio2/silabas/f')}}/${silabasf[i]}.jpg`;
-            img.classList.add('imagenes-ejercicio2');
-            button.append(img);
+            button.style.fontSize = "20px";
+            button.style.width = "60px";
+            button.style.border = "1px black solid";
+            button.text =  silabasf[i];
             document.getElementById('botonesfsilaba').append(button);
         }
 
@@ -2543,10 +2570,10 @@
             button.classList.add('btn');
             button.style.margin = "15px";
             button.style.cursor = "pointer";
-            let img = document.createElement('img');
-            img.src =  `{{asset('img/ejercicios/ejercicio2/palabras/listapalabras/f/${modelo_elegidof}')}}/${palabrasf[modelo_elegidof][i]}.jpg`;
-            img.classList.add('imagenes-ejercicio2');
-            button.append(img);
+            button.style.fontSize = "20px";
+            button.style.width = "100px";
+            button.style.border = "1px black solid";
+            button.text = palabrasf[modelo_elegidof][i];
             document.getElementById('botonesfpalabra').append(button);
         }
 
@@ -2640,7 +2667,7 @@
     {{-- letra t --}}
     <script>
         //inicio letras
-        let letrast = ['z', 'b2', 'f', 't', 'l', 'y', 'p','q','r', 's', 'i','m', 'b'];
+        let letrast = ['z', 'b', 'f', 't', 'l', 'y', 'p','q','r', 's', 'i','m', 'b'];
         let correctast = ['t'];
 
         if(Math.floor(Math.random()*10) > 5)
@@ -2668,10 +2695,10 @@
             button.classList.add('btn');
             button.style.margin = "15px";
             button.style.cursor = "pointer";
-            let img = document.createElement('img');
-            img.src =  `{{asset('img/ejercicios/ejercicio2/letras/t')}}/${letrast[i]}.jpg`;
-            img.classList.add('imagenes-ejercicio2');
-            button.append(img);
+            button.style.fontSize = "20px";
+            button.style.width = "60px";
+            button.style.border = "1px black solid";
+            button.text = letrast[i];
             document.getElementById('botonest').append(button);
         }
 
@@ -2787,10 +2814,10 @@
             button.classList.add('btn');
             button.style.margin = "15px";
             button.style.cursor = "pointer";
-            let img = document.createElement('img');
-            img.src =  `{{asset('img/ejercicios/ejercicio2/silabas/t')}}/${silabast[i]}.jpg`;
-            img.classList.add('imagenes-ejercicio2');
-            button.append(img);
+            button.style.fontSize = "20px";
+            button.style.width = "60px";
+            button.style.border = "1px black solid";
+            button.text = silabast[i];
             document.getElementById('botonestsilaba').append(button);
         }
 
@@ -2923,10 +2950,10 @@
             button.classList.add('btn');
             button.style.margin = "15px";
             button.style.cursor = "pointer";
-            let img = document.createElement('img');
-            img.src =  `{{asset('img/ejercicios/ejercicio2/palabras/listapalabras/t/${modelo_elegidot}')}}/${palabrast[modelo_elegidot][i]}.jpg`;
-            img.classList.add('imagenes-ejercicio2');
-            button.append(img);
+            button.style.fontSize = "20px";
+            button.style.width = "100px";
+            button.style.border = "1px black solid";
+            button.text = palabrast[modelo_elegidot][i];
             document.getElementById('botonestpalabra').append(button);
         }
 
