@@ -48,6 +48,7 @@
                             <button palabra="tijera"><img style="height: 75px; width: 75px;" src="{{asset('img/ejercicios/ejercicio1/d/tijera.jpg')}}" alt=""></button>
                             <button palabra="tomate"><img style="height: 75px; width: 75px;" src="{{asset('img/ejercicios/ejercicio1/d/tomate.jpg')}}" alt=""></button>
                             <button palabra="tenedor"><img style="height: 75px; width: 75px;" src="{{asset('img/ejercicios/ejercicio1/d/tenedor.jpg')}}" alt=""></button>
+                            <button palabra="dedo"><img style="height: 75px; width: 75px;" src="{{asset('img/ejercicios/ejercicio1/d/dedo.jpg')}}" alt=""></button>
                         </div>
                     </div>
                     <div class="col-sm-6 col-12">
@@ -216,7 +217,7 @@
 
 @section('js')
     <script>
-        let palabras_correctasd = ['dado', 'dinero', 'tenedor'];
+        let palabras_correctasd = ['dado', 'dinero', 'tenedor','dedo'];
         let palabras_incorrectasd = ['botella', 'foco', 'tijera', 'tomate'];
 
         $('#tablad').DataTable({
@@ -320,9 +321,9 @@
             if(aciertos.length == palabras_correctasd.length && erroneos.length == 0)
             {
                 Swal.fire({
-                    iconHtml: "<img src='{{asset('img/ejercicios/ejercicio1/estrella.jpg')}}' width='200px' height='100px'",
+                    iconHtml: "<img src='{{asset('img/ejercicios/ejercicio1/estrella.jpg')}}' width='200px' height='100px'>",
                     title: 'Excelente',
-                    text:'Felicidades, acertaste en todas ' + (aciertos.length*3.33),
+                    text:'Felicidades, acertaste en todas 10',
                     confirmButtonColor: '#3085d6',
                     confirmButtonText: 'OK'
 
@@ -333,7 +334,7 @@
                 Swal.fire({
                     icon: 'error',
                     title: 'Por poco lo logras',
-                    text:'Te faltaron respuestas ' + ((aciertos.length*3.33) - (erroneos.length*3.33)) ,
+                    text:'Te faltaron respuestas ' + ((aciertos.length*2.5) - (erroneos.length*2.5)) ,
                     confirmButtonColor: '#3085d6',
                     confirmButtonText: 'OK'
 
@@ -344,7 +345,7 @@
                 Swal.fire({
                     icon: 'error',
                     title: 'Fallaste',
-                    text:'Debes entrenar un poco más ' + ((aciertos.length*3.33) - (erroneos.length*3.33)) ,
+                    text:'Debes entrenar un poco más ' + ((aciertos.length*2.5) - (erroneos.length*2.5)) ,
                     confirmButtonColor: '#3085d6',
                     confirmButtonText: 'OK'
                    
@@ -468,9 +469,9 @@
             if(aciertos.length == palabras_correctasb.length && erroneos.length == 0)
             {
                 Swal.fire({
-                    iconHtml: "{{asset('img/ejercicios/ejercicio1/estrella.jpg')}}",
+                    iconHtml: "<img src='{{asset('img/ejercicios/ejercicio1/estrella.jpg')}}' width='200px' height='100px'>",
                     title: 'Excelente',
-                    text:'Felicidades, acertaste en todas',
+                    text:'Felicidades, acertaste en todas 10',
                     showConfirmButton: false,
                     timer: 1000
                 })
@@ -612,9 +613,9 @@
             if(aciertos.length == palabras_correctasq.length && erroneos.length == 0)
             {
                 Swal.fire({
-                    iconHtml: "{{asset('img/ejercicios/ejercicio1/estrella.jpg')}}",
+                    iconHtml: "<img src='{{asset('img/ejercicios/ejercicio1/estrella.jpg')}}' width='200px' height='100px'>",
                     title: 'Excelente',
-                    text:'Felicidades, acertaste en todas',
+                    text:'Felicidades, acertaste en todas 10',
                     showConfirmButton: false,
                     timer: 1000
                 })
@@ -747,7 +748,7 @@
             if(aciertos.length == palabras_correctasl.length && erroneos.length == 0)
             {
                 Swal.fire({
-                    icon: 'success',
+                    iconHtml: "<img src='{{asset('img/ejercicios/ejercicio1/estrella.jpg')}}' width='200px' height='100px'>",
                     title: 'Excelente',
                     text:'Felicidades, acertaste en todas',
                     showConfirmButton: false,
@@ -883,9 +884,9 @@
             if(aciertos.length == palabras_correctasll.length && erroneos.length == 0)
             {
                 Swal.fire({
-                    icon: 'success',
+                    iconHtml: "<img src='{{asset('img/ejercicios/ejercicio1/estrella.jpg')}}' width='200px' height='100px'>",
                     title: 'Excelente',
-                    text:'Felicidades, acertaste en todas',
+                    text:'Felicidades, acertaste en todas 10',
                     showConfirmButton: false,
                     timer: 1000
                 })
