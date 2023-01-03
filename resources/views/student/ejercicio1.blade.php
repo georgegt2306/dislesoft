@@ -321,7 +321,7 @@
             if(aciertos.length == palabras_correctasd.length && erroneos.length == 0)
             {
                 Swal.fire({
-                    iconHtml: "<img src='{{asset('img/ejercicios/ejercicio1/estrella.jpg')}}' width='200px' height='100px'>",
+                    iconHtml: "<img src='{{asset('img/ejercicios/cinco_estrellas.jpg')}}' width='300px' height='100px'>",
                     title: 'Excelente',
                     text:'Felicidades, acertaste en todas 10',
                     confirmButtonColor: '#3085d6',
@@ -330,26 +330,71 @@
                 })
             }
             else if(aciertos.length < palabras_correctasd.length && erroneos.length == 0)
-            {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Por poco lo logras',
-                    text:'Te faltaron respuestas ' + ((aciertos.length*2.5) - (erroneos.length*2.5)) ,
-                    confirmButtonColor: '#3085d6',
-                    confirmButtonText: 'OK'
+            {   
+                if(aciertos.length==1){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/una_estrella.jpg')}}' width='300px' height='100px'>",
+                        title: 'Por poco lo logras',
+                        text:'Te faltaron respuestas ' + ((aciertos.length*2.5) - (erroneos.length*2.5)) ,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }else if(aciertos.length==2){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/segundo_estrella_media.jpg')}}' width='300px' height='100px'>",
+                        title: 'Por poco lo logras',
+                        text:'Te faltaron respuestas ' + ((aciertos.length*2.5) - (erroneos.length*2.5)) ,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }else if(aciertos.length==3){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/tres_estrella_media.jpg')}}' width='300px' height='100px'>",
+                        title: 'Por poco lo logras',
+                        text:'Te faltaron respuestas ' + ((aciertos.length*2.5) - (erroneos.length*2.5)) ,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }
 
-                })
             }
             else
             {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Fallaste',
-                    text:'Debes entrenar un poco más ' + ((aciertos.length*2.5) - (erroneos.length*2.5)) ,
-                    confirmButtonColor: '#3085d6',
-                    confirmButtonText: 'OK'
-                   
-                })
+                var restante=aciertos.length - erroneos.length;
+
+                if(restante==1){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/una_estrella.jpg')}}' width='300px' height='100px'>",
+                        title: 'Por poco lo logras',
+                        text:'Debes entrenar un poco más ' + restante*2.5 ,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }else if(restante==0){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/sin_estrella.jpg')}}' width='300px' height='100px'>",
+                        title: 'Por poco lo logras',
+                        text:'Debes entrenar un poco más ' + restante*2.5 ,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }else if(restante.length==2){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/segundo_estrella_media.jpg')}}' width='300px' height='100px'>",
+                        title: 'Por poco lo logras',
+                        text:'Debes entrenar un poco más ' + restante*2.5 ,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }else if(restante.length==3){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/tres_estrella_media.jpg')}}' width='300px' height='100px'>",
+                        title: 'Por poco lo logras',
+                        text:'Debes entrenar un poco más ' + restante*2.5 ,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }
             }
 
         })
@@ -469,11 +514,11 @@
             if(aciertos.length == palabras_correctasb.length && erroneos.length == 0)
             {
                 Swal.fire({
-                    iconHtml: "<img src='{{asset('img/ejercicios/ejercicio1/estrella.jpg')}}' width='200px' height='100px'>",
+                    iconHtml: "<img src='{{asset('img/ejercicios/cinco_estrellas.jpg')}}' width='300px' height='100px'>",
                     title: 'Excelente',
                     text:'Felicidades, acertaste en todas 10',
-                    showConfirmButton: false,
-                    timer: 1000
+                    confirmButtonColor: '#3085d6',
+                    confirmButtonText: 'OK'
                 })
             }
             else if(aciertos.length < palabras_correctasb.length && erroneos.length == 0)
@@ -613,11 +658,11 @@
             if(aciertos.length == palabras_correctasq.length && erroneos.length == 0)
             {
                 Swal.fire({
-                    iconHtml: "<img src='{{asset('img/ejercicios/ejercicio1/estrella.jpg')}}' width='200px' height='100px'>",
+                    iconHtml: "<img src='{{asset('img/ejercicios/cinco_estrellas.jpg')}}' width='300px' height='100px'>",
                     title: 'Excelente',
                     text:'Felicidades, acertaste en todas 10',
-                    showConfirmButton: false,
-                    timer: 1000
+                    confirmButtonColor: '#3085d6',
+                    confirmButtonText: 'OK'
                 })
             }
             else if(aciertos.length < palabras_correctasq.length && erroneos.length == 0)
@@ -748,11 +793,11 @@
             if(aciertos.length == palabras_correctasl.length && erroneos.length == 0)
             {
                 Swal.fire({
-                    iconHtml: "<img src='{{asset('img/ejercicios/ejercicio1/estrella.jpg')}}' width='200px' height='100px'>",
+                    iconHtml: "<img src='{{asset('img/ejercicios/cinco_estrellas.jpg')}}' width='300px' height='100px'>",
                     title: 'Excelente',
-                    text:'Felicidades, acertaste en todas',
-                    showConfirmButton: false,
-                    timer: 1000
+                    text:'Felicidades, acertaste en todas 10',
+                    confirmButtonColor: '#3085d6',
+                    confirmButtonText: 'OK'
                 })
             }
             else if(aciertos.length < palabras_correctasl.length && erroneos.length == 0)
@@ -884,11 +929,11 @@
             if(aciertos.length == palabras_correctasll.length && erroneos.length == 0)
             {
                 Swal.fire({
-                    iconHtml: "<img src='{{asset('img/ejercicios/ejercicio1/estrella.jpg')}}' width='200px' height='100px'>",
+                    iconHtml: "<img src='{{asset('img/ejercicios/cinco_estrellas.jpg')}}' width='300px' height='100px'>",
                     title: 'Excelente',
                     text:'Felicidades, acertaste en todas 10',
-                    showConfirmButton: false,
-                    timer: 1000
+                    confirmButtonColor: '#3085d6',
+                    confirmButtonText: 'OK'
                 })
             }
             else if(aciertos.length < palabras_correctasll.length && erroneos.length == 0)

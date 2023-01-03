@@ -70,7 +70,6 @@
                 <br>
                 <div id="palabrasd" class="row botones"></div>
                 <br>
-                <button id="comenzard" class="btn btn-secondary">Comenzar</button>
                 <button id="siguiented" disabled class="btn btn-success">Siguiente</button>
                 <button id="calificard" disabled class="btn btn-primary">Calificar</button>
                 <button class="btn btn-warning reiniciar">Reiniciar</button>
@@ -82,7 +81,6 @@
                 <br>
                 <div id="palabrasb" class="row botones"></div>
                 <br>
-                <button id="comenzarb" class="btn btn-secondary">Comenzar</button>
                 <button id="siguienteb" disabled class="btn btn-success">Siguiente</button>
                 <button id="calificarb" disabled class="btn btn-primary">Calificar</button>
                 <button class="btn btn-warning reiniciar">Reiniciar</button>
@@ -94,7 +92,6 @@
                 <br>
                 <div id="palabrasp" class="row botones"></div>
                 <br>
-                <button id="comenzarp" class="btn btn-secondary">Comenzar</button>
                 <button id="siguientep" disabled class="btn btn-success">Siguiente</button>
                 <button id="calificarp" disabled class="btn btn-primary">Calificar</button>
                 <button class="btn btn-warning reiniciar">Reiniciar</button>
@@ -106,7 +103,6 @@
                 <br>
                 <div id="palabrasf" class="row botones"></div>
                 <br>
-                <button id="comenzarf" class="btn btn-secondary">Comenzar</button>
                 <button id="siguientef" disabled class="btn btn-success">Siguiente</button>
                 <button id="calificarf" disabled class="btn btn-primary">Calificar</button>
                 <button class="btn btn-warning reiniciar">Reiniciar</button>
@@ -118,7 +114,6 @@
                 <br>
                 <div id="palabrast" class="row botones"></div>
                 <br>
-                <button id="comenzart" class="btn btn-secondary">Comenzar</button>
                 <button id="siguientet" disabled class="btn btn-success">Siguiente</button>
                 <button id="calificart" disabled class="btn btn-primary">Calificar</button>
                 <button class="btn btn-warning reiniciar">Reiniciar</button>
@@ -195,7 +190,7 @@
 
         document.getElementById('palabrasazard').value =  seleccionadosd.toString();
 
-        document.getElementById('comenzard').addEventListener('click', ()=>{
+        function letrad(){
 
             [...document.getElementById('palabrasd').children].map(e => e.remove());
             let numero = Number(document.getElementById('palabrasazard').value.split(',')[Number(document.getElementById('itemd').value)]);
@@ -238,10 +233,10 @@
 
             document.getElementById('itemd').value = Number(document.getElementById('itemd').value)+1;
 
-            document.getElementById('comenzard').setAttribute('disabled', 'disabled');
             document.getElementById('siguiented').removeAttribute('disabled');
             document.getElementById('calificard').removeAttribute('disabled');
-        })
+        }
+        letrad();
 
         document.getElementById('siguiented').addEventListener('click', ()=>{
 
@@ -329,7 +324,7 @@
 
         document.getElementById('palabrasazarb').value =  seleccionadosb.toString();
 
-        document.getElementById('comenzarb').addEventListener('click', ()=>{
+        function letrab (){
 
             [...document.getElementById('palabrasb').children].map(e => e.remove());
             let numero = Number(document.getElementById('palabrasazarb').value.split(',')[Number(document.getElementById('itemb').value)]);
@@ -372,10 +367,10 @@
 
             document.getElementById('itemb').value = Number(document.getElementById('itemb').value)+1;
 
-            document.getElementById('comenzarb').setAttribute('disabled', 'disabled');
             document.getElementById('siguienteb').removeAttribute('disabled');
             document.getElementById('calificarb').removeAttribute('disabled');
-        })
+        }
+        letrab();
 
         document.getElementById('siguienteb').addEventListener('click', ()=>{
 
@@ -462,7 +457,7 @@
 
         document.getElementById('palabrasazarp').value =  seleccionadosp.toString();
 
-        document.getElementById('comenzarp').addEventListener('click', ()=>{
+        function letrap(){
 
             [...document.getElementById('palabrasp').children].map(e => e.remove());
             let numero = Number(document.getElementById('palabrasazarp').value.split(',')[Number(document.getElementById('itemp').value)]);
@@ -505,10 +500,10 @@
 
             document.getElementById('itemp').value = Number(document.getElementById('itemp').value)+1;
 
-            document.getElementById('comenzarp').setAttribute('disabled', 'disabled');
             document.getElementById('siguientep').removeAttribute('disabled');
             document.getElementById('calificarp').removeAttribute('disabled');
-        })
+        }
+        letrap();
 
         document.getElementById('siguientep').addEventListener('click', ()=>{
 
@@ -595,7 +590,7 @@
 
         document.getElementById('palabrasazarf').value =  seleccionadosf.toString();
 
-        document.getElementById('comenzarf').addEventListener('click', ()=>{
+        function letraf(){
 
             [...document.getElementById('palabrasf').children].map(e => e.remove());
             let numero = Number(document.getElementById('palabrasazarf').value.split(',')[Number(document.getElementById('itemf').value)]);
@@ -638,10 +633,10 @@
 
             document.getElementById('itemf').value = Number(document.getElementById('itemf').value)+1;
 
-            document.getElementById('comenzarf').setAttribute('disabled', 'disabled');
             document.getElementById('siguientef').removeAttribute('disabled');
             document.getElementById('calificarf').removeAttribute('disabled');
-        })
+        }
+        letraf();
 
         document.getElementById('siguientef').addEventListener('click', ()=>{
 
@@ -729,7 +724,7 @@
 
         document.getElementById('palabrasazart').value =  seleccionadost.toString();
 
-        document.getElementById('comenzart').addEventListener('click', ()=>{
+        function letrat(){
 
             [...document.getElementById('palabrast').children].map(e => e.remove());
             let numero = Number(document.getElementById('palabrasazart').value.split(',')[Number(document.getElementById('itemt').value)]);
@@ -771,11 +766,10 @@
             document.getElementById('palabrast').append(img);
 
             document.getElementById('itemt').value = Number(document.getElementById('itemt').value)+1;
-
-            document.getElementById('comenzart').setAttribute('disabled', 'disabled');
             document.getElementById('siguientet').removeAttribute('disabled');
             document.getElementById('calificart').removeAttribute('disabled');
-        })
+        }
+        letrat();
 
         document.getElementById('siguientet').addEventListener('click', ()=>{
 
