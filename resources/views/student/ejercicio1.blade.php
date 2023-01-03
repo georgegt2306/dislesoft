@@ -39,7 +39,7 @@
             {{-- primer subitem --}}
             <div class="tab-pane fade show active" id="d" role="tabpanel" aria-labelledby="home-tab">
                 <div class="row">
-                    <div class="col-sm-6 col-12">
+                    <div class="col-md-6">
                         <div id="botonesd">
                             <button palabra="botella"><img style="height: 75px; width: 75px;" src="{{asset('img/ejercicios/ejercicio1/d/botella.jpg')}}" alt=""></button>
                             <button palabra="dado"><img style="height: 75px; width: 75px;" src="{{asset('img/ejercicios/ejercicio1/d/dado.jpg')}}" alt=""></button>
@@ -51,8 +51,10 @@
                             <button palabra="dedo"><img style="height: 75px; width: 75px;" src="{{asset('img/ejercicios/ejercicio1/d/dedo.jpg')}}" alt=""></button>
                         </div>
                     </div>
-                    <div class="col-sm-6 col-12">
-                        <table id="tablad" class="table tabla-bordered table-striped">
+                    <div class="col-md-2">
+                    </div>
+                    <div class="col-md-3">
+                        <table id="tablad" class="table tabla-bordered table-striped ">
                             <thead class="thead-dark">
                                 <tr>
                                     <th>Eliminar</th>
@@ -87,7 +89,7 @@
                         </div>
                     </div>
                     <div class="col-sm-6 col-12">
-                        <table id="tablab" class="table tabla-bordered table-striped">
+                        <table id="tablab" class="table tabla-bordered table-striped ">
                             <thead class="thead-dark">
                                 <tr>
                                     <th>Eliminar</th>
@@ -223,7 +225,10 @@
         $('#tablad').DataTable({
             paging: false,
             searching: false,
-            info: false
+            info: false,
+            scrollY: '200px',
+            scrollCollapse: true,
+            responsive: true
         });
 
         $('.ordenes').on('click', function(){
@@ -365,7 +370,7 @@
                 if(restante==1){
                     Swal.fire({
                         iconHtml: "<img src='{{asset('img/ejercicios/una_estrella.jpg')}}' width='300px' height='100px'>",
-                        title: 'Por poco lo logras',
+                        title: 'Fallaste',
                         text:'Debes entrenar un poco más ' + restante*2.5 ,
                         confirmButtonColor: '#3085d6',
                         confirmButtonText: 'OK'
@@ -373,27 +378,35 @@
                 }else if(restante==0){
                     Swal.fire({
                         iconHtml: "<img src='{{asset('img/ejercicios/sin_estrella.jpg')}}' width='300px' height='100px'>",
-                        title: 'Por poco lo logras',
+                        title: 'Fallaste',
                         text:'Debes entrenar un poco más ' + restante*2.5 ,
                         confirmButtonColor: '#3085d6',
                         confirmButtonText: 'OK'
                     })
-                }else if(restante.length==2){
+                }else if(restante==2){
                     Swal.fire({
                         iconHtml: "<img src='{{asset('img/ejercicios/segundo_estrella_media.jpg')}}' width='300px' height='100px'>",
-                        title: 'Por poco lo logras',
+                        title: 'Fallaste',
                         text:'Debes entrenar un poco más ' + restante*2.5 ,
                         confirmButtonColor: '#3085d6',
                         confirmButtonText: 'OK'
                     })
-                }else if(restante.length==3){
+                }else if(restante==3){
                     Swal.fire({
                         iconHtml: "<img src='{{asset('img/ejercicios/tres_estrella_media.jpg')}}' width='300px' height='100px'>",
-                        title: 'Por poco lo logras',
+                        title: 'Fallaste',
                         text:'Debes entrenar un poco más ' + restante*2.5 ,
                         confirmButtonColor: '#3085d6',
                         confirmButtonText: 'OK'
                     })
+                }else{
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/sin_estrella.jpg')}}' width='300px' height='100px'>",
+                        title: 'Fallaste',
+                        text:'Debes entrenar un poco más ' + restante*2.5 ,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })    
                 }
             }
 
