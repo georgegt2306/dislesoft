@@ -89,7 +89,7 @@
                 <br>
                 <div id="palabrasd" class="row botones"></div>
                 <br>
-                <button id="comenzard" class="btn btn-secondary">Comenzar</button>
+               
                 <button id="siguiented" disabled class="btn btn-success">Siguiente</button>
                 <button class="btn btn-warning reiniciar">Reiniciar</button>
             </div>
@@ -100,7 +100,7 @@
                 <br>
                 <div id="palabrasb" class="row botones"></div>
                 <br>
-                <button id="comenzarb" class="btn btn-secondary">Comenzar</button>
+               
                 <button id="siguienteb" disabled class="btn btn-success">Siguiente</button>
                 <button class="btn btn-warning reiniciar">Reiniciar</button>
             </div>
@@ -111,7 +111,7 @@
                 <br>
                 <div id="palabrasm" class="row botones"></div>
                 <br>
-                <button id="comenzarm" class="btn btn-secondary">Comenzar</button>
+                
                 <button id="siguientem" disabled class="btn btn-success">Siguiente</button>
                 <button class="btn btn-warning reiniciar">Reiniciar</button>
             </div>
@@ -122,7 +122,7 @@
                 <br>
                 <div id="palabrasp" class="row botones"></div>
                 <br>
-                <button id="comenzarp" class="btn btn-secondary">Comenzar</button>
+                
                 <button id="siguientep" disabled class="btn btn-success">Siguiente</button>
                 <button class="btn btn-warning reiniciar">Reiniciar</button>
             </div>
@@ -133,7 +133,7 @@
                 <br>
                 <div id="palabrasq" class="row botones"></div>
                 <br>
-                <button id="comenzarq" class="btn btn-secondary">Comenzar</button>
+            
                 <button id="siguienteq" disabled class="btn btn-success">Siguiente</button>
                 <button class="btn btn-warning reiniciar">Reiniciar</button>
             </div>
@@ -144,7 +144,7 @@
                 <br>
                 <div id="palabrasf" class="row botones"></div>
                 <br>
-                <button id="comenzarf" class="btn btn-secondary">Comenzar</button>
+            
                 <button id="siguientef" disabled class="btn btn-success">Siguiente</button>
                 <button class="btn btn-warning reiniciar">Reiniciar</button>
             </div>
@@ -155,7 +155,7 @@
                 <br>
                 <div id="palabrast" class="row botones"></div>
                 <br>
-                <button id="comenzart" class="btn btn-secondary">Comenzar</button>
+            
                 <button id="siguientet" disabled class="btn btn-success">Siguiente</button>
                 <button class="btn btn-warning reiniciar">Reiniciar</button>
             </div>
@@ -269,9 +269,9 @@
             }
         })
 
-        document.getElementById('comenzard').addEventListener('click', ()=>{
 
-            [...palabrasd.children].map( e => e.remove() );
+            function letrad(){
+                            [...palabrasd.children].map( e => e.remove() );
 
             let numero = Number(document.getElementById('palabrasdazar').value.split(',')[Number(document.getElementById('itemd').value)]); //item elegido que sigue 
             let boton = document.createElement('button');
@@ -309,9 +309,11 @@
             document.getElementById('palabrasd').append(img);
             document.getElementById('itemd').value = Number(document.getElementById('itemd').value)+1;
 
-            document.getElementById('comenzard').setAttribute('disabled', 'disabled');
+           
             document.getElementById('siguiented').removeAttribute('disabled');
-        })
+            }
+            letrad();
+
 
         document.getElementById('palabrasd').addEventListener('click', (e)=>{
             
@@ -434,8 +436,7 @@
             }
         })
 
-        document.getElementById('comenzarb').addEventListener('click', ()=>{
-
+        function letrab(){
             [...palabrasb.children].map( e => e.remove() );
 
             let numero = Number(document.getElementById('palabrasbazar').value.split(',')[Number(document.getElementById('itemb').value)]); //item elegido que sigue 
@@ -473,10 +474,9 @@
             document.getElementById('palabrasb').append(boton3);
             document.getElementById('palabrasb').append(img);
             document.getElementById('itemb').value = Number(document.getElementById('itemb').value)+1;
-
-            document.getElementById('comenzarb').setAttribute('disabled', 'disabled');
             document.getElementById('siguienteb').removeAttribute('disabled');
-        })
+        }
+        letrab();
 
         document.getElementById('palabrasb').addEventListener('click', (e)=>{
             
@@ -601,8 +601,8 @@
 
         })
 
-        document.getElementById('comenzarm').addEventListener('click', ()=>{
-
+        
+        function letram(){
             [...palabrasm.children].map( e => e.remove() );
 
             let numero = Number(document.getElementById('palabrasmazar').value.split(',')[Number(document.getElementById('itemm').value)]); //item elegido que sigue 
@@ -643,8 +643,9 @@
 
             document.getElementById('comenzarm').setAttribute('disabled', 'disabled');
             document.getElementById('siguientem').removeAttribute('disabled');
-        })
+        }
 
+        letram();
         document.getElementById('palabrasm').addEventListener('click', (e)=>{
             
             if(e.target.nodeName == 'BUTTON' && !e.target.classList.contains('volumen'))
@@ -767,9 +768,9 @@
 
         })
 
-        document.getElementById('comenzarp').addEventListener('click', ()=>{
+        function letrap(){
 
-            [...palabrasm.children].map( e => e.remove() );
+            [...palabrasp.children].map( e => e.remove() );
 
             let numero = Number(document.getElementById('palabraspazar').value.split(',')[Number(document.getElementById('itemp').value)]); //item elegido que sigue 
             let boton = document.createElement('button');
@@ -806,10 +807,10 @@
             document.getElementById('palabrasp').append(boton3);
             document.getElementById('palabrasp').append(img);
             document.getElementById('itemp').value = Number(document.getElementById('itemp').value)+1;
-
-            document.getElementById('comenzarp').setAttribute('disabled', 'disabled');
             document.getElementById('siguientep').removeAttribute('disabled');
-        })
+        }
+        letrap();
+        
 
         document.getElementById('palabrasp').addEventListener('click', (e)=>{
             
@@ -933,7 +934,7 @@
 
         })
 
-        document.getElementById('comenzarq').addEventListener('click', ()=>{
+        function letraq(){
 
             [...palabrasq.children].map( e => e.remove() );
 
@@ -975,7 +976,8 @@
 
             document.getElementById('comenzarq').setAttribute('disabled', 'disabled');
             document.getElementById('siguienteq').removeAttribute('disabled');
-        })
+        }
+        letraq();
 
         document.getElementById('palabrasq').addEventListener('click', (e)=>{
             
@@ -1099,7 +1101,7 @@
 
         })
 
-        document.getElementById('comenzarf').addEventListener('click', ()=>{
+        function letraf(){
 
             [...palabrasf.children].map( e => e.remove() );
 
@@ -1141,7 +1143,8 @@
 
             document.getElementById('comenzarf').setAttribute('disabled', 'disabled');
             document.getElementById('siguientef').removeAttribute('disabled');
-        })
+        }
+        letraf();
 
         document.getElementById('palabrasf').addEventListener('click', (e)=>{
             
@@ -1265,7 +1268,7 @@
 
         })
 
-        document.getElementById('comenzart').addEventListener('click', ()=>{
+        function letrat(){
 
             [...palabrast.children].map( e => e.remove() );
 
@@ -1307,7 +1310,8 @@
 
             document.getElementById('comenzart').setAttribute('disabled', 'disabled');
             document.getElementById('siguientet').removeAttribute('disabled');
-        })
+        }
+        letrat();
 
         document.getElementById('palabrast').addEventListener('click', (e)=>{
             
