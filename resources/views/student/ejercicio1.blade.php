@@ -49,12 +49,13 @@
                             <button palabra="tomate"><img style="height: 75px; width: 75px;" src="{{asset('img/ejercicios/ejercicio1/d/tomate.jpg')}}" alt=""></button>
                             <button palabra="tenedor"><img style="height: 75px; width: 75px;" src="{{asset('img/ejercicios/ejercicio1/d/tenedor.jpg')}}" alt=""></button>
                             <button palabra="dedo"><img style="height: 75px; width: 75px;" src="{{asset('img/ejercicios/ejercicio1/d/dedo.jpg')}}" alt=""></button>
+                            
                         </div>
                     </div>
                     <div class="col-md-2">
                     </div>
                     <div class="col-md-3">
-                        <table id="tablad" class="table tabla-bordered table-striped ">
+                        <table id="tablad" class="table table-bordered table-striped ">
                             <thead class="thead-dark">
                                 <tr>
                                     <th>Eliminar</th>
@@ -77,7 +78,7 @@
             {{-- segundo subitem --}}
             <div class="tab-pane fade" id="b" role="tabpanel" aria-labelledby="profile-tab">
                 <div class="row">
-                    <div class="col-sm-6 col-12">
+                    <div class="col-md-6">
                         <div id="botonesb">
                             <button palabra="arbol"><img style="height: 75px; width: 75px;" src="{{asset('img/ejercicios/ejercicio1/b/arbol.jpg')}}" alt="arbol"></button>
                             <button palabra="auto"><img style="height: 75px; width: 75px;" src="{{asset('img/ejercicios/ejercicio1/b/auto.jpg')}}" alt=""></button>
@@ -86,10 +87,13 @@
                             <button palabra="cama"><img style="height: 75px; width: 75px;" src="{{asset('img/ejercicios/ejercicio1/b/cama.jpg')}}" alt=""></button>
                             <button palabra="embudo"><img style="height: 75px; width: 75px;" src="{{asset('img/ejercicios/ejercicio1/b/embudo.jpg')}}" alt=""></button>
                             <button palabra="telefono"><img style="height: 75px; width: 75px;" src="{{asset('img/ejercicios/ejercicio1/b/telefono.jpg')}}" alt=""></button>
+                            <button palabra="boca"><img style="height: 75px; width: 75px;" src="{{asset('img/ejercicios/ejercicio1/b/boca.jpg')}}" alt=""></button>
                         </div>
                     </div>
-                    <div class="col-sm-6 col-12">
-                        <table id="tablab" class="table tabla-bordered table-striped ">
+                    <div class="col-md-2">
+                    </div>
+                    <div class="col-md-3">
+                    <table id="tablab" class="table table-bordered table-striped ">
                             <thead class="thead-dark">
                                 <tr>
                                     <th>Eliminar</th>
@@ -112,7 +116,7 @@
             {{-- tercer subitem --}}
             <div class="tab-pane fade" id="q" role="tabpanel" aria-labelledby="contact-tab">
                 <div class="row">
-                    <div class="col-sm-6 col-12">
+                    <div class="col-md-6">
                         <div id="botonesq">
                             <button palabra="bicicleta"><img style="height: 75px; width: 75px;" src="{{asset('img/ejercicios/ejercicio1/q/bicicleta.jpg')}}" alt=""></button>
                             <button palabra="botella"><img style="height: 75px; width: 75px;" src="{{asset('img/ejercicios/ejercicio1/q/botella.jpg')}}" alt=""></button>
@@ -121,10 +125,15 @@
                             <button palabra="peluquero"><img style="height: 75px; width: 75px;" src="{{asset('img/ejercicios/ejercicio1/q/peluquero.jpg')}}" alt=""></button>
                             <button palabra="queso"><img style="height: 75px; width: 75px;" src="{{asset('img/ejercicios/ejercicio1/q/queso.jpg')}}" alt=""></button>
                             <button palabra="zapato"><img style="height: 75px; width: 75px;" src="{{asset('img/ejercicios/ejercicio1/q/zapato.jpg')}}" alt=""></button>
+                            <button palabra="quimico"><img style="height: 75px; width: 75px;" src="{{asset('img/ejercicios/ejercicio1/q/quimico.jpg')}}" alt=""></button>
+                            <button palabra="mariquita"><img style="height: 75px; width: 75px;" src="{{asset('img/ejercicios/ejercicio1/q/mariquita.jpg')}}" alt=""></button>
+                            
                         </div>
                     </div>
-                    <div class="col-sm-6 col-12">
-                        <table id="tablaq" class="table tabla-bordered table-striped">
+                    <div class="col-md-2">
+                    </div>
+                    <div class="col-md-3">
+                        <table id="tablaq" class="table tabla-bordered table-striped" style="width:100px">
                             <thead class="thead-dark">
                                 <tr>
                                     <th>Eliminar</th>
@@ -146,7 +155,7 @@
             {{-- cuarto subitem --}}
             <div class="tab-pane fade" id="l" role="tabpanel" aria-labelledby="contact-tab">
                 <div class="row">
-                    <div class="col-sm-6 col-12">
+                <div class="col-md-6">
                         <div id="botonesl">
                             <button palabra="casa"><img style="height: 75px; width: 75px;" src="{{asset('img/ejercicios/ejercicio1/l/casa.jpg')}}" alt=""></button>
                             <button palabra="cocina"><img style="height: 75px; width: 75px;" src="{{asset('img/ejercicios/ejercicio1/l/cocina.jpg')}}" alt=""></button>
@@ -155,9 +164,12 @@
                             <button palabra="maleta"><img style="height: 75px; width: 75px;" src="{{asset('img/ejercicios/ejercicio1/l/maleta.jpg')}}" alt=""></button>
                             <button palabra="perchero"><img style="height: 75px; width: 75px;" src="{{asset('img/ejercicios/ejercicio1/l/perchero.jpg')}}" alt=""></button>
                             <button palabra="radio"><img style="height: 75px; width: 75px;" src="{{asset('img/ejercicios/ejercicio1/l/radio.jpg')}}" alt=""></button>
+                            <button palabra="loro"><img style="height: 75px; width: 75px;" src="{{asset('img/ejercicios/ejercicio1/l/loro.jpg')}}" alt=""></button>
                         </div>
                     </div>
-                    <div class="col-sm-6 col-12">
+                    <div class="col-md-2">
+                    </div>
+                    <div class="col-md-3">
                         <table id="tablal" class="table tabla-bordered table-striped">
                             <thead class="thead-dark">
                                 <tr>
@@ -180,7 +192,7 @@
             {{-- quinto subitem --}}
             <div class="tab-pane fade" id="ll" role="tabpanel" aria-labelledby="contact-tab">
                 <div class="row">
-                    <div class="col-sm-6 col-12">
+                <div class="col-md-6">
                         <div id="botonesll">
                             <button palabra="ballena"><img style="height: 75px; width: 75px;" src="{{asset('img/ejercicios/ejercicio1/ll/ballena.jpg')}}" alt=""></button>
                             <button palabra="barco"><img style="height: 75px; width: 75px;" src="{{asset('img/ejercicios/ejercicio1/ll/barco.jpg')}}" alt=""></button>
@@ -189,9 +201,13 @@
                             <button palabra="gallo"><img style="height: 75px; width: 75px;" src="{{asset('img/ejercicios/ejercicio1/ll/gallo.jpg')}}" alt=""></button>
                             <button palabra="llavero"><img style="height: 75px; width: 75px;" src="{{asset('img/ejercicios/ejercicio1/ll/llavero.jpg')}}" alt=""></button>
                             <button palabra="vaso"><img style="height: 75px; width: 75px;" src="{{asset('img/ejercicios/ejercicio1/ll/vaso.jpg')}}" alt=""></button>
+                            <button palabra="lluvia"><img style="height: 75px; width: 75px;" src="{{asset('img/ejercicios/ejercicio1/ll/lluvia.jpg')}}" alt=""></button>
+
                         </div>
                     </div>
-                    <div class="col-sm-6 col-12">
+                    <div class="col-md-2">
+                    </div>
+                    <div class="col-md-3">
                         <table id="tablall" class="table tabla-bordered table-striped">
                             <thead class="thead-dark">
                                 <tr>
@@ -227,8 +243,7 @@
             searching: false,
             info: false,
             scrollY: '200px',
-            scrollCollapse: true,
-            responsive: true
+            scrollCollapse: true
         });
 
         $('.ordenes').on('click', function(){
@@ -429,18 +444,22 @@
             document.getElementById('tablab').removeAttribute('style');
         })
          
-        let palabras_correctasb = ['arbol', 'barco', 'embudo'];
+        let palabras_correctasb = ['arbol', 'barco', 'embudo','boca'];
         let palabras_incorrectasb = ['auto', 'avion', 'cama', 'telefono'];
         
         $('#tablab').DataTable({
+            columnDefs: [
+                      { visible: false, targets: 2 }
+            ],
             paging: false,
             searching: false,
-            info: false
+            info: false,
+            scrollY: '200px',
+            scrollCollapse: true,
+
         });
 
-        $('#tablab').DataTable().column(2).visible(false)
-
-
+    
 
         document.getElementById('botonesb').addEventListener('click', (e)=>{
 
@@ -532,30 +551,84 @@
                     text:'Felicidades, acertaste en todas 10',
                     confirmButtonColor: '#3085d6',
                     confirmButtonText: 'OK'
+
                 })
             }
             else if(aciertos.length < palabras_correctasb.length && erroneos.length == 0)
-            {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Por poco lo logras',
-                    text:'Te faltaron respuestas',
-                    showConfirmButton: false,
-                    timer: 1000
-                })
+            {   
+                if(aciertos.length==1){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/una_estrella.jpg')}}' width='300px' height='100px'>",
+                        title: 'Por poco lo logras',
+                        text:'Te faltaron respuestas ' + ((aciertos.length*2.5) - (erroneos.length*2.5)) ,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }else if(aciertos.length==2){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/segundo_estrella_media.jpg')}}' width='300px' height='100px'>",
+                        title: 'Por poco lo logras',
+                        text:'Te faltaron respuestas ' + ((aciertos.length*2.5) - (erroneos.length*2.5)) ,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }else if(aciertos.length==3){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/tres_estrella_media.jpg')}}' width='300px' height='100px'>",
+                        title: 'Por poco lo logras',
+                        text:'Te faltaron respuestas ' + ((aciertos.length*2.5) - (erroneos.length*2.5)) ,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }
+
             }
             else
             {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Fallaste',
-                    text:'Debes entrenar un poco más',
-                    showConfirmButton: false,
-                    timer: 1000
-                })
-            }
+                var restante=aciertos.length - erroneos.length;
 
-            
+                if(restante==1){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/una_estrella.jpg')}}' width='300px' height='100px'>",
+                        title: 'Fallaste',
+                        text:'Debes entrenar un poco más ' + restante*2.5 ,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }else if(restante==0){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/sin_estrella.jpg')}}' width='300px' height='100px'>",
+                        title: 'Fallaste',
+                        text:'Debes entrenar un poco más ' + restante*2.5 ,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }else if(restante==2){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/segundo_estrella_media.jpg')}}' width='300px' height='100px'>",
+                        title: 'Fallaste',
+                        text:'Debes entrenar un poco más ' + restante*2.5 ,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }else if(restante==3){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/tres_estrella_media.jpg')}}' width='300px' height='100px'>",
+                        title: 'Fallaste',
+                        text:'Debes entrenar un poco más ' + restante*2.5 ,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }else{
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/sin_estrella.jpg')}}' width='300px' height='100px'>",
+                        title: 'Fallaste',
+                        text:'Debes entrenar un poco más ' + restante*2.5 ,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })    
+                }
+            }
 
         })
 
@@ -576,18 +649,22 @@
             document.getElementById('tablall').removeAttribute('style');
         })
 
-        let palabras_correctasq = ['peluquero', 'queso'];
-        let palabras_incorrectasq = ['bicicleta', 'botella', 'computadora', 'disco', 'zapato'];
+        let palabras_correctasq = ['peluquero', 'queso', 'quimico', 'mariquita'];
+        let palabras_incorrectasq = ['bicicleta', 'botella', 'computadora', 'disco', 'zapato',];
         $('#tablaq').DataTable({
+            columnDefs: [
+                      { visible: false, targets: 2 }
+            ],
             paging: false,
             searching: false,
-            info: false
+            info: false,
+            scrollY: '200px',
+            scrollCollapse: true
         });
 
         $('#tablaq').DataTable().column(2).visible(false)
 
-
-
+        
         document.getElementById('botonesq').addEventListener('click', (e)=>{
 
             if(e.target.nodeName == 'BUTTON')
@@ -676,27 +753,83 @@
                     text:'Felicidades, acertaste en todas 10',
                     confirmButtonColor: '#3085d6',
                     confirmButtonText: 'OK'
+
                 })
             }
             else if(aciertos.length < palabras_correctasq.length && erroneos.length == 0)
-            {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Por poco lo logras',
-                    text:'Te faltaron respuestas',
-                    showConfirmButton: false,
-                    timer: 1000
-                })
+            {   
+                if(aciertos.length==1){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/una_estrella.jpg')}}' width='300px' height='100px'>",
+                        title: 'Por poco lo logras',
+                        text:'Te faltaron respuestas ' + ((aciertos.length*2.5) - (erroneos.length*2.5)) ,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }else if(aciertos.length==2){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/segundo_estrella_media.jpg')}}' width='300px' height='100px'>",
+                        title: 'Por poco lo logras',
+                        text:'Te faltaron respuestas ' + ((aciertos.length*2.5) - (erroneos.length*2.5)) ,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }else if(aciertos.length==3){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/tres_estrella_media.jpg')}}' width='300px' height='100px'>",
+                        title: 'Por poco lo logras',
+                        text:'Te faltaron respuestas ' + ((aciertos.length*2.5) - (erroneos.length*2.5)) ,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }
+
             }
             else
             {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Fallaste',
-                    text:'Debes entrenar un poco más',
-                    showConfirmButton: false,
-                    timer: 1000
-                })
+                var restante=aciertos.length - erroneos.length;
+
+                if(restante==1){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/una_estrella.jpg')}}' width='300px' height='100px'>",
+                        title: 'Fallaste',
+                        text:'Debes entrenar un poco más ' + restante*2.5 ,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }else if(restante==0){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/sin_estrella.jpg')}}' width='300px' height='100px'>",
+                        title: 'Fallaste',
+                        text:'Debes entrenar un poco más ' + restante*2.5 ,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }else if(restante==2){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/segundo_estrella_media.jpg')}}' width='300px' height='100px'>",
+                        title: 'Fallaste',
+                        text:'Debes entrenar un poco más ' + restante*2.5 ,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }else if(restante==3){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/tres_estrella_media.jpg')}}' width='300px' height='100px'>",
+                        title: 'Fallaste',
+                        text:'Debes entrenar un poco más ' + restante*2.5 ,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }else{
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/sin_estrella.jpg')}}' width='300px' height='100px'>",
+                        title: 'Fallaste',
+                        text:'Debes entrenar un poco más ' + restante*2.5 ,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })    
+                }
             }
 
         })
@@ -713,12 +846,17 @@
     {{-- letra l --}}
     <script>
 
-        let palabras_correctasl = ['escalera', 'lapiz', 'maleta'];
+        let palabras_correctasl = ['escalera', 'lapiz', 'maleta','loro'];
         let palabras_incorrectasl = ['casa', 'cocina','perchero', 'radio'];
         $('#tablal').DataTable({
+            columnDefs: [
+                      { visible: false, targets: 2 }
+            ],
             paging: false,
             searching: false,
-            info: false
+            info: false,
+            scrollY: '200px',
+            scrollCollapse: true
         });
 
         $('#tablal').DataTable().column(2).visible(false)
@@ -811,27 +949,83 @@
                     text:'Felicidades, acertaste en todas 10',
                     confirmButtonColor: '#3085d6',
                     confirmButtonText: 'OK'
+
                 })
             }
             else if(aciertos.length < palabras_correctasl.length && erroneos.length == 0)
-            {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Por poco lo logras',
-                    text:'Te faltaron respuestas',
-                    showConfirmButton: false,
-                    timer: 1000
-                })
+            {   
+                if(aciertos.length==1){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/una_estrella.jpg')}}' width='300px' height='100px'>",
+                        title: 'Por poco lo logras',
+                        text:'Te faltaron respuestas ' + ((aciertos.length*2.5) - (erroneos.length*2.5)) ,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }else if(aciertos.length==2){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/segundo_estrella_media.jpg')}}' width='300px' height='100px'>",
+                        title: 'Por poco lo logras',
+                        text:'Te faltaron respuestas ' + ((aciertos.length*2.5) - (erroneos.length*2.5)) ,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }else if(aciertos.length==3){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/tres_estrella_media.jpg')}}' width='300px' height='100px'>",
+                        title: 'Por poco lo logras',
+                        text:'Te faltaron respuestas ' + ((aciertos.length*2.5) - (erroneos.length*2.5)) ,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }
+
             }
             else
             {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Fallaste',
-                    text:'Debes entrenar un poco más',
-                    showConfirmButton: false,
-                    timer: 1000
-                })
+                var restante=aciertos.length - erroneos.length;
+
+                if(restante==1){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/una_estrella.jpg')}}' width='300px' height='100px'>",
+                        title: 'Fallaste',
+                        text:'Debes entrenar un poco más ' + restante*2.5 ,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }else if(restante==0){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/sin_estrella.jpg')}}' width='300px' height='100px'>",
+                        title: 'Fallaste',
+                        text:'Debes entrenar un poco más ' + restante*2.5 ,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }else if(restante==2){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/segundo_estrella_media.jpg')}}' width='300px' height='100px'>",
+                        title: 'Fallaste',
+                        text:'Debes entrenar un poco más ' + restante*2.5 ,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }else if(restante==3){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/tres_estrella_media.jpg')}}' width='300px' height='100px'>",
+                        title: 'Fallaste',
+                        text:'Debes entrenar un poco más ' + restante*2.5 ,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }else{
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/sin_estrella.jpg')}}' width='300px' height='100px'>",
+                        title: 'Fallaste',
+                        text:'Debes entrenar un poco más ' + restante*2.5 ,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })    
+                }
             }
 
         })
@@ -847,12 +1041,17 @@
 
     {{-- letra ll --}}
     <script>
-        let palabras_correctasll = ['ballena', 'gallo', 'llavero'];
+        let palabras_correctasll = ['ballena', 'gallo', 'llavero','lluvia'];
         let palabras_incorrectasll = ['barco', 'desayuno', 'despertador', 'vaso'];
         $('#tablall').DataTable({
+            columnDefs: [
+                      { visible: false, targets: 2 }
+            ],
             paging: false,
             searching: false,
-            info: false
+            info: false,
+            scrollY: '200px',
+            scrollCollapse: true
         });
 
         $('#tablall').DataTable().column(2).visible(false)
@@ -947,29 +1146,84 @@
                     text:'Felicidades, acertaste en todas 10',
                     confirmButtonColor: '#3085d6',
                     confirmButtonText: 'OK'
+
                 })
             }
             else if(aciertos.length < palabras_correctasll.length && erroneos.length == 0)
-            {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Por poco lo logras',
-                    text:'Te faltaron respuestas',
-                    showConfirmButton: false,
-                    timer: 1000
-                })
+            {   
+                if(aciertos.length==1){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/una_estrella.jpg')}}' width='300px' height='100px'>",
+                        title: 'Por poco lo logras',
+                        text:'Te faltaron respuestas ' + ((aciertos.length*2.5) - (erroneos.length*2.5)) ,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }else if(aciertos.length==2){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/segundo_estrella_media.jpg')}}' width='300px' height='100px'>",
+                        title: 'Por poco lo logras',
+                        text:'Te faltaron respuestas ' + ((aciertos.length*2.5) - (erroneos.length*2.5)) ,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }else if(aciertos.length==3){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/tres_estrella_media.jpg')}}' width='300px' height='100px'>",
+                        title: 'Por poco lo logras',
+                        text:'Te faltaron respuestas ' + ((aciertos.length*2.5) - (erroneos.length*2.5)) ,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }
+
             }
             else
             {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Fallaste',
-                    text:'Debes entrenar un poco más',
-                    showConfirmButton: false,
-                    timer: 1000
-                })
-            }
+                var restante=aciertos.length - erroneos.length;
 
+                if(restante==1){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/una_estrella.jpg')}}' width='300px' height='100px'>",
+                        title: 'Fallaste',
+                        text:'Debes entrenar un poco más ' + restante*2.5 ,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }else if(restante==0){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/sin_estrella.jpg')}}' width='300px' height='100px'>",
+                        title: 'Fallaste',
+                        text:'Debes entrenar un poco más ' + restante*2.5 ,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }else if(restante==2){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/segundo_estrella_media.jpg')}}' width='300px' height='100px'>",
+                        title: 'Fallaste',
+                        text:'Debes entrenar un poco más ' + restante*2.5 ,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }else if(restante==3){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/tres_estrella_media.jpg')}}' width='300px' height='100px'>",
+                        title: 'Fallaste',
+                        text:'Debes entrenar un poco más ' + restante*2.5 ,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }else{
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/sin_estrella.jpg')}}' width='300px' height='100px'>",
+                        title: 'Fallaste',
+                        text:'Debes entrenar un poco más ' + restante*2.5 ,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })    
+                }
+            }
         })
 
         document.getElementById('reiniciarll').addEventListener('click', ()=>{
