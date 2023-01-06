@@ -395,25 +395,22 @@
     {{-- letra d --}}
     <script>
         //inicio letras d
-        let letrasd = ['q', 's', 'b', 'p', 't', 'l', 'm', 'd', 'b', 'g'];
+        let letrasd = ['q', 's', 'b', 'p', 't', 'l', 'm', 'k', 'g', 'n'];
         let correctasd = ['d'];
 
-        if(Math.floor(Math.random()*10) > 5)
-        {
-            letrasd.sort();
-        }
 
         for (let i = 0; i < 10; i++)
         {
-            if(Math.floor(Math.random()*10) > 5)
-            {
-                letrasd.unshift(letrasd[Math.floor(Math.random()*10)]);
+            if(i<4){
+                letrasd.push('d');
+            }else{            
+                    letrasd.push(letrasd[Math.floor(Math.random()*10)]);
             }
-            else
-            {
-                letrasd.push(letrasd[Math.floor(Math.random()*10)]);
-            }
+
+            
         }
+
+        letrasd.sort(function(a,b) {return (Math.random()-0.5)});
 
         for(let i=0; i<letrasd.length; i++)
         {
@@ -431,22 +428,26 @@
             document.getElementById('botonesd').append(button);
         }
 
+
         document.getElementById('botonesd').addEventListener('click', (e)=>{
             
             /* let mensaje = new SpeechSynthesisUtterance();
             mensaje.voice = speechSynthesis.getVoices()[0];
             */
+            console.log(e.target.classList);
             if(e.target.nodeName == 'A')
             {
-                e.target.setAttribute('disabled', 'disabled');
-                e.target.classList.add('disabled', 'bg-primary');
+                if(e.target.classList.contains('bg-primary') == false && e.target.classList.contains('bg-danger') == false && e.target.classList.contains('bg-success') == false){
+                    e.target.classList.add( 'bg-primary');
+                    e.target.classList.add('puesto');
+                }else if(e.target.classList.contains('bg-primary')){
+                    e.target.classList.remove( 'bg-primary');
+                    e.target.classList.remove( 'puesto');
+                }
+
+                
+                
                 /* mensaje.text = e.target.getAttribute('palabra').replace('2', ''); */
-            }
-            else if(e.target.nodeName == 'IMG')
-            {
-                e.target.parentElement.setAttribute('disabled', 'disabled');
-                e.target.parentElement.classList.add('disabled','bg-primary');
-                /* mensaje.text = e.target.parentElement.getAttribute('palabra').replace('2', ''); */
             }
             /* mensaje.rate = 0.8;
             speechSynthesis.speak(mensaje); */
@@ -458,22 +459,26 @@
             let incorrectas = 0;
             [...document.getElementById('botonesd').children].map( e=>{
 
-                if(e.classList.contains('disabled'))
+                if(e.classList.contains('puesto'))
                 {
                     if(correctasd.includes(e.getAttribute('palabra')))
                     {
                         e.classList.remove('bg-primary');
                         e.classList.add('bg-success');
+                        
                     }
                     else
                     {
                         e.classList.remove('bg-primary');
                         e.classList.add('bg-danger');
+                        
+
                         incorrectas++;
                     }
+                    e.setAttribute('disabled', 'disabled');
                 }
 
-                if(!e.classList.contains('disabled') && correctasd.includes(e.getAttribute('palabra')))
+                if(!e.classList.contains('puesto') && correctasd.includes(e.getAttribute('palabra')))
                 {
                     faltantes++;
                 }
@@ -484,57 +489,109 @@
             if(faltantes == 0 && incorrectas == 0)
             {
                 Swal.fire({
-                    icon: 'success',
+                    iconHtml: "<img src='{{asset('img/ejercicios/cinco_estrellas.jpg')}}' width='300px' height='100px'>",
                     title: 'Excelente',
-                    text:'Felicidades, acertaste en todas',
-                    showConfirmButton: false,
-                    timer: 1000
+                    text:'Felicidades, acertaste en todas. Tu nota es 10',
+                    confirmButtonColor: '#3085d6',
+                    confirmButtonText: 'OK'
                 })
             }
             else if(incorrectas == 0 && faltantes>0)
             {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Por poco lo logras',
-                    text:'Te faltaron respuestas',
-                    showConfirmButton: false,
-                    timer: 1000
-                })
+
+                if(faltantes == 3){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/una_estrella.jpg')}}' width='300px' height='100px'>",
+                        title: 'Por poco lo logras',
+                        text:'Te faltaron respuestas ' + (4-faltantes)*2.5,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }else if(faltantes == 2){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/segundo_estrella_media.jpg')}}' width='300px' height='100px'>",
+                        title: 'Por poco lo logras',
+                        text:'Te faltaron respuestas ' + (4-faltantes)*2.5,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }else if(faltantes == 1){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/tres_estrella_media.jpg')}}' width='300px' height='100px'>",
+                        title: 'Por poco lo logras',
+                        text:'Te faltaron respuestas ' + (4-faltantes)*2.5,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }
             }
             else
             {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Fallaste',
-                    text:'Debes entrenar un poco más',
-                    showConfirmButton: false,
-                    timer: 1000
-                })
+                var restante= (4-faltantes) - incorrectas;
+                
+                if(restante==1){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/una_estrella.jpg')}}' width='300px' height='100px'>",
+                        title: 'Fallaste',
+                        text:'Debes entrenar un poco más ' + restante*2.5 ,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }else if(restante==0){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/sin_estrella.jpg')}}' width='300px' height='100px'>",
+                        title: 'Fallaste',
+                        text:'Debes entrenar un poco más ' + restante*2.5 ,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }else if(restante==2){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/segundo_estrella_media.jpg')}}' width='300px' height='100px'>",
+                        title: 'Fallaste',
+                        text:'Debes entrenar un poco más ' + restante*2.5 ,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }else if(restante==3){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/tres_estrella_media.jpg')}}' width='300px' height='100px'>",
+                        title: 'Fallaste',
+                        text:'Debes entrenar un poco más ' + restante*2.5 ,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }else{
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/sin_estrella.jpg')}}' width='300px' height='100px'>",
+                        title: 'Fallaste',
+                        text:'Debes entrenar un poco más ' + restante*2.5 ,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })    
+                }
             }
 
         })
         //fin letras
 
         //inicio silabas
-        let silabasd = ['qu', 'te', 'bu', 'do', 'du', 'di', 'da', 'de', 'gu', 'la', 'pu', 'ab', 'bi', 'ub'];
+        let silabasd = ['qu', 'te', 'bu', 'gu', 'la', 'pu', 'ab', 'bi', 'ub', 'ba'];
         let correctassilabasd = ['da', 'de', 'di', 'do', 'du'];
 
-        if(Math.floor(Math.random()*10) > 5)
-        {
-            silabasd.sort();
-        }
 
-        for (let i = 0; i < 6; i++)
+        for (let i = 0; i < 10; i++)
         {
-            if(Math.floor(Math.random()*10) > 5)
+            if(i < 4)
             {
-                silabasd.unshift(silabasd[Math.floor(Math.random()*10)]);
+                silabasd.push(correctassilabasd[Math.floor(Math.random()*5)]);
             }
             else
             {
                 silabasd.push(silabasd[Math.floor(Math.random()*10)]);
             }
         }
+        silabasd.sort(function() {return (Math.random()-0.5)});
 
         for(let i=0; i<silabasd.length; i++)
         {
