@@ -443,7 +443,14 @@
                 }else if(e.target.classList.contains('bg-primary')){
                     e.target.classList.remove( 'bg-primary');
                     e.target.classList.remove( 'puesto');
+                }else if(e.target.classList.contains('bg-danger')){
+                    e.target.classList.remove( 'bg-danger');
+                    e.target.classList.remove( 'puesto');
+                }else if(e.target.classList.contains('bg-success')){
+                    e.target.classList.remove( 'bg-success');
+                    e.target.classList.remove( 'puesto');
                 }
+                
 
                 
                 
