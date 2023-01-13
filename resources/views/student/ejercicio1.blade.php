@@ -343,7 +343,7 @@
                 Swal.fire({
                     iconHtml: "<img src='{{asset('img/ejercicios/cinco_estrellas.jpg')}}' width='300px' height='100px'>",
                     title: 'Excelente',
-                    text:'Felicidades, acertaste en todas 10',
+                    text:'¡FELICITACIONES, ERES EL MEJOR! NO DEJES DE SEGUIR ESFORZÁNDOTE',
                     confirmButtonColor: '#3085d6',
                     confirmButtonText: 'OK'
 
@@ -355,7 +355,7 @@
                     Swal.fire({
                         iconHtml: "<img src='{{asset('img/ejercicios/una_estrella.jpg')}}' width='300px' height='100px'>",
                         title: 'Por poco lo logras',
-                        text:'Te faltaron respuestas ' + ((aciertos.length*2.5) - (erroneos.length*2.5)) ,
+                        text:'¡TU PUEDES! NECESITAS PRACTICAR Y ESFORZARTE MÁS PARA MEJORAR' ,
                         confirmButtonColor: '#3085d6',
                         confirmButtonText: 'OK'
                     })
@@ -363,7 +363,7 @@
                     Swal.fire({
                         iconHtml: "<img src='{{asset('img/ejercicios/segundo_estrella_media.jpg')}}' width='300px' height='100px'>",
                         title: 'Por poco lo logras',
-                        text:'Te faltaron respuestas ' + ((aciertos.length*2.5) - (erroneos.length*2.5)) ,
+                        text:'¡NO TE RINDAS! SI SIGUES PRACTICANDO, LO CONSEGUIRÁS' ,
                         confirmButtonColor: '#3085d6',
                         confirmButtonText: 'OK'
                     })
@@ -371,7 +371,7 @@
                     Swal.fire({
                         iconHtml: "<img src='{{asset('img/ejercicios/tres_estrella_media.jpg')}}' width='300px' height='100px'>",
                         title: 'Por poco lo logras',
-                        text:'Te faltaron respuestas ' + ((aciertos.length*2.5) - (erroneos.length*2.5)) ,
+                        text:'¡MUY BUEN TRABAJO! SIGUE ASÍ, ESTÁS CERCA DE SER EL MEJOR EN ESTO',
                         confirmButtonColor: '#3085d6',
                         confirmButtonText: 'OK'
                     })
@@ -386,7 +386,7 @@
                     Swal.fire({
                         iconHtml: "<img src='{{asset('img/ejercicios/una_estrella.jpg')}}' width='300px' height='100px'>",
                         title: 'Fallaste',
-                        text:'Debes entrenar un poco más ' + restante*2.5 ,
+                        text:'¡TU PUEDES! NECESITAS PRACTICAR Y ESFORZARTE MÁS PARA MEJORAR',
                         confirmButtonColor: '#3085d6',
                         confirmButtonText: 'OK'
                     })
@@ -394,7 +394,7 @@
                     Swal.fire({
                         iconHtml: "<img src='{{asset('img/ejercicios/sin_estrella.jpg')}}' width='300px' height='100px'>",
                         title: 'Fallaste',
-                        text:'Debes entrenar un poco más ' + restante*2.5 ,
+                        text:'¡TU PUEDES! NECESITAS PRACTICAR Y ESFORZARTE MÁS PARA MEJORAR',
                         confirmButtonColor: '#3085d6',
                         confirmButtonText: 'OK'
                     })
@@ -402,7 +402,7 @@
                     Swal.fire({
                         iconHtml: "<img src='{{asset('img/ejercicios/segundo_estrella_media.jpg')}}' width='300px' height='100px'>",
                         title: 'Fallaste',
-                        text:'Debes entrenar un poco más ' + restante*2.5 ,
+                        text:'¡NO TE RINDAS! SI SIGUES PRACTICANDO, LO CONSEGUIRÁS' ,
                         confirmButtonColor: '#3085d6',
                         confirmButtonText: 'OK'
                     })
@@ -410,7 +410,7 @@
                     Swal.fire({
                         iconHtml: "<img src='{{asset('img/ejercicios/tres_estrella_media.jpg')}}' width='300px' height='100px'>",
                         title: 'Fallaste',
-                        text:'Debes entrenar un poco más ' + restante*2.5 ,
+                        text:'¡SIGUE PRACTICANDO! PODRÁS LOGRARLO SI LO INTENTAS Y TE ESFUERZAS MAS.',
                         confirmButtonColor: '#3085d6',
                         confirmButtonText: 'OK'
                     })
@@ -418,7 +418,7 @@
                     Swal.fire({
                         iconHtml: "<img src='{{asset('img/ejercicios/sin_estrella.jpg')}}' width='300px' height='100px'>",
                         title: 'Fallaste',
-                        text:'Debes entrenar un poco más ' + restante*2.5 ,
+                        text:'¡TU PUEDES! NECESITAS PRACTICAR Y ESFORZARTE MÁS PARA MEJORAR' ,
                         confirmButtonColor: '#3085d6',
                         confirmButtonText: 'OK'
                     })    
@@ -548,7 +548,7 @@
                 Swal.fire({
                     iconHtml: "<img src='{{asset('img/ejercicios/cinco_estrellas.jpg')}}' width='300px' height='100px'>",
                     title: 'Excelente',
-                    text:'Felicidades, acertaste en todas 10',
+                    text:'¡FELICITACIONES, ERES EL MEJOR! NO DEJES DE SEGUIR ESFORZÁNDOTE',
                     confirmButtonColor: '#3085d6',
                     confirmButtonText: 'OK'
 
@@ -560,7 +560,7 @@
                     Swal.fire({
                         iconHtml: "<img src='{{asset('img/ejercicios/una_estrella.jpg')}}' width='300px' height='100px'>",
                         title: 'Por poco lo logras',
-                        text:'Te faltaron respuestas ' + ((aciertos.length*2.5) - (erroneos.length*2.5)) ,
+                        text:'¡TU PUEDES! NECESITAS PRACTICAR Y ESFORZARTE MÁS PARA MEJORAR' ,
                         confirmButtonColor: '#3085d6',
                         confirmButtonText: 'OK'
                     })
@@ -568,7 +568,7 @@
                     Swal.fire({
                         iconHtml: "<img src='{{asset('img/ejercicios/segundo_estrella_media.jpg')}}' width='300px' height='100px'>",
                         title: 'Por poco lo logras',
-                        text:'Te faltaron respuestas ' + ((aciertos.length*2.5) - (erroneos.length*2.5)) ,
+                        text:'¡NO TE RINDAS! SI SIGUES PRACTICANDO, LO CONSEGUIRÁS' ,
                         confirmButtonColor: '#3085d6',
                         confirmButtonText: 'OK'
                     })
@@ -576,7 +576,7 @@
                     Swal.fire({
                         iconHtml: "<img src='{{asset('img/ejercicios/tres_estrella_media.jpg')}}' width='300px' height='100px'>",
                         title: 'Por poco lo logras',
-                        text:'Te faltaron respuestas ' + ((aciertos.length*2.5) - (erroneos.length*2.5)) ,
+                        text:'¡MUY BUEN TRABAJO! SIGUE ASÍ, ESTÁS CERCA DE SER EL MEJOR EN ESTO',
                         confirmButtonColor: '#3085d6',
                         confirmButtonText: 'OK'
                     })
@@ -591,7 +591,7 @@
                     Swal.fire({
                         iconHtml: "<img src='{{asset('img/ejercicios/una_estrella.jpg')}}' width='300px' height='100px'>",
                         title: 'Fallaste',
-                        text:'Debes entrenar un poco más ' + restante*2.5 ,
+                        text:'¡TU PUEDES! NECESITAS PRACTICAR Y ESFORZARTE MÁS PARA MEJORAR',
                         confirmButtonColor: '#3085d6',
                         confirmButtonText: 'OK'
                     })
@@ -599,7 +599,7 @@
                     Swal.fire({
                         iconHtml: "<img src='{{asset('img/ejercicios/sin_estrella.jpg')}}' width='300px' height='100px'>",
                         title: 'Fallaste',
-                        text:'Debes entrenar un poco más ' + restante*2.5 ,
+                        text:'¡TU PUEDES! NECESITAS PRACTICAR Y ESFORZARTE MÁS PARA MEJORAR',
                         confirmButtonColor: '#3085d6',
                         confirmButtonText: 'OK'
                     })
@@ -607,7 +607,7 @@
                     Swal.fire({
                         iconHtml: "<img src='{{asset('img/ejercicios/segundo_estrella_media.jpg')}}' width='300px' height='100px'>",
                         title: 'Fallaste',
-                        text:'Debes entrenar un poco más ' + restante*2.5 ,
+                        text:'¡NO TE RINDAS! SI SIGUES PRACTICANDO, LO CONSEGUIRÁS' ,
                         confirmButtonColor: '#3085d6',
                         confirmButtonText: 'OK'
                     })
@@ -615,7 +615,7 @@
                     Swal.fire({
                         iconHtml: "<img src='{{asset('img/ejercicios/tres_estrella_media.jpg')}}' width='300px' height='100px'>",
                         title: 'Fallaste',
-                        text:'Debes entrenar un poco más ' + restante*2.5 ,
+                        text:'¡SIGUE PRACTICANDO! PODRÁS LOGRARLO SI LO INTENTAS Y TE ESFUERZAS MAS.',
                         confirmButtonColor: '#3085d6',
                         confirmButtonText: 'OK'
                     })
@@ -623,7 +623,7 @@
                     Swal.fire({
                         iconHtml: "<img src='{{asset('img/ejercicios/sin_estrella.jpg')}}' width='300px' height='100px'>",
                         title: 'Fallaste',
-                        text:'Debes entrenar un poco más ' + restante*2.5 ,
+                        text:'¡TU PUEDES! NECESITAS PRACTICAR Y ESFORZARTE MÁS PARA MEJORAR' ,
                         confirmButtonColor: '#3085d6',
                         confirmButtonText: 'OK'
                     })    
@@ -750,7 +750,7 @@
                 Swal.fire({
                     iconHtml: "<img src='{{asset('img/ejercicios/cinco_estrellas.jpg')}}' width='300px' height='100px'>",
                     title: 'Excelente',
-                    text:'Felicidades, acertaste en todas 10',
+                    text:'¡FELICITACIONES, ERES EL MEJOR! NO DEJES DE SEGUIR ESFORZÁNDOTE',
                     confirmButtonColor: '#3085d6',
                     confirmButtonText: 'OK'
 
@@ -762,7 +762,7 @@
                     Swal.fire({
                         iconHtml: "<img src='{{asset('img/ejercicios/una_estrella.jpg')}}' width='300px' height='100px'>",
                         title: 'Por poco lo logras',
-                        text:'Te faltaron respuestas ' + ((aciertos.length*2.5) - (erroneos.length*2.5)) ,
+                        text:'¡TU PUEDES! NECESITAS PRACTICAR Y ESFORZARTE MÁS PARA MEJORAR' ,
                         confirmButtonColor: '#3085d6',
                         confirmButtonText: 'OK'
                     })
@@ -770,7 +770,7 @@
                     Swal.fire({
                         iconHtml: "<img src='{{asset('img/ejercicios/segundo_estrella_media.jpg')}}' width='300px' height='100px'>",
                         title: 'Por poco lo logras',
-                        text:'Te faltaron respuestas ' + ((aciertos.length*2.5) - (erroneos.length*2.5)) ,
+                        text:'¡NO TE RINDAS! SI SIGUES PRACTICANDO, LO CONSEGUIRÁS' ,
                         confirmButtonColor: '#3085d6',
                         confirmButtonText: 'OK'
                     })
@@ -778,7 +778,7 @@
                     Swal.fire({
                         iconHtml: "<img src='{{asset('img/ejercicios/tres_estrella_media.jpg')}}' width='300px' height='100px'>",
                         title: 'Por poco lo logras',
-                        text:'Te faltaron respuestas ' + ((aciertos.length*2.5) - (erroneos.length*2.5)) ,
+                        text:'¡MUY BUEN TRABAJO! SIGUE ASÍ, ESTÁS CERCA DE SER EL MEJOR EN ESTO',
                         confirmButtonColor: '#3085d6',
                         confirmButtonText: 'OK'
                     })
@@ -793,7 +793,7 @@
                     Swal.fire({
                         iconHtml: "<img src='{{asset('img/ejercicios/una_estrella.jpg')}}' width='300px' height='100px'>",
                         title: 'Fallaste',
-                        text:'Debes entrenar un poco más ' + restante*2.5 ,
+                        text:'¡TU PUEDES! NECESITAS PRACTICAR Y ESFORZARTE MÁS PARA MEJORAR',
                         confirmButtonColor: '#3085d6',
                         confirmButtonText: 'OK'
                     })
@@ -801,7 +801,7 @@
                     Swal.fire({
                         iconHtml: "<img src='{{asset('img/ejercicios/sin_estrella.jpg')}}' width='300px' height='100px'>",
                         title: 'Fallaste',
-                        text:'Debes entrenar un poco más ' + restante*2.5 ,
+                        text:'¡TU PUEDES! NECESITAS PRACTICAR Y ESFORZARTE MÁS PARA MEJORAR',
                         confirmButtonColor: '#3085d6',
                         confirmButtonText: 'OK'
                     })
@@ -809,7 +809,7 @@
                     Swal.fire({
                         iconHtml: "<img src='{{asset('img/ejercicios/segundo_estrella_media.jpg')}}' width='300px' height='100px'>",
                         title: 'Fallaste',
-                        text:'Debes entrenar un poco más ' + restante*2.5 ,
+                        text:'¡NO TE RINDAS! SI SIGUES PRACTICANDO, LO CONSEGUIRÁS' ,
                         confirmButtonColor: '#3085d6',
                         confirmButtonText: 'OK'
                     })
@@ -817,7 +817,7 @@
                     Swal.fire({
                         iconHtml: "<img src='{{asset('img/ejercicios/tres_estrella_media.jpg')}}' width='300px' height='100px'>",
                         title: 'Fallaste',
-                        text:'Debes entrenar un poco más ' + restante*2.5 ,
+                        text:'¡SIGUE PRACTICANDO! PODRÁS LOGRARLO SI LO INTENTAS Y TE ESFUERZAS MAS.',
                         confirmButtonColor: '#3085d6',
                         confirmButtonText: 'OK'
                     })
@@ -825,13 +825,12 @@
                     Swal.fire({
                         iconHtml: "<img src='{{asset('img/ejercicios/sin_estrella.jpg')}}' width='300px' height='100px'>",
                         title: 'Fallaste',
-                        text:'Debes entrenar un poco más ' + restante*2.5 ,
+                        text:'¡TU PUEDES! NECESITAS PRACTICAR Y ESFORZARTE MÁS PARA MEJORAR' ,
                         confirmButtonColor: '#3085d6',
                         confirmButtonText: 'OK'
                     })    
                 }
             }
-
         })
 
         document.getElementById('reiniciarq').addEventListener('click', ()=>{
@@ -946,7 +945,7 @@
                 Swal.fire({
                     iconHtml: "<img src='{{asset('img/ejercicios/cinco_estrellas.jpg')}}' width='300px' height='100px'>",
                     title: 'Excelente',
-                    text:'Felicidades, acertaste en todas 10',
+                    text:'¡FELICITACIONES, ERES EL MEJOR! NO DEJES DE SEGUIR ESFORZÁNDOTE',
                     confirmButtonColor: '#3085d6',
                     confirmButtonText: 'OK'
 
@@ -958,7 +957,7 @@
                     Swal.fire({
                         iconHtml: "<img src='{{asset('img/ejercicios/una_estrella.jpg')}}' width='300px' height='100px'>",
                         title: 'Por poco lo logras',
-                        text:'Te faltaron respuestas ' + ((aciertos.length*2.5) - (erroneos.length*2.5)) ,
+                        text:'¡TU PUEDES! NECESITAS PRACTICAR Y ESFORZARTE MÁS PARA MEJORAR' ,
                         confirmButtonColor: '#3085d6',
                         confirmButtonText: 'OK'
                     })
@@ -966,7 +965,7 @@
                     Swal.fire({
                         iconHtml: "<img src='{{asset('img/ejercicios/segundo_estrella_media.jpg')}}' width='300px' height='100px'>",
                         title: 'Por poco lo logras',
-                        text:'Te faltaron respuestas ' + ((aciertos.length*2.5) - (erroneos.length*2.5)) ,
+                        text:'¡NO TE RINDAS! SI SIGUES PRACTICANDO, LO CONSEGUIRÁS' ,
                         confirmButtonColor: '#3085d6',
                         confirmButtonText: 'OK'
                     })
@@ -974,7 +973,7 @@
                     Swal.fire({
                         iconHtml: "<img src='{{asset('img/ejercicios/tres_estrella_media.jpg')}}' width='300px' height='100px'>",
                         title: 'Por poco lo logras',
-                        text:'Te faltaron respuestas ' + ((aciertos.length*2.5) - (erroneos.length*2.5)) ,
+                        text:'¡MUY BUEN TRABAJO! SIGUE ASÍ, ESTÁS CERCA DE SER EL MEJOR EN ESTO',
                         confirmButtonColor: '#3085d6',
                         confirmButtonText: 'OK'
                     })
@@ -989,7 +988,7 @@
                     Swal.fire({
                         iconHtml: "<img src='{{asset('img/ejercicios/una_estrella.jpg')}}' width='300px' height='100px'>",
                         title: 'Fallaste',
-                        text:'Debes entrenar un poco más ' + restante*2.5 ,
+                        text:'¡TU PUEDES! NECESITAS PRACTICAR Y ESFORZARTE MÁS PARA MEJORAR',
                         confirmButtonColor: '#3085d6',
                         confirmButtonText: 'OK'
                     })
@@ -997,7 +996,7 @@
                     Swal.fire({
                         iconHtml: "<img src='{{asset('img/ejercicios/sin_estrella.jpg')}}' width='300px' height='100px'>",
                         title: 'Fallaste',
-                        text:'Debes entrenar un poco más ' + restante*2.5 ,
+                        text:'¡TU PUEDES! NECESITAS PRACTICAR Y ESFORZARTE MÁS PARA MEJORAR',
                         confirmButtonColor: '#3085d6',
                         confirmButtonText: 'OK'
                     })
@@ -1005,7 +1004,7 @@
                     Swal.fire({
                         iconHtml: "<img src='{{asset('img/ejercicios/segundo_estrella_media.jpg')}}' width='300px' height='100px'>",
                         title: 'Fallaste',
-                        text:'Debes entrenar un poco más ' + restante*2.5 ,
+                        text:'¡NO TE RINDAS! SI SIGUES PRACTICANDO, LO CONSEGUIRÁS' ,
                         confirmButtonColor: '#3085d6',
                         confirmButtonText: 'OK'
                     })
@@ -1013,7 +1012,7 @@
                     Swal.fire({
                         iconHtml: "<img src='{{asset('img/ejercicios/tres_estrella_media.jpg')}}' width='300px' height='100px'>",
                         title: 'Fallaste',
-                        text:'Debes entrenar un poco más ' + restante*2.5 ,
+                        text:'¡SIGUE PRACTICANDO! PODRÁS LOGRARLO SI LO INTENTAS Y TE ESFUERZAS MAS.',
                         confirmButtonColor: '#3085d6',
                         confirmButtonText: 'OK'
                     })
@@ -1021,7 +1020,7 @@
                     Swal.fire({
                         iconHtml: "<img src='{{asset('img/ejercicios/sin_estrella.jpg')}}' width='300px' height='100px'>",
                         title: 'Fallaste',
-                        text:'Debes entrenar un poco más ' + restante*2.5 ,
+                        text:'¡TU PUEDES! NECESITAS PRACTICAR Y ESFORZARTE MÁS PARA MEJORAR' ,
                         confirmButtonColor: '#3085d6',
                         confirmButtonText: 'OK'
                     })    
@@ -1143,7 +1142,7 @@
                 Swal.fire({
                     iconHtml: "<img src='{{asset('img/ejercicios/cinco_estrellas.jpg')}}' width='300px' height='100px'>",
                     title: 'Excelente',
-                    text:'Felicidades, acertaste en todas 10',
+                    text:'¡FELICITACIONES, ERES EL MEJOR! NO DEJES DE SEGUIR ESFORZÁNDOTE',
                     confirmButtonColor: '#3085d6',
                     confirmButtonText: 'OK'
 
@@ -1155,7 +1154,7 @@
                     Swal.fire({
                         iconHtml: "<img src='{{asset('img/ejercicios/una_estrella.jpg')}}' width='300px' height='100px'>",
                         title: 'Por poco lo logras',
-                        text:'Te faltaron respuestas ' + ((aciertos.length*2.5) - (erroneos.length*2.5)) ,
+                        text:'¡TU PUEDES! NECESITAS PRACTICAR Y ESFORZARTE MÁS PARA MEJORAR' ,
                         confirmButtonColor: '#3085d6',
                         confirmButtonText: 'OK'
                     })
@@ -1163,7 +1162,7 @@
                     Swal.fire({
                         iconHtml: "<img src='{{asset('img/ejercicios/segundo_estrella_media.jpg')}}' width='300px' height='100px'>",
                         title: 'Por poco lo logras',
-                        text:'Te faltaron respuestas ' + ((aciertos.length*2.5) - (erroneos.length*2.5)) ,
+                        text:'¡NO TE RINDAS! SI SIGUES PRACTICANDO, LO CONSEGUIRÁS' ,
                         confirmButtonColor: '#3085d6',
                         confirmButtonText: 'OK'
                     })
@@ -1171,7 +1170,7 @@
                     Swal.fire({
                         iconHtml: "<img src='{{asset('img/ejercicios/tres_estrella_media.jpg')}}' width='300px' height='100px'>",
                         title: 'Por poco lo logras',
-                        text:'Te faltaron respuestas ' + ((aciertos.length*2.5) - (erroneos.length*2.5)) ,
+                        text:'¡MUY BUEN TRABAJO! SIGUE ASÍ, ESTÁS CERCA DE SER EL MEJOR EN ESTO',
                         confirmButtonColor: '#3085d6',
                         confirmButtonText: 'OK'
                     })
@@ -1186,7 +1185,7 @@
                     Swal.fire({
                         iconHtml: "<img src='{{asset('img/ejercicios/una_estrella.jpg')}}' width='300px' height='100px'>",
                         title: 'Fallaste',
-                        text:'Debes entrenar un poco más ' + restante*2.5 ,
+                        text:'¡TU PUEDES! NECESITAS PRACTICAR Y ESFORZARTE MÁS PARA MEJORAR',
                         confirmButtonColor: '#3085d6',
                         confirmButtonText: 'OK'
                     })
@@ -1194,7 +1193,7 @@
                     Swal.fire({
                         iconHtml: "<img src='{{asset('img/ejercicios/sin_estrella.jpg')}}' width='300px' height='100px'>",
                         title: 'Fallaste',
-                        text:'Debes entrenar un poco más ' + restante*2.5 ,
+                        text:'¡TU PUEDES! NECESITAS PRACTICAR Y ESFORZARTE MÁS PARA MEJORAR',
                         confirmButtonColor: '#3085d6',
                         confirmButtonText: 'OK'
                     })
@@ -1202,7 +1201,7 @@
                     Swal.fire({
                         iconHtml: "<img src='{{asset('img/ejercicios/segundo_estrella_media.jpg')}}' width='300px' height='100px'>",
                         title: 'Fallaste',
-                        text:'Debes entrenar un poco más ' + restante*2.5 ,
+                        text:'¡NO TE RINDAS! SI SIGUES PRACTICANDO, LO CONSEGUIRÁS' ,
                         confirmButtonColor: '#3085d6',
                         confirmButtonText: 'OK'
                     })
@@ -1210,7 +1209,7 @@
                     Swal.fire({
                         iconHtml: "<img src='{{asset('img/ejercicios/tres_estrella_media.jpg')}}' width='300px' height='100px'>",
                         title: 'Fallaste',
-                        text:'Debes entrenar un poco más ' + restante*2.5 ,
+                        text:'¡SIGUE PRACTICANDO! PODRÁS LOGRARLO SI LO INTENTAS Y TE ESFUERZAS MAS.',
                         confirmButtonColor: '#3085d6',
                         confirmButtonText: 'OK'
                     })
@@ -1218,7 +1217,7 @@
                     Swal.fire({
                         iconHtml: "<img src='{{asset('img/ejercicios/sin_estrella.jpg')}}' width='300px' height='100px'>",
                         title: 'Fallaste',
-                        text:'Debes entrenar un poco más ' + restante*2.5 ,
+                        text:'¡TU PUEDES! NECESITAS PRACTICAR Y ESFORZARTE MÁS PARA MEJORAR' ,
                         confirmButtonColor: '#3085d6',
                         confirmButtonText: 'OK'
                     })    

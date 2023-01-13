@@ -173,8 +173,8 @@
     {{-- script d --}}
     <script>
         let palabrascompletasd = ['dentista', 'dinero', 'delgado', 'dinosaurio', 'doncella', 'desierto', 'deporte', 'desfile', 'durazno', 'dormitorio', 'documento', 'discoteca', 'dormir', 'disculpa', 'docente', 'derretir', 'ducha', 'desayuno', 'diploma'];
-        let palabrasd = ['ntista', 'nero', 'lgado', 'nosaurio', 'ncella', 'sierto', 'porte', 'sfile', 'razno', 'rmitorio', 'cumento', 'scoteca', 'rmir', 'sculpa', 'cente', 'rretir', 'cha', 'sayuno', 'ploma'];
-        let faltantesd = ['de', 'di', 'de', 'di', 'do', 'de', 'de', 'de', 'du', 'do', 'do', 'di', 'do', 'di', 'do', 'de', 'du', 'de', 'di'];
+        let palabrasd = ['tista', 'nero', 'gado', 'nosaurio', 'cella', 'sierto', 'porte', 'file', 'razno', 'rmitorio', 'cumento', 'coteca', 'mir', 'culpa', 'cente', 'rretir', 'cha', 'sayuno', 'ploma'];
+        let faltantesd = ['den', 'di', 'del', 'di', 'don', 'de', 'de', 'des', 'du', 'do', 'do', 'dis', 'dor', 'dis', 'do', 'de', 'du', 'de', 'di'];
         let seleccionadosd = [];
 
         for (let i = 0; i < 5; i++)
@@ -307,8 +307,8 @@
     {{-- script b --}}
     <script>
         let palabrascompletasb = ['burro', 'bailar', 'bacteria', 'banana', 'bandera', 'baño', 'balcon', 'beso', 'bermuda', 'biblioteca', 'billetera', 'biberon', 'bombon', 'bufalo', 'burbuja', 'botella', 'bolso', 'binario', 'bellota', 'bateria'];
-        let palabrasb = ['rro', 'ilar', 'cteria', 'nana', 'ndera', 'ño', 'lcon', 'so', 'rmuda', 'blioteca', 'lletera', 'beron', 'mbon', 'falo', 'rbuja', 'tella', 'lso', 'nario', 'llota', 'cteria'];
-        let faltantesb = ['bu', 'ba', 'ba', 'ba', 'ba', 'ba', 'ba', 'be', 'be', 'bi', 'bi', 'bi', 'bo', 'bu', 'bu', 'bo', 'bo', 'bi', 'be', 'ba'];
+        let palabrasb = ['rro', 'lar', 'teria', 'nana', 'dera', 'ño', 'con', 'so', 'muda', 'blioteca', 'lletera', 'beron', 'bon', 'falo', 'buja', 'tella', 'so', 'nario', 'llota', 'teria'];
+        let faltantesb = ['bu', 'bai', 'bac', 'ba', 'ban', 'ba', 'bal', 'be', 'ber', 'bi', 'bi', 'bi', 'bom', 'bu', 'bur', 'bo', 'bol', 'bi', 'be', 'bac'];
         let seleccionadosb = [];
 
         for (let i = 0; i < 5; i++)
@@ -440,8 +440,8 @@
     {{-- script p --}}
     <script>
         let palabrascompletasp = ['pirámide', 'piano', 'pastel', 'plantas', 'pulmón', 'policía', 'político', 'peleador', 'pueblo', 'pozo', 'pequeño', 'puerto', 'primavera', 'palabra', 'picante', 'perfume', 'pirata', 'planeta', 'prisión', 'persona'];
-        let palabrasp = ['rámide', 'ano', 'stel', 'ntas', 'lmón', 'licía', 'lítico', 'leador', 'eblo', 'zo', 'queño', 'erto', 'mavera', 'labra', 'cante', 'rfume', 'rata', 'neta', 'sión', 'rsona'];
-        let faltantesp = ['pi', 'pi', 'pa', 'pla', 'pu', 'po', 'po', 'pe', 'pu', 'po', 'pe', 'pu', 'pri', 'pa', 'pi', 'pe', 'pi', 'pla', 'pri', 'pe'];
+        let palabrasp = ['rámide', 'no', 'tel', 'tas', 'món', 'licía', 'lítico', 'leador', 'blo', 'zo', 'queño', 'to', 'mavera', 'labra', 'cante', 'fume', 'rata', 'neta', 'sión', 'sona'];
+        let faltantesp = ['pi', 'pia', 'pas', 'plan', 'pul', 'po', 'po', 'pe', 'pue', 'po', 'pe', 'puer', 'pri', 'pa', 'pi', 'per', 'pi', 'pla', 'pri', 'per'];
         let seleccionadosp = [];
 
         for (let i = 0; i < 5; i++)
@@ -572,9 +572,9 @@
 
     {{-- script f --}}
     <script>
-        let palabrascompletasf = ['foco', 'fútbol', 'fresa', 'frasco', 'flaco', 'factura', 'foto', 'famoso', 'farmacia', 'feliz', 'francia', 'fruta', 'fábrica', 'funda', 'fuerte', 'fuente', 'fernando', 'fósforo'];
-        let palabrasf = ['co', 'tbol', 'sa', 'asco', 'co', 'ctura', 'to', 'moso', 'rmacia', 'liz', 'ncia', 'ta', 'brica', 'nda', 'erte', 'ente', 'rnando', 'sforo'];
-        let faltantesf = ['fo', 'fú', 'fre','fra', 'fla', 'fa', 'fo', 'fa', 'fa', 'fe', 'fra', 'fru', 'fá', 'fu', 'fu', 'fu', 'fe', 'fó'];
+        let palabrascompletasf = ['foco', 'fútbol', 'fresa', 'frasco', 'flaco', 'factura', 'foto', 'famoso', 'farmacia', 'feliz', 'francia', 'fruta', 'fabrica', 'funda', 'fuerte', 'fuente', 'fernando', 'fosforo'];
+        let palabrasf = ['co', 'bol', 'sa', 'co', 'co', 'tura', 'to', 'moso', 'macia', 'liz', 'cia', 'ta', 'brica', 'da', 'te', 'te', 'nando', 'foro'];
+        let faltantesf = ['fo', 'fút', 'fre','fras', 'fla', 'fac', 'fo', 'fa', 'far', 'fe', 'fran', 'fru', 'fa', 'fun', 'fuer', 'fuen', 'fer', 'fos'];
         let seleccionadosf = [];
 
         for (let i = 0; i < 5; i++)
@@ -706,9 +706,9 @@
 
     {{-- script t --}}
     <script>
-        let palabrascompletast = ['tabla', 'tiempo', 'timbre', 'tijera', 'taza', 'teléfono', 'televisión', 'terremoto', 'trabajo', 'tren', 'turista', 'topo', 'tigre', 'tortuga', 'transporte', 'tania', 'tiburón', 'texto', 'temblor', 'tormenta'];
-        let palabrast = ['bla', 'empo', 'mbre', 'jera', 'za', 'léfono', 'levisión', 'rremoto', 'bajo', 'n', 'rista', 'po', 'gre', 'rtuga', 'nsporte', 'nia', 'burón', 'xto', 'mblor', 'rmenta'];
-        let faltantest = ['ta', 'ti', 'ti', 'ti', 'ta', 'te', 'te', 'te', 'tra', 'tre', 'tu', 'to', 'ti', 'to', 'tra', 'ta', 'ti', 'te', 'te', 'to'];
+        let palabrascompletast = ['tabla', 'tiempo', 'timbre', 'tijera', 'taza', 'telefono', 'television', 'terremoto', 'trabajo', 'turista', 'topo', 'tigre', 'tortuga', 'transporte', 'tania', 'tiburon', 'texto', 'temblor', 'tormenta'];
+        let palabrast = ['bla', 'po', 'bre', 'jera', 'za', 'lefono', 'levision', 'rremoto', 'bajo', 'rista', 'po', 'gre', 'tuga', 'porte', 'nia', 'buron', 'to', 'blor', 'menta'];
+        let faltantest = ['ta', 'tiem', 'tim', 'ti', 'ta', 'te', 'te', 'te', 'tra', 'tu', 'to', 'ti', 'tor', 'trans', 'ta', 'ti', 'tex', 'tem', 'tor'];
         let seleccionadost = [];
 
         for (let i = 0; i < 5; i++)

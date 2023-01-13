@@ -449,11 +449,7 @@
                     e.target.classList.remove( 'bg-success');
                     e.target.classList.remove( 'puesto');
                 }
-                
-
-                
-                
-                /* mensaje.text = e.target.getAttribute('palabra').replace('2', ''); */
+              /* mensaje.text = e.target.getAttribute('palabra').replace('2', ''); */
             }
             /* mensaje.rate = 0.8;
             speechSynthesis.speak(mensaje); */
@@ -490,10 +486,9 @@
                     faltantes++;
                 }
                 
-
             })
 
-           document.getElementById('calificarbotonesd').setAttribute('disabled', 'disabled');
+           
             
 
             if(faltantes == 0 && incorrectas == 0)
@@ -505,6 +500,7 @@
                     confirmButtonColor: '#3085d6',
                     confirmButtonText: 'OK'
                 })
+                document.getElementById('calificarbotonesd').setAttribute('disabled', 'disabled');
             }
             
             else if(incorrectas == 0 && faltantes>0)
@@ -628,15 +624,19 @@
 
             if(e.target.nodeName == 'A')
             {
-                e.target.setAttribute('disabled', 'disabled');
-                e.target.classList.add('disabled', 'bg-primary');
-                /* mensaje.text = e.target.getAttribute('palabra').replace('2', ''); */
-            }
-            else if(e.target.nodeName == 'IMG')
-            {
-                e.target.parentElement.setAttribute('disabled', 'disabled');
-                e.target.parentElement.classList.add('disabled','bg-primary');
-                /* mensaje.text = e.target.parentElement.getAttribute('palabra').replace('2', ''); */
+                if(e.target.classList.contains('bg-primary') == false && e.target.classList.contains('bg-danger') == false && e.target.classList.contains('bg-success') == false){
+                    e.target.classList.add( 'bg-primary');
+                    e.target.classList.add('puesto');
+                }else if(e.target.classList.contains('bg-primary')){
+                    e.target.classList.remove( 'bg-primary');
+                    e.target.classList.remove( 'puesto');
+                }else if(e.target.classList.contains('bg-danger')){
+                    e.target.classList.remove( 'bg-danger');
+                    e.target.classList.remove( 'puesto');
+                }else if(e.target.classList.contains('bg-success')){
+                    e.target.classList.remove( 'bg-success');
+                    e.target.classList.remove( 'puesto');
+                }
             }
             /* mensaje.rate = 0.8;
             speechSynthesis.speak(mensaje); */
@@ -648,58 +648,119 @@
             let incorrectas = 0;
             [...document.getElementById('botonesdsilaba').children].map( e=>{
 
-                if(e.classList.contains('disabled'))
+                if(e.classList.contains('puesto'))
                 {
                     if(correctassilabasd.includes(e.getAttribute('palabra')))
                     {
                         e.classList.remove('bg-primary');
                         e.classList.add('bg-success');
+                        
                     }
                     else
                     {
                         e.classList.remove('bg-primary');
                         e.classList.add('bg-danger');
+                        
+
                         incorrectas++;
                     }
+                    e.setAttribute('disabled', 'disabled');
+
                 }
 
-                if(!e.classList.contains('disabled') && correctassilabasd.includes(e.getAttribute('palabra')))
+                if(!e.classList.contains('puesto') && correctassilabasd.includes(e.getAttribute('palabra')))
                 {
                     faltantes++;
                 }
                 
-
             })
 
             if(faltantes == 0 && incorrectas == 0)
             {
                 Swal.fire({
-                    icon: 'success',
+                    iconHtml: "<img src='{{asset('img/ejercicios/cinco_estrellas.jpg')}}' width='300px' height='100px'>",
                     title: 'Excelente',
-                    text:'Felicidades, acertaste en todas',
-                    showConfirmButton: false,
-                    timer: 1000
+                    text:'¡FELICITACIONES, ERES EL MEJOR! NO DEJES DE SEGUIR ESFORZÁNDOTE',
+                    confirmButtonColor: '#3085d6',
+                    confirmButtonText: 'OK'
                 })
+                document.getElementById('calificarbotonesdsilaba').setAttribute('disabled', 'disabled');
             }
+            
             else if(incorrectas == 0 && faltantes>0)
             {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Por poco lo logras',
-                    text:'Te faltaron respuestas',
-                    showConfirmButton: false,
-                    timer: 1000
-                })
+
+                if(faltantes == 3){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/una_estrella.jpg')}}' width='300px' height='100px'>",
+                        title: 'Por poco lo logras',
+                        text:'¡TU PUEDES! NECESITAS PRACTICAR Y ESFORZARTE MÁS PARA MEJORAR',
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }else if(faltantes == 2){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/segundo_estrella_media.jpg')}}' width='300px' height='100px'>",
+                        title: 'Por poco lo logras',
+                        text:'¡NO TE RINDAS! SI SIGUES PRACTICANDO, LO CONSEGUIRÁS',
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }else if(faltantes == 1){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/tres_estrella_media.jpg')}}' width='300px' height='100px'>",
+                        title: 'Por poco lo logras',
+                        text:'¡MUY BUEN TRABAJO! SIGUE ASÍ, ESTÁS CERCA DE SER EL MEJOR EN ESTO',
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }
             }
             else
             {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Fallaste',
-                    text:'Debes entrenar un poco más',
-                    showConfirmButton: false,
-                    timer: 1000
-                })
+                var restante= (4-faltantes) - incorrectas;
+                
+                if(restante==1){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/una_estrella.jpg')}}' width='300px' height='100px'>",
+                        title: 'Fallaste',
+                        text:'¡TU PUEDES! NECESITAS PRACTICAR Y ESFORZARTE MÁS PARA MEJORAR' ,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }else if(restante==0){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/sin_estrella.jpg')}}' width='300px' height='100px'>",
+                        title: 'Fallaste',
+                        text: '¡TU PUEDES! NECESITAS PRACTICAR Y ESFORZARTE MÁS PARA MEJORAR',
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }else if(restante==2){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/segundo_estrella_media.jpg')}}' width='300px' height='100px'>",
+                        title: 'Fallaste',
+                        text:'¡NO TE RINDAS! SI SIGUES PRACTICANDO, LO CONSEGUIRÁS',
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }else if(restante==3){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/tres_estrella_media.jpg')}}' width='300px' height='100px'>",
+                        title: 'Fallaste',
+                        text:'¡SIGUE PRACTICANDO! PODRÁS LOGRARLO SI LO INTENTAS Y TE ESFUERZAS MAS.',
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }else{
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/sin_estrella.jpg')}}' width='300px' height='100px'>",
+                        title: 'Fallaste',
+                        text:'¡TU PUEDES! NECESITAS PRACTICAR Y ESFORZARTE MÁS PARA MEJORAR' ,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })    
+                }
             }
 
         })
@@ -708,9 +769,10 @@
 
         //inicio palabra
         let modelosd = ['dado', 'dedo', 'delfin', 'disco', 'doctor'];
-        let palabrasd = {"dedo": ['bebo', 'bedo', 'dado', 'debo', 'dedo', 'abeb', 'deldo', 'depo', 'dido', 'dode', 'duedo', 'gedo'], "dado": ['baba', 'babo', 'bado', 'bebe', 'boda', 'dada', 'dado', 'dedo', 'depe', 'gaba', 'qipe', 'qopa'], "delfin": ['baltin', 'belfin', 'belfyn', 'delfin', 'dalton', 'dellfin', 'betfin', 'deltin', 'depe', 'detfin', 'pelon', 'qaltin'], "disco": ['besca', 'bisco', 'bisno', 'bizvo', 'dede', 'disco', 'disvo', 'disxo', 'dixco', 'jisno', 'listo', 'qisno'], "doctor": ['bartac', 'boctor', 'daclor', 'dactor', 'doclor', 'doctor', 'dorlor', 'lactar', 'loctor', 'toclor', 'tordoc', 'tractor']}
+        let palabrasd = {"dedo": ['bebo', 'bedo', 'dado', 'debo', 'dedo', 'abeb', 'deldo', 'depo', 'dido', 'dode', 'duedo', 'gedo'], "dado": ['baba', 'babo', 'bado', 'bebe', 'boda', 'dada', 'dado', 'dedo', 'depe', 'gaba', 'qipe', 'qopa'], "delfin": ['delfin', 'belfin', 'belfyn', 'delfin', 'dalton', 'dellfin', 'betfin', 'deltin', 'depe', 'detfin', 'delfin', 'qaltin'], "disco": ['besca', 'bisco', 'bisno', 'bizvo', 'dede', 'disco', 'disvo', 'disxo', 'dixco', 'jisno', 'listo', 'qisno'], "doctor": ['bartac', 'boctor', 'daclor', 'dactor', 'doclor', 'doctor', 'dorlor', 'lactar', 'loctor', 'toclor', 'tordoc', 'tractor']}
 
         let modelo_elegidod = modelosd[Math.floor(Math.random()*5)];
+        
 
         document.getElementById('modelod').setAttribute('src', `{{asset('img/ejercicios/ejercicio2/palabras/modelos/d/')}}/${modelo_elegidod}.jpg`)
         document.getElementById('modelod').setAttribute('palabra', modelo_elegidod)
@@ -726,22 +788,9 @@
 
         })
 
-        if(Math.floor(Math.random()*10) > 5)
-        {
-            palabrasd[modelo_elegidod].sort();
-        }
 
-        for (let i = 0; i < 6; i++)
-        {
-            if(Math.floor(Math.random()*10) > 5)
-            {
-                palabrasd[modelo_elegidod].unshift(palabrasd[modelo_elegidod][Math.floor(Math.random()*palabrasd[modelo_elegidod].length)]);
-            }
-            else
-            {
-                palabrasd[modelo_elegidod].push(palabrasd[modelo_elegidod][Math.floor(Math.random()*palabrasd[modelo_elegidod].length)]);
-            }
-        }
+
+        palabrasd[modelo_elegidod].sort(function() {return (Math.random()-0.5)});
 
         for(let i=0; i<palabrasd[modelo_elegidod].length; i++)
         {
@@ -767,7 +816,7 @@
                 e.target.setAttribute('disabled', 'disabled');
                 e.target.classList.add('disabled', 'bg-primary');
                 /* mensaje.text = e.target.getAttribute('palabra').replace('2', ''); */
-            }
+                }            
             else if(e.target.nodeName == 'IMG')
             {
                 e.target.parentElement.setAttribute('disabled', 'disabled');
@@ -789,7 +838,7 @@
                     if(e.getAttribute('palabra') == modelo_elegidod)
                     {
                         e.classList.remove('bg-primary');
-                        e.classList.add('bg-success');
+                        e.classList.add('bg-success');    
                     }
                     else
                     {
@@ -798,7 +847,6 @@
                         incorrectas++;
                     }
                 }
-
                 if(!e.classList.contains('disabled') && e.getAttribute('palabra') == modelo_elegidod)
                 {
                     faltantes++;
@@ -810,32 +858,89 @@
             if(faltantes == 0 && incorrectas == 0)
             {
                 Swal.fire({
-                    icon: 'success',
+                    iconHtml: "<img src='{{asset('img/ejercicios/cinco_estrellas.jpg')}}' width='300px' height='100px'>",
                     title: 'Excelente',
-                    text:'Felicidades, acertaste en todas',
-                    showConfirmButton: false,
-                    timer: 1000
+                    text:'¡FELICITACIONES, ERES EL MEJOR! NO DEJES DE SEGUIR ESFORZÁNDOTE',
+                    confirmButtonColor: '#3085d6',
+                    confirmButtonText: 'OK'
                 })
+                document.getElementById('calificarbotonesdsilaba').setAttribute('disabled', 'disabled');
             }
+            
             else if(incorrectas == 0 && faltantes>0)
             {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Por poco lo logras',
-                    text:'Te faltaron respuestas',
-                    showConfirmButton: false,
-                    timer: 1000
-                })
+
+                if(faltantes == 3){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/una_estrella.jpg')}}' width='300px' height='100px'>",
+                        title: 'Por poco lo logras',
+                        text:'¡TU PUEDES! NECESITAS PRACTICAR Y ESFORZARTE MÁS PARA MEJORAR',
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }else if(faltantes == 2){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/segundo_estrella_media.jpg')}}' width='300px' height='100px'>",
+                        title: 'Por poco lo logras',
+                        text:'¡NO TE RINDAS! SI SIGUES PRACTICANDO, LO CONSEGUIRÁS',
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }else if(faltantes == 1){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/tres_estrella_media.jpg')}}' width='300px' height='100px'>",
+                        title: 'Por poco lo logras',
+                        text:'¡MUY BUEN TRABAJO! SIGUE ASÍ, ESTÁS CERCA DE SER EL MEJOR EN ESTO',
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }
             }
             else
             {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Fallaste',
-                    text:'Debes entrenar un poco más',
-                    showConfirmButton: false,
-                    timer: 1000
-                })
+                var restante= (4-faltantes) - incorrectas;
+                
+                if(restante==1){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/una_estrella.jpg')}}' width='300px' height='100px'>",
+                        title: 'Fallaste',
+                        text:'¡TU PUEDES! NECESITAS PRACTICAR Y ESFORZARTE MÁS PARA MEJORAR' ,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }else if(restante==0){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/sin_estrella.jpg')}}' width='300px' height='100px'>",
+                        title: 'Fallaste',
+                        text: '¡TU PUEDES! NECESITAS PRACTICAR Y ESFORZARTE MÁS PARA MEJORAR',
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }else if(restante==2){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/segundo_estrella_media.jpg')}}' width='300px' height='100px'>",
+                        title: 'Fallaste',
+                        text:'¡NO TE RINDAS! SI SIGUES PRACTICANDO, LO CONSEGUIRÁS',
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }else if(restante==3){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/tres_estrella_media.jpg')}}' width='300px' height='100px'>",
+                        title: 'Fallaste',
+                        text:'¡SIGUE PRACTICANDO! PODRÁS LOGRARLO SI LO INTENTAS Y TE ESFUERZAS MAS.',
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }else{
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/sin_estrella.jpg')}}' width='300px' height='100px'>",
+                        title: 'Fallaste',
+                        text:'¡TU PUEDES! NECESITAS PRACTICAR Y ESFORZARTE MÁS PARA MEJORAR' ,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })    
+                }
             }
 
         })
