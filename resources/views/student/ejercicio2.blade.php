@@ -769,7 +769,7 @@
 
         //inicio palabra
         let modelosd = ['dado', 'dedo', 'delfin', 'disco', 'doctor'];
-        let palabrasd = {"dedo": ['bebo', 'bedo', 'dado', 'debo', 'dedo', 'abeb', 'deldo', 'depo', 'dido', 'dode', 'duedo', 'gedo'], "dado": ['baba', 'babo', 'bado', 'bebe', 'boda', 'dada', 'dado', 'dedo', 'depe', 'gaba', 'qipe', 'qopa'], "delfin": ['delfin', 'belfin', 'belfyn', 'delfin', 'dalton', 'dellfin', 'betfin', 'deltin', 'depe', 'detfin', 'delfin', 'qaltin'], "disco": ['besca', 'bisco', 'bisno', 'bizvo', 'dede', 'disco', 'disvo', 'disxo', 'dixco', 'jisno', 'listo', 'qisno'], "doctor": ['bartac', 'boctor', 'daclor', 'dactor', 'doclor', 'doctor', 'dorlor', 'lactar', 'loctor', 'toclor', 'tordoc', 'tractor']}
+        let palabrasd = {"dedo": ['bebo', 'bedo', 'dado', 'debo', 'abeb', 'deldo', 'depo', 'dido', 'dode', 'duedo', 'gedo'], "dado": ['baba', 'babo', 'bado', 'bebe', 'boda', 'dada', 'dedo', 'depe', 'gaba', 'qipe', 'qopa'], "delfin": [, 'belfin', 'belfyn', 'delfin', 'dalton', 'dellfin', 'betfin', 'deltin', 'depe', 'detfin', 'qaltin'], "disco": ['besca', 'bisco', 'bisno', 'bizvo', 'dede', 'disvo', 'disxo', 'dixco', 'jisno', 'listo', 'qisno'], "doctor": ['bartac', 'boctor', 'daclor', 'dactor', 'doclor', 'dorlor', 'lactar', 'loctor', 'toclor', 'tordoc', 'tractor']}
 
         let modelo_elegidod = modelosd[Math.floor(Math.random()*5)];
         
@@ -788,7 +788,16 @@
 
         })
 
+        for (let i = 0; i < 10; i++)
+        {
+            if(i<4){
+                palabrasd[modelo_elegidod].push(modelo_elegidod);
+            }else{            
+                palabrasd[modelo_elegidod].push(palabrasd[modelo_elegidod][Math.floor(Math.random()*9)]);
+            }
 
+            
+        }
 
         palabrasd[modelo_elegidod].sort(function() {return (Math.random()-0.5)});
 
@@ -813,16 +822,21 @@
 
             if(e.target.nodeName == 'A')
             {
-                e.target.setAttribute('disabled', 'disabled');
-                e.target.classList.add('disabled', 'bg-primary');
-                /* mensaje.text = e.target.getAttribute('palabra').replace('2', ''); */
-                }            
-            else if(e.target.nodeName == 'IMG')
-            {
-                e.target.parentElement.setAttribute('disabled', 'disabled');
-                e.target.parentElement.classList.add('disabled','bg-primary');
-                /* mensaje.text = e.target.parentElement.getAttribute('palabra').replace('2', ''); */
-            }
+                if(e.target.classList.contains('bg-primary') == false && e.target.classList.contains('bg-danger') == false && e.target.classList.contains('bg-success') == false){
+                    e.target.classList.add( 'bg-primary');
+                    e.target.classList.add('puesto');
+                }else if(e.target.classList.contains('bg-primary')){
+                    e.target.classList.remove( 'bg-primary');
+                    e.target.classList.remove( 'puesto');
+                }else if(e.target.classList.contains('bg-danger')){
+                    e.target.classList.remove( 'bg-danger');
+                    e.target.classList.remove( 'puesto');
+                }else if(e.target.classList.contains('bg-success')){
+                    e.target.classList.remove( 'bg-success');
+                    e.target.classList.remove( 'puesto');
+                }
+            }            
+           
             /* mensaje.rate = 0.8;
             speechSynthesis.speak(mensaje); */
 
@@ -833,7 +847,7 @@
             let incorrectas = 0;
             [...document.getElementById('botonesdpalabra').children].map( e=>{
 
-                if(e.classList.contains('disabled'))
+                if(e.classList.contains('puesto'))
                 {
                     if(e.getAttribute('palabra') == modelo_elegidod)
                     {
@@ -847,7 +861,7 @@
                         incorrectas++;
                     }
                 }
-                if(!e.classList.contains('disabled') && e.getAttribute('palabra') == modelo_elegidod)
+                if(!e.classList.contains('puesto') && e.getAttribute('palabra') == modelo_elegidod)
                 {
                     faltantes++;
                 }
@@ -864,7 +878,7 @@
                     confirmButtonColor: '#3085d6',
                     confirmButtonText: 'OK'
                 })
-                document.getElementById('calificarbotonesdsilaba').setAttribute('disabled', 'disabled');
+                document.getElementById('calificarbotonesdpalabra').setAttribute('disabled', 'disabled');
             }
             
             else if(incorrectas == 0 && faltantes>0)
@@ -953,25 +967,19 @@
     {{-- Inicio letra b --}}
     <script>
         //inicio letras
-        let letrasb = ['a', 'z', 'd', 'e', 'l', 's', 'p', 'q', 'm', 'g', 'v', 'b'];
+        let letrasb = ['a', 'z', 'd', 'e', 'l', 's', 'p', 'q', 'm', 'g', 'v', 'h'];
         let correctasb = ['b'];
 
-        if(Math.floor(Math.random()*10) > 5)
+        for (let i = 0; i < 10; i++)
         {
-            letrasb.sort();
+            if(i<4){
+                letrasb.push('b');
+            }else{            
+                    letrasb.push(letrasb[Math.floor(Math.random()*10)]);
+            }           
         }
 
-        for (let i = 0; i < 8; i++)
-        {
-            if(Math.floor(Math.random()*10) > 5)
-            {
-                letrasb.unshift(letrasb[Math.floor(Math.random()*10)]);
-            }
-            else
-            {
-                letrasb.push(letrasb[Math.floor(Math.random()*10)]);
-            }
-        }
+        letrasb.sort(function(a,b) {return (Math.random()-0.5)});
 
         for(let i=0; i<letrasb.length; i++)
         {
@@ -995,15 +1003,19 @@
 
             if(e.target.nodeName == 'A')
             {
-                e.target.setAttribute('disabled', 'disabled');
-                e.target.classList.add('disabled', 'bg-primary');
-                /* mensaje.text = e.target.getAttribute('palabra').replace('2', ''); */
-            }
-            else if(e.target.nodeName == 'IMG')
-            {
-                e.target.parentElement.setAttribute('disabled', 'disabled');
-                e.target.parentElement.classList.add('disabled','bg-primary');
-                /* mensaje.text = e.target.parentElement.getAttribute('palabra').replace('2', ''); */
+                if(e.target.classList.contains('bg-primary') == false && e.target.classList.contains('bg-danger') == false && e.target.classList.contains('bg-success') == false){
+                    e.target.classList.add( 'bg-primary');
+                    e.target.classList.add('puesto');
+                }else if(e.target.classList.contains('bg-primary')){
+                    e.target.classList.remove( 'bg-primary');
+                    e.target.classList.remove( 'puesto');
+                }else if(e.target.classList.contains('bg-danger')){
+                    e.target.classList.remove( 'bg-danger');
+                    e.target.classList.remove( 'puesto');
+                }else if(e.target.classList.contains('bg-success')){
+                    e.target.classList.remove( 'bg-success');
+                    e.target.classList.remove( 'puesto');
+                }
             }
             /* mensaje.rate = 0.8;
             speechSynthesis.speak(mensaje); */
@@ -1015,7 +1027,7 @@
             let incorrectas = 0;
             [...document.getElementById('botonesb').children].map( e=>{
 
-                if(e.classList.contains('disabled'))
+                if(e.classList.contains('puesto'))
                 {
                     if(correctasb.includes(e.getAttribute('palabra')))
                     {
@@ -1030,7 +1042,7 @@
                     }
                 }
 
-                if(!e.classList.contains('disabled') && correctasb.includes(e.getAttribute('palabra')))
+                if(!e.classList.contains('puesto') && correctasb.includes(e.getAttribute('palabra')))
                 {
                     faltantes++;
                 }
@@ -1041,58 +1053,113 @@
             if(faltantes == 0 && incorrectas == 0)
             {
                 Swal.fire({
-                    icon: 'success',
+                    iconHtml: "<img src='{{asset('img/ejercicios/cinco_estrellas.jpg')}}' width='300px' height='100px'>",
                     title: 'Excelente',
-                    text:'Felicidades, acertaste en todas',
-                    showConfirmButton: false,
-                    timer: 1000
+                    text:'¡FELICITACIONES, ERES EL MEJOR! NO DEJES DE SEGUIR ESFORZÁNDOTE',
+                    confirmButtonColor: '#3085d6',
+                    confirmButtonText: 'OK'
                 })
+                document.getElementById('calificarbotonesb').setAttribute('disabled', 'disabled');
             }
+            
             else if(incorrectas == 0 && faltantes>0)
             {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Por poco lo logras',
-                    text:'Te faltaron respuestas',
-                    showConfirmButton: false,
-                    timer: 1000
-                })
+
+                if(faltantes == 3){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/una_estrella.jpg')}}' width='300px' height='100px'>",
+                        title: 'Por poco lo logras',
+                        text:'¡TU PUEDES! NECESITAS PRACTICAR Y ESFORZARTE MÁS PARA MEJORAR',
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }else if(faltantes == 2){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/segundo_estrella_media.jpg')}}' width='300px' height='100px'>",
+                        title: 'Por poco lo logras',
+                        text:'¡NO TE RINDAS! SI SIGUES PRACTICANDO, LO CONSEGUIRÁS',
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }else if(faltantes == 1){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/tres_estrella_media.jpg')}}' width='300px' height='100px'>",
+                        title: 'Por poco lo logras',
+                        text:'¡MUY BUEN TRABAJO! SIGUE ASÍ, ESTÁS CERCA DE SER EL MEJOR EN ESTO',
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }
             }
             else
             {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Fallaste',
-                    text:'Debes entrenar un poco más',
-                    showConfirmButton: false,
-                    timer: 1000
-                })
+                var restante= (4-faltantes) - incorrectas;
+                
+                if(restante==1){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/una_estrella.jpg')}}' width='300px' height='100px'>",
+                        title: 'Fallaste',
+                        text:'¡TU PUEDES! NECESITAS PRACTICAR Y ESFORZARTE MÁS PARA MEJORAR' ,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }else if(restante==0){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/sin_estrella.jpg')}}' width='300px' height='100px'>",
+                        title: 'Fallaste',
+                        text: '¡TU PUEDES! NECESITAS PRACTICAR Y ESFORZARTE MÁS PARA MEJORAR',
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }else if(restante==2){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/segundo_estrella_media.jpg')}}' width='300px' height='100px'>",
+                        title: 'Fallaste',
+                        text:'¡NO TE RINDAS! SI SIGUES PRACTICANDO, LO CONSEGUIRÁS',
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }else if(restante==3){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/tres_estrella_media.jpg')}}' width='300px' height='100px'>",
+                        title: 'Fallaste',
+                        text:'¡SIGUE PRACTICANDO! PODRÁS LOGRARLO SI LO INTENTAS Y TE ESFUERZAS MAS.',
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }else{
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/sin_estrella.jpg')}}' width='300px' height='100px'>",
+                        title: 'Fallaste',
+                        text:'¡TU PUEDES! NECESITAS PRACTICAR Y ESFORZARTE MÁS PARA MEJORAR' ,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })    
+                }
             }
 
         })
         //fin letras
 
         //inicio silabas
-        let silabasb = ['ab', 'ad', 'ba', 'be', 'bi', 'bo', 'di', 'dy', 'ga', 'la', 'qa', 'qu',  'ub', 'ud'];
+        let silabasb = ['ab', 'ad', 'di', 'dy', 'ga', 'la', 'qa', 'qu',  'ub', 'ud'];
         let correctassilabasb = ['ba', 'be', 'bi', 'bo', 'bu'];
 
-        if(Math.floor(Math.random()*10) > 5)
-        {
-            silabasb.sort();
-        }
 
-        for (let i = 0; i < 6; i++)
+        for (let i = 0; i < 10; i++)
         {
-            if(Math.floor(Math.random()*10) > 5)
+            if(i < 4)
             {
-                silabasb.unshift(silabasb[Math.floor(Math.random()*10)]);
+                silabasb.push(correctassilabasb[Math.floor(Math.random()*5)]);
             }
             else
             {
                 silabasb.push(silabasb[Math.floor(Math.random()*10)]);
-            }
+            }   
         }
-
+        
+        silabasb.sort(function() {return (Math.random()-0.5)});
+        
         for(let i=0; i<silabasb.length; i++)
         {
             let button = document.createElement('a');
@@ -1114,14 +1181,19 @@
 
             if(e.target.nodeName == 'A')
             {
-                e.target.setAttribute('disabled', 'disabled');
-                e.target.classList.add('disabled', 'bg-primary');
-                /* mensaje.text = e.target.getAttribute('palabra').replace('2', ''); */
-            }
-            else if(e.target.nodeName == 'IMG')
-            {
-                e.target.parentElement.setAttribute('disabled', 'disabled');
-                e.target.parentElement.classList.add('disabled','bg-primary');
+                if(e.target.classList.contains('bg-primary') == false && e.target.classList.contains('bg-danger') == false && e.target.classList.contains('bg-success') == false){
+                    e.target.classList.add( 'bg-primary');
+                    e.target.classList.add('puesto');
+                }else if(e.target.classList.contains('bg-primary')){
+                    e.target.classList.remove( 'bg-primary');
+                    e.target.classList.remove( 'puesto');
+                }else if(e.target.classList.contains('bg-danger')){
+                    e.target.classList.remove( 'bg-danger');
+                    e.target.classList.remove( 'puesto');
+                }else if(e.target.classList.contains('bg-success')){
+                    e.target.classList.remove( 'bg-success');
+                    e.target.classList.remove( 'puesto');
+                }
                 /* mensaje.text = e.target.parentElement.getAttribute('palabra').replace('2', ''); */
             }
             /* mensaje.rate = 0.8;
@@ -1134,7 +1206,7 @@
             let incorrectas = 0;
             [...document.getElementById('botonesbsilaba').children].map( e=>{
 
-                if(e.classList.contains('disabled'))
+                if(e.classList.contains('puesto'))
                 {
                     if(correctassilabasb.includes(e.getAttribute('palabra')))
                     {
@@ -1149,7 +1221,7 @@
                     }
                 }
 
-                if(!e.classList.contains('disabled') && correctassilabasb.includes(e.getAttribute('palabra')))
+                if(!e.classList.contains('puesto') && correctassilabasb.includes(e.getAttribute('palabra')))
                 {
                     faltantes++;
                 }
@@ -1160,32 +1232,89 @@
             if(faltantes == 0 && incorrectas == 0)
             {
                 Swal.fire({
-                    icon: 'success',
+                    iconHtml: "<img src='{{asset('img/ejercicios/cinco_estrellas.jpg')}}' width='300px' height='100px'>",
                     title: 'Excelente',
-                    text:'Felicidades, acertaste en todas',
-                    showConfirmButton: false,
-                    timer: 1000
+                    text:'¡FELICITACIONES, ERES EL MEJOR! NO DEJES DE SEGUIR ESFORZÁNDOTE',
+                    confirmButtonColor: '#3085d6',
+                    confirmButtonText: 'OK'
                 })
+                document.getElementById('calificarbotonesbsilaba').setAttribute('disabled', 'disabled');
             }
+            
             else if(incorrectas == 0 && faltantes>0)
             {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Por poco lo logras',
-                    text:'Te faltaron respuestas',
-                    showConfirmButton: false,
-                    timer: 1000
-                })
+
+                if(faltantes == 3){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/una_estrella.jpg')}}' width='300px' height='100px'>",
+                        title: 'Por poco lo logras',
+                        text:'¡TU PUEDES! NECESITAS PRACTICAR Y ESFORZARTE MÁS PARA MEJORAR',
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }else if(faltantes == 2){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/segundo_estrella_media.jpg')}}' width='300px' height='100px'>",
+                        title: 'Por poco lo logras',
+                        text:'¡NO TE RINDAS! SI SIGUES PRACTICANDO, LO CONSEGUIRÁS',
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }else if(faltantes == 1){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/tres_estrella_media.jpg')}}' width='300px' height='100px'>",
+                        title: 'Por poco lo logras',
+                        text:'¡MUY BUEN TRABAJO! SIGUE ASÍ, ESTÁS CERCA DE SER EL MEJOR EN ESTO',
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }
             }
             else
             {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Fallaste',
-                    text:'Debes entrenar un poco más',
-                    showConfirmButton: false,
-                    timer: 1000
-                })
+                var restante= (4-faltantes) - incorrectas;
+                
+                if(restante==1){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/una_estrella.jpg')}}' width='300px' height='100px'>",
+                        title: 'Fallaste',
+                        text:'¡TU PUEDES! NECESITAS PRACTICAR Y ESFORZARTE MÁS PARA MEJORAR' ,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }else if(restante==0){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/sin_estrella.jpg')}}' width='300px' height='100px'>",
+                        title: 'Fallaste',
+                        text: '¡TU PUEDES! NECESITAS PRACTICAR Y ESFORZARTE MÁS PARA MEJORAR',
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }else if(restante==2){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/segundo_estrella_media.jpg')}}' width='300px' height='100px'>",
+                        title: 'Fallaste',
+                        text:'¡NO TE RINDAS! SI SIGUES PRACTICANDO, LO CONSEGUIRÁS',
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }else if(restante==3){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/tres_estrella_media.jpg')}}' width='300px' height='100px'>",
+                        title: 'Fallaste',
+                        text:'¡SIGUE PRACTICANDO! PODRÁS LOGRARLO SI LO INTENTAS Y TE ESFUERZAS MAS.',
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }else{
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/sin_estrella.jpg')}}' width='300px' height='100px'>",
+                        title: 'Fallaste',
+                        text:'¡TU PUEDES! NECESITAS PRACTICAR Y ESFORZARTE MÁS PARA MEJORAR' ,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })    
+                }
             }
 
         });
@@ -1193,29 +1322,36 @@
 
         //inicio palabra
         let modelosb = ['barco', 'bebe', 'billete', 'bota', 'botón'];
-        let palabrasb = {"bebe": ['bado', 'bebo', 'bede', 'debo', 'dede', 'depe', 'gebe', 'gedo', 'gege', 'pepe', 'qepe', 'qipe'], "barco": ['barno', 'barco', 'darco', 'darno', 'dirco', 'doxco', 'durno', 'lacta', 'lacteo', 'qarcu', 'tacto', 'torso'], "billete": ['billete', 'dellete', 'dillete', 'filete', 'fillete', 'gerente', 'grillete', 'jitile', 'pilate', 'pileta', 'pillo', 'quinto', 'tolete'], "bota": ['bato', 'bela', 'bota', 'dabo', 'dado', 'dato', 'dedo', 'dota', 'jota', 'lola', 'luto', 'pato', 'qebo'], "botón": ['botón', 'botox', 'dalto', 'daton', 'doton', 'dulto', 'gloton', 'lector', 'lotan', 'portan', 'quasco', 'queso', 'tacto']};
+        let palabrasb = {"bebe": ['bado', 'bebo', 'bede', 'debo', 'dede', 'depe', 'gebe', 'gedo', 'gege', 'pepe', 'qepe', 'qipe'], "barco": ['barno', 'darco', 'darno', 'dirco', 'doxco', 'durno', 'lacta', 'lacteo', 'qarcu', 'tacto', 'torso'], "billete": ['dellete', 'dillete', 'filete', 'fillete', 'gerente', 'grillete', 'jitile', 'pilate', 'pileta', 'pillo', 'quinto', 'tolete'], "bota": ['bato', 'bela', 'dabo', 'dado', 'dato', 'dedo', 'dota', 'jota', 'lola', 'luto', 'pato', 'qebo'], "botón": ['botox', 'dalto', 'daton', 'doton', 'dulto', 'gloton', 'lector', 'lotan', 'portan', 'quasco', 'queso', 'tacto']};
 
         let modelo_elegidob = modelosb[Math.floor(Math.random()*5)];
 
         document.getElementById('modelob').setAttribute('src', `{{asset('img/ejercicios/ejercicio2/palabras/modelos/b/')}}/${modelo_elegidob}.jpg`)
-        document.getElementById('modelob_palabra').textContent = `${document.getElementById('modelob_palabra').textContent} ${modelo_elegidob}`;
+        document.getElementById('modelob').setAttribute('palabra', modelo_elegidod)
+        document.getElementById('modelob_palabra').textContent = `${document.getElementById('modelob_palabra').textContent} ${modelo_elegidod}`;
 
-        if(Math.floor(Math.random()*10) > 5)
+        document.getElementById('modelob').addEventListener('click', (e)=>{
+
+            let mensaje = new SpeechSynthesisUtterance();
+            mensaje.voice = speechSynthesis.getVoices()[0];
+            mensaje.rate = 0.8;
+            mensaje.text = e.target.getAttribute('palabra');
+            speechSynthesis.speak(mensaje);
+
+        })
+
+        for (let i = 0; i < 10; i++)
         {
-            palabrasb[modelo_elegidob].sort();
+            if(i<4){
+                palabrasb[modelo_elegidob].push(modelo_elegidob);
+            }else{            
+                palabrasb[modelo_elegidob].push(palabrasb[modelo_elegidob][Math.floor(Math.random()*9)]);
+            }
+
+            
         }
 
-        for (let i = 0; i < 6; i++)
-        {
-            if(Math.floor(Math.random()*10) > 5)
-            {
-                palabrasb[modelo_elegidob].unshift(palabrasb[modelo_elegidob][Math.floor(Math.random()*palabrasb[modelo_elegidob].length)]);
-            }
-            else
-            {
-                palabrasb[modelo_elegidob].push(palabrasb[modelo_elegidob][Math.floor(Math.random()*palabrasb[modelo_elegidob].length)]);
-            }
-        }
+        palabrasb[modelo_elegidob].sort(function() {return (Math.random()-0.5)});
 
         for(let i=0; i<palabrasb[modelo_elegidob].length; i++)
         {
@@ -1238,14 +1374,19 @@
 
             if(e.target.nodeName == 'A')
             {
-                e.target.setAttribute('disabled', 'disabled');
-                e.target.classList.add('disabled', 'bg-primary');
-                /* mensaje.text = e.target.getAttribute('palabra').replace('2', ''); */
-            }
-            else if(e.target.nodeName == 'IMG')
-            {
-                e.target.parentElement.setAttribute('disabled', 'disabled');
-                e.target.parentElement.classList.add('disabled','bg-primary');
+                if(e.target.classList.contains('bg-primary') == false && e.target.classList.contains('bg-danger') == false && e.target.classList.contains('bg-success') == false){
+                    e.target.classList.add( 'bg-primary');
+                    e.target.classList.add('puesto');
+                }else if(e.target.classList.contains('bg-primary')){
+                    e.target.classList.remove( 'bg-primary');
+                    e.target.classList.remove( 'puesto');
+                }else if(e.target.classList.contains('bg-danger')){
+                    e.target.classList.remove( 'bg-danger');
+                    e.target.classList.remove( 'puesto');
+                }else if(e.target.classList.contains('bg-success')){
+                    e.target.classList.remove( 'bg-success');
+                    e.target.classList.remove( 'puesto');
+                }
                 /* mensaje.text = e.target.parentElement.getAttribute('palabra').replace('2', ''); */
             }
             /* mensaje.rate = 0.8;
@@ -1258,12 +1399,12 @@
             let incorrectas = 0;
             [...document.getElementById('botonesbpalabra').children].map( e=>{
 
-                if(e.classList.contains('disabled'))
+                if(e.classList.contains('puesto'))
                 {
                     if(e.getAttribute('palabra') == modelo_elegidob)
                     {
                         e.classList.remove('bg-primary');
-                        e.classList.add('bg-success');
+                        e.classList.add('bg-success');    
                     }
                     else
                     {
@@ -1272,44 +1413,99 @@
                         incorrectas++;
                     }
                 }
-
-                if(!e.classList.contains('disabled') && e.getAttribute('palabra') == modelo_elegidob)
+                if(!e.classList.contains('puesto') && e.getAttribute('palabra') == modelo_elegidob)
                 {
                     faltantes++;
                 }
-                
 
             })
 
             if(faltantes == 0 && incorrectas == 0)
             {
                 Swal.fire({
-                    icon: 'success',
+                    iconHtml: "<img src='{{asset('img/ejercicios/cinco_estrellas.jpg')}}' width='300px' height='100px'>",
                     title: 'Excelente',
-                    text:'Felicidades, acertaste en todas',
-                    showConfirmButton: false,
-                    timer: 1000
+                    text:'¡FELICITACIONES, ERES EL MEJOR! NO DEJES DE SEGUIR ESFORZÁNDOTE',
+                    confirmButtonColor: '#3085d6',
+                    confirmButtonText: 'OK'
                 })
+                document.getElementById('calificarbotonesbpalabra').setAttribute('disabled', 'disabled');
             }
+            
             else if(incorrectas == 0 && faltantes>0)
             {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Por poco lo logras',
-                    text:'Te faltaron respuestas',
-                    showConfirmButton: false,
-                    timer: 1000
-                })
+
+                if(faltantes == 3){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/una_estrella.jpg')}}' width='300px' height='100px'>",
+                        title: 'Por poco lo logras',
+                        text:'¡TU PUEDES! NECESITAS PRACTICAR Y ESFORZARTE MÁS PARA MEJORAR',
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }else if(faltantes == 2){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/segundo_estrella_media.jpg')}}' width='300px' height='100px'>",
+                        title: 'Por poco lo logras',
+                        text:'¡NO TE RINDAS! SI SIGUES PRACTICANDO, LO CONSEGUIRÁS',
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }else if(faltantes == 1){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/tres_estrella_media.jpg')}}' width='300px' height='100px'>",
+                        title: 'Por poco lo logras',
+                        text:'¡MUY BUEN TRABAJO! SIGUE ASÍ, ESTÁS CERCA DE SER EL MEJOR EN ESTO',
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }
             }
             else
             {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Fallaste',
-                    text:'Debes entrenar un poco más',
-                    showConfirmButton: false,
-                    timer: 1000
-                })
+                var restante= (4-faltantes) - incorrectas;
+                
+                if(restante==1){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/una_estrella.jpg')}}' width='300px' height='100px'>",
+                        title: 'Fallaste',
+                        text:'¡TU PUEDES! NECESITAS PRACTICAR Y ESFORZARTE MÁS PARA MEJORAR' ,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }else if(restante==0){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/sin_estrella.jpg')}}' width='300px' height='100px'>",
+                        title: 'Fallaste',
+                        text: '¡TU PUEDES! NECESITAS PRACTICAR Y ESFORZARTE MÁS PARA MEJORAR',
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }else if(restante==2){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/segundo_estrella_media.jpg')}}' width='300px' height='100px'>",
+                        title: 'Fallaste',
+                        text:'¡NO TE RINDAS! SI SIGUES PRACTICANDO, LO CONSEGUIRÁS',
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }else if(restante==3){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/tres_estrella_media.jpg')}}' width='300px' height='100px'>",
+                        title: 'Fallaste',
+                        text:'¡SIGUE PRACTICANDO! PODRÁS LOGRARLO SI LO INTENTAS Y TE ESFUERZAS MAS.',
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }else{
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/sin_estrella.jpg')}}' width='300px' height='100px'>",
+                        title: 'Fallaste',
+                        text:'¡TU PUEDES! NECESITAS PRACTICAR Y ESFORZARTE MÁS PARA MEJORAR' ,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })    
+                }
             }
 
         })
@@ -1321,25 +1517,19 @@
     {{-- letra c --}}
     <script>
         //inicio letras
-        let letrasc = ['z', 'v', 'a', 'u', 't', 'p', 'q', 'r','c','o', 'g', 'h', 'a'];
+        let letrasc = ['z', 'v', 'a', 'u', 't', 'p', 'q', 'r','o', 'g', 'h', 'a'];
         let correctasc = ['c'];
-
-        if(Math.floor(Math.random()*10) > 5)
-        {
-            letrasc.sort();
-        }
 
         for (let i = 0; i < 10; i++)
         {
-            if(Math.floor(Math.random()*10) > 5)
-            {
-                letrasc.unshift(letrasc[Math.floor(Math.random()*10)]);
-            }
-            else
-            {
-                letrasc.push(letrasc[Math.floor(Math.random()*10)]);
-            }
+            if(i<4){
+                letrasc.push('b');
+            }else{            
+                    letrasc.push(letrasc[Math.floor(Math.random()*10)]);
+            }           
         }
+
+        letrasc.sort(function(a,b) {return (Math.random()-0.5)});
 
         for(let i=0; i<letrasc.length; i++)
         {
@@ -1358,20 +1548,21 @@
 
         document.getElementById('botonesc').addEventListener('click', (e)=>{
             
-            /* let mensaje = new SpeechSynthesisUtterance();
-            mensaje.voice = speechSynthesis.getVoices()[0];
-            */
             if(e.target.nodeName == 'A')
             {
-                e.target.setAttribute('disabled', 'disabled');
-                e.target.classList.add('disabled', 'bg-primary');
-                /* mensaje.text = e.target.getAttribute('palabra').replace('2', ''); */
-            }
-            else if(e.target.nodeName == 'IMG')
-            {
-                e.target.parentElement.setAttribute('disabled', 'disabled');
-                e.target.parentElement.classList.add('disabled','bg-primary');
-                /* mensaje.text = e.target.parentElement.getAttribute('palabra').replace('2', ''); */
+                if(e.target.classList.contains('bg-primary') == false && e.target.classList.contains('bg-danger') == false && e.target.classList.contains('bg-success') == false){
+                    e.target.classList.add( 'bg-primary');
+                    e.target.classList.add('puesto');
+                }else if(e.target.classList.contains('bg-primary')){
+                    e.target.classList.remove( 'bg-primary');
+                    e.target.classList.remove( 'puesto');
+                }else if(e.target.classList.contains('bg-danger')){
+                    e.target.classList.remove( 'bg-danger');
+                    e.target.classList.remove( 'puesto');
+                }else if(e.target.classList.contains('bg-success')){
+                    e.target.classList.remove( 'bg-success');
+                    e.target.classList.remove( 'puesto');
+                }
             }
             /* mensaje.rate = 0.8;
             speechSynthesis.speak(mensaje); */
@@ -1383,7 +1574,7 @@
             let incorrectas = 0;
             [...document.getElementById('botonesc').children].map( e=>{
 
-                if(e.classList.contains('disabled'))
+                if(e.classList.contains('puesto'))
                 {
                     if(correctasc.includes(e.getAttribute('palabra')))
                     {
@@ -1398,7 +1589,7 @@
                     }
                 }
 
-                if(!e.classList.contains('disabled') && correctasc.includes(e.getAttribute('palabra')))
+                if(!e.classList.contains('puesto') && correctasc.includes(e.getAttribute('palabra')))
                 {
                     faltantes++;
                 }
@@ -1409,57 +1600,111 @@
             if(faltantes == 0 && incorrectas == 0)
             {
                 Swal.fire({
-                    icon: 'success',
+                    iconHtml: "<img src='{{asset('img/ejercicios/cinco_estrellas.jpg')}}' width='300px' height='100px'>",
                     title: 'Excelente',
-                    text:'Felicidades, acertaste en todas',
-                    showConfirmButton: false,
-                    timer: 1000
+                    text:'¡FELICITACIONES, ERES EL MEJOR! NO DEJES DE SEGUIR ESFORZÁNDOTE',
+                    confirmButtonColor: '#3085d6',
+                    confirmButtonText: 'OK'
                 })
+                document.getElementById('calificarbotonesc').setAttribute('disabled', 'disabled');
             }
+            
             else if(incorrectas == 0 && faltantes>0)
             {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Por poco lo logras',
-                    text:'Te faltaron respuestas',
-                    showConfirmButton: false,
-                    timer: 1000
-                })
+
+                if(faltantes == 3){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/una_estrella.jpg')}}' width='300px' height='100px'>",
+                        title: 'Por poco lo logras',
+                        text:'¡TU PUEDES! NECESITAS PRACTICAR Y ESFORZARTE MÁS PARA MEJORAR',
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }else if(faltantes == 2){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/segundo_estrella_media.jpg')}}' width='300px' height='100px'>",
+                        title: 'Por poco lo logras',
+                        text:'¡NO TE RINDAS! SI SIGUES PRACTICANDO, LO CONSEGUIRÁS',
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }else if(faltantes == 1){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/tres_estrella_media.jpg')}}' width='300px' height='100px'>",
+                        title: 'Por poco lo logras',
+                        text:'¡MUY BUEN TRABAJO! SIGUE ASÍ, ESTÁS CERCA DE SER EL MEJOR EN ESTO',
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }
             }
             else
             {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Fallaste',
-                    text:'Debes entrenar un poco más',
-                    showConfirmButton: false,
-                    timer: 1000
-                })
+                var restante= (4-faltantes) - incorrectas;
+                
+                if(restante==1){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/una_estrella.jpg')}}' width='300px' height='100px'>",
+                        title: 'Fallaste',
+                        text:'¡TU PUEDES! NECESITAS PRACTICAR Y ESFORZARTE MÁS PARA MEJORAR' ,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }else if(restante==0){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/sin_estrella.jpg')}}' width='300px' height='100px'>",
+                        title: 'Fallaste',
+                        text: '¡TU PUEDES! NECESITAS PRACTICAR Y ESFORZARTE MÁS PARA MEJORAR',
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }else if(restante==2){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/segundo_estrella_media.jpg')}}' width='300px' height='100px'>",
+                        title: 'Fallaste',
+                        text:'¡NO TE RINDAS! SI SIGUES PRACTICANDO, LO CONSEGUIRÁS',
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }else if(restante==3){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/tres_estrella_media.jpg')}}' width='300px' height='100px'>",
+                        title: 'Fallaste',
+                        text:'¡SIGUE PRACTICANDO! PODRÁS LOGRARLO SI LO INTENTAS Y TE ESFUERZAS MAS.',
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }else{
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/sin_estrella.jpg')}}' width='300px' height='100px'>",
+                        title: 'Fallaste',
+                        text:'¡TU PUEDES! NECESITAS PRACTICAR Y ESFORZARTE MÁS PARA MEJORAR' ,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })    
+                }
             }
 
         })
         //fin letras
 
         //inicio silabas
-        let silabasc = ['be', 'ca', 'ce', 'ci', 'oc', 'co', 'ac', 'uc', 'cu', 'da', 'mu', 'ne', 'ni', 're', 'sa', 'se', 'su', 'te', 'zo'];
+        let silabasc = ['be', 'oc', 'ac', 'uc', 'da', 'mu', 'ne', 'ni', 're', 'sa', 'se', 'su', 'te', 'zo'];
         let correctassilabasc = ['ca', 'ce', 'ci', 'co', 'cu'];
 
-        if(Math.floor(Math.random()*10) > 5)
+        for (let i = 0; i < 10; i++)
         {
-            silabasc.sort();
-        }
-
-        for (let i = 0; i < 6; i++)
-        {
-            if(Math.floor(Math.random()*10) > 5)
+            if(i < 4)
             {
-                silabasc.unshift(silabasc[Math.floor(Math.random()*10)]);
+                silabasc.push(correctassilabasc[Math.floor(Math.random()*5)]);
             }
             else
             {
                 silabasc.push(silabasc[Math.floor(Math.random()*10)]);
-            }
+            }   
         }
+        
+        silabasc.sort(function() {return (Math.random()-0.5)});
 
         for(let i=0; i<silabasc.length; i++)
         {
@@ -1482,14 +1727,19 @@
 
             if(e.target.nodeName == 'A')
             {
-                e.target.setAttribute('disabled', 'disabled');
-                e.target.classList.add('disabled', 'bg-primary');
-                /* mensaje.text = e.target.getAttribute('palabra').replace('2', ''); */
-            }
-            else if(e.target.nodeName == 'IMG')
-            {
-                e.target.parentElement.setAttribute('disabled', 'disabled');
-                e.target.parentElement.classList.add('disabled','bg-primary');
+                if(e.target.classList.contains('bg-primary') == false && e.target.classList.contains('bg-danger') == false && e.target.classList.contains('bg-success') == false){
+                    e.target.classList.add( 'bg-primary');
+                    e.target.classList.add('puesto');
+                }else if(e.target.classList.contains('bg-primary')){
+                    e.target.classList.remove( 'bg-primary');
+                    e.target.classList.remove( 'puesto');
+                }else if(e.target.classList.contains('bg-danger')){
+                    e.target.classList.remove( 'bg-danger');
+                    e.target.classList.remove( 'puesto');
+                }else if(e.target.classList.contains('bg-success')){
+                    e.target.classList.remove( 'bg-success');
+                    e.target.classList.remove( 'puesto');
+                }
                 /* mensaje.text = e.target.parentElement.getAttribute('palabra').replace('2', ''); */
             }
             /* mensaje.rate = 0.8;
@@ -1502,7 +1752,7 @@
             let incorrectas = 0;
             [...document.getElementById('botonescsilaba').children].map( e=>{
 
-                if(e.classList.contains('disabled'))
+                if(e.classList.contains('puesto'))
                 {
                     if(correctassilabasc.includes(e.getAttribute('palabra')))
                     {
@@ -1517,7 +1767,7 @@
                     }
                 }
 
-                if(!e.classList.contains('disabled') && correctassilabasc.includes(e.getAttribute('palabra')))
+                if(!e.classList.contains('puesto') && correctassilabasc.includes(e.getAttribute('palabra')))
                 {
                     faltantes++;
                 }
@@ -1528,32 +1778,89 @@
             if(faltantes == 0 && incorrectas == 0)
             {
                 Swal.fire({
-                    icon: 'success',
+                    iconHtml: "<img src='{{asset('img/ejercicios/cinco_estrellas.jpg')}}' width='300px' height='100px'>",
                     title: 'Excelente',
-                    text:'Felicidades, acertaste en todas',
-                    showConfirmButton: false,
-                    timer: 1000
+                    text:'¡FELICITACIONES, ERES EL MEJOR! NO DEJES DE SEGUIR ESFORZÁNDOTE',
+                    confirmButtonColor: '#3085d6',
+                    confirmButtonText: 'OK'
                 })
+                document.getElementById('calificarbotonescsilaba').setAttribute('disabled', 'disabled');
             }
+            
             else if(incorrectas == 0 && faltantes>0)
             {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Por poco lo logras',
-                    text:'Te faltaron respuestas',
-                    showConfirmButton: false,
-                    timer: 1000
-                })
+
+                if(faltantes == 3){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/una_estrella.jpg')}}' width='300px' height='100px'>",
+                        title: 'Por poco lo logras',
+                        text:'¡TU PUEDES! NECESITAS PRACTICAR Y ESFORZARTE MÁS PARA MEJORAR',
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }else if(faltantes == 2){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/segundo_estrella_media.jpg')}}' width='300px' height='100px'>",
+                        title: 'Por poco lo logras',
+                        text:'¡NO TE RINDAS! SI SIGUES PRACTICANDO, LO CONSEGUIRÁS',
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }else if(faltantes == 1){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/tres_estrella_media.jpg')}}' width='300px' height='100px'>",
+                        title: 'Por poco lo logras',
+                        text:'¡MUY BUEN TRABAJO! SIGUE ASÍ, ESTÁS CERCA DE SER EL MEJOR EN ESTO',
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }
             }
             else
             {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Fallaste',
-                    text:'Debes entrenar un poco más',
-                    showConfirmButton: false,
-                    timer: 1000
-                })
+                var restante= (4-faltantes) - incorrectas;
+                
+                if(restante==1){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/una_estrella.jpg')}}' width='300px' height='100px'>",
+                        title: 'Fallaste',
+                        text:'¡TU PUEDES! NECESITAS PRACTICAR Y ESFORZARTE MÁS PARA MEJORAR' ,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }else if(restante==0){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/sin_estrella.jpg')}}' width='300px' height='100px'>",
+                        title: 'Fallaste',
+                        text: '¡TU PUEDES! NECESITAS PRACTICAR Y ESFORZARTE MÁS PARA MEJORAR',
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }else if(restante==2){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/segundo_estrella_media.jpg')}}' width='300px' height='100px'>",
+                        title: 'Fallaste',
+                        text:'¡NO TE RINDAS! SI SIGUES PRACTICANDO, LO CONSEGUIRÁS',
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }else if(restante==3){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/tres_estrella_media.jpg')}}' width='300px' height='100px'>",
+                        title: 'Fallaste',
+                        text:'¡SIGUE PRACTICANDO! PODRÁS LOGRARLO SI LO INTENTAS Y TE ESFUERZAS MAS.',
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }else{
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/sin_estrella.jpg')}}' width='300px' height='100px'>",
+                        title: 'Fallaste',
+                        text:'¡TU PUEDES! NECESITAS PRACTICAR Y ESFORZARTE MÁS PARA MEJORAR' ,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })    
+                }
             }
 
         })
@@ -1562,7 +1869,7 @@
 
         //inicio palabra c
         let modelosc = ['cama', 'casa', 'circo', 'coco', 'conejo'];
-        let palabrasc = {"cama": ['cama', 'amac', 'cpor', 'emac', 'camo', 'cana', 'anac', 'onac', 'como', 'omoc', 'onca', 'onoc'], "casa": ['casa', 'asac', 'saca', 'caso', 'casoinvertida', 'caza', 'cazainvertida', 'cora', 'coro', 'cosa', 'asoc', 'ocos'], "circo": ['circa', 'acric', 'circo', 'ocric', 'ocric', 'ocric', 'acirc', 'anric', 'onric', 'cirva', 'ovric', 'acryc', 'sirco'], "coco": ['acoc', 'caco', 'acoc', 'caro', 'orac', 'coca', 'coco', 'ococ', 'coc', 'cono', 'coro', 'oroc'], "conejo": ['cameja', 'camejo', 'camelo', 'ojenca', 'canela', 'alenca', 'enrac', 'ojemoc', 'conejo', 'ojenoc', 'conej', 'corneja', 'cortea']}
+        let palabrasc = {"cama": ['amac', 'cpor', 'emac', 'camo', 'cana', 'anac', 'onac', 'como', 'omoc', 'onca', 'onoc'], "casa": ['asac', 'saca', 'caso', 'casoinvertida', 'caza', 'cazainvertida', 'cora', 'coro', 'cosa', 'asoc', 'ocos'], "circo": ['circa', 'acric', 'ocric', 'ocric', 'ocric', 'acirc', 'anric', 'onric', 'cirva', 'ovric', 'acryc', 'sirco'], "coco": ['acoc', 'caco', 'acoc', 'caro', 'orac', 'coca','ococ', 'coc', 'cono', 'coro', 'oroc'], "conejo": ['cameja', 'camejo', 'camelo', 'ojenca', 'canela', 'alenca', 'enrac', 'ojemoc','ojenoc', 'conej', 'corneja', 'cortea']}
 
         let modelo_elegidoc = modelosc[Math.floor(Math.random()*5)];
 
@@ -1580,22 +1887,18 @@
 
         })
 
-        if(Math.floor(Math.random()*10) > 5)
+        for (let i = 0; i < 10; i++)
         {
-            palabrasc[modelo_elegidoc].sort();
+            if(i<4){
+                palabrasc[modelo_elegidoc].push(modelo_elegidoc);
+            }else{            
+                palabrasc[modelo_elegidoc].push(palabrasc[modelo_elegidoc][Math.floor(Math.random()*9)]);
+            }
+
+            
         }
 
-        for (let i = 0; i < 6; i++)
-        {
-            if(Math.floor(Math.random()*10) > 5)
-            {
-                palabrasc[modelo_elegidoc].unshift(palabrasc[modelo_elegidoc][Math.floor(Math.random()*palabrasc[modelo_elegidoc].length)]);
-            }
-            else
-            {
-                palabrasc[modelo_elegidoc].push(palabrasc[modelo_elegidoc][Math.floor(Math.random()*palabrasc[modelo_elegidoc].length)]);
-            }
-        }
+        palabrasc[modelo_elegidoc].sort(function() {return (Math.random()-0.5)});
 
         for(let i=0; i<palabrasc[modelo_elegidoc].length; i++)
         {
@@ -1618,14 +1921,19 @@
 
             if(e.target.nodeName == 'A')
             {
-                e.target.setAttribute('disabled', 'disabled');
-                e.target.classList.add('disabled', 'bg-primary');
-                /* mensaje.text = e.target.getAttribute('palabra').replace('2', ''); */
-            }
-            else if(e.target.nodeName == 'IMG')
-            {
-                e.target.parentElement.setAttribute('disabled', 'disabled');
-                e.target.parentElement.classList.add('disabled','bg-primary');
+                if(e.target.classList.contains('bg-primary') == false && e.target.classList.contains('bg-danger') == false && e.target.classList.contains('bg-success') == false){
+                    e.target.classList.add( 'bg-primary');
+                    e.target.classList.add('puesto');
+                }else if(e.target.classList.contains('bg-primary')){
+                    e.target.classList.remove( 'bg-primary');
+                    e.target.classList.remove( 'puesto');
+                }else if(e.target.classList.contains('bg-danger')){
+                    e.target.classList.remove( 'bg-danger');
+                    e.target.classList.remove( 'puesto');
+                }else if(e.target.classList.contains('bg-success')){
+                    e.target.classList.remove( 'bg-success');
+                    e.target.classList.remove( 'puesto');
+                }
                 /* mensaje.text = e.target.parentElement.getAttribute('palabra').replace('2', ''); */
             }
             /* mensaje.rate = 0.8;
@@ -1638,7 +1946,7 @@
             let incorrectas = 0;
             [...document.getElementById('botonescpalabra').children].map( e=>{
 
-                if(e.classList.contains('disabled'))
+                if(e.classList.contains('puesto'))
                 {
                     if(e.getAttribute('palabra') == modelo_elegidoc)
                     {
@@ -1653,7 +1961,7 @@
                     }
                 }
 
-                if(!e.classList.contains('disabled') && e.getAttribute('palabra') == modelo_elegidoc)
+                if(!e.classList.contains('puesto') && e.getAttribute('palabra') == modelo_elegidoc)
                 {
                     faltantes++;
                 }
@@ -1664,43 +1972,101 @@
             if(faltantes == 0 && incorrectas == 0)
             {
                 Swal.fire({
-                    icon: 'success',
+                    iconHtml: "<img src='{{asset('img/ejercicios/cinco_estrellas.jpg')}}' width='300px' height='100px'>",
                     title: 'Excelente',
-                    text:'Felicidades, acertaste en todas',
-                    showConfirmButton: false,
-                    timer: 1000
+                    text:'¡FELICITACIONES, ERES EL MEJOR! NO DEJES DE SEGUIR ESFORZÁNDOTE',
+                    confirmButtonColor: '#3085d6',
+                    confirmButtonText: 'OK'
                 })
+                document.getElementById('calificarbotonescpalabra').setAttribute('disabled', 'disabled');
             }
+            
             else if(incorrectas == 0 && faltantes>0)
             {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Por poco lo logras',
-                    text:'Te faltaron respuestas',
-                    showConfirmButton: false,
-                    timer: 1000
-                })
+
+                if(faltantes == 3){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/una_estrella.jpg')}}' width='300px' height='100px'>",
+                        title: 'Por poco lo logras',
+                        text:'¡TU PUEDES! NECESITAS PRACTICAR Y ESFORZARTE MÁS PARA MEJORAR',
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }else if(faltantes == 2){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/segundo_estrella_media.jpg')}}' width='300px' height='100px'>",
+                        title: 'Por poco lo logras',
+                        text:'¡NO TE RINDAS! SI SIGUES PRACTICANDO, LO CONSEGUIRÁS',
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }else if(faltantes == 1){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/tres_estrella_media.jpg')}}' width='300px' height='100px'>",
+                        title: 'Por poco lo logras',
+                        text:'¡MUY BUEN TRABAJO! SIGUE ASÍ, ESTÁS CERCA DE SER EL MEJOR EN ESTO',
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }
             }
             else
             {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Fallaste',
-                    text:'Debes entrenar un poco más',
-                    showConfirmButton: false,
-                    timer: 1000
-                })
+                var restante= (4-faltantes) - incorrectas;
+                
+                if(restante==1){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/una_estrella.jpg')}}' width='300px' height='100px'>",
+                        title: 'Fallaste',
+                        text:'¡TU PUEDES! NECESITAS PRACTICAR Y ESFORZARTE MÁS PARA MEJORAR' ,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }else if(restante==0){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/sin_estrella.jpg')}}' width='300px' height='100px'>",
+                        title: 'Fallaste',
+                        text: '¡TU PUEDES! NECESITAS PRACTICAR Y ESFORZARTE MÁS PARA MEJORAR',
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }else if(restante==2){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/segundo_estrella_media.jpg')}}' width='300px' height='100px'>",
+                        title: 'Fallaste',
+                        text:'¡NO TE RINDAS! SI SIGUES PRACTICANDO, LO CONSEGUIRÁS',
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }else if(restante==3){
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/tres_estrella_media.jpg')}}' width='300px' height='100px'>",
+                        title: 'Fallaste',
+                        text:'¡SIGUE PRACTICANDO! PODRÁS LOGRARLO SI LO INTENTAS Y TE ESFUERZAS MAS.',
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                }else{
+                    Swal.fire({
+                        iconHtml: "<img src='{{asset('img/ejercicios/sin_estrella.jpg')}}' width='300px' height='100px'>",
+                        title: 'Fallaste',
+                        text:'¡TU PUEDES! NECESITAS PRACTICAR Y ESFORZARTE MÁS PARA MEJORAR' ,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })    
+                }
             }
 
         })
 
         //fin palabra
     </script>
-    {{-- fin letra c --}}
+
 
     {{-- letra p --}}
     <script>
         //inicio letras
+
         let letrasp = ['z', 'r', 'd', 'u', 'j', 'l', 'm', 'p','q', 's', 'g', 'y', 'b'];
         let correctasp = ['p'];
 
@@ -1738,23 +2104,23 @@
 
         document.getElementById('botonesp').addEventListener('click', (e)=>{
             
-            /* let mensaje = new SpeechSynthesisUtterance();
-            mensaje.voice = speechSynthesis.getVoices()[0];
-            */
             if(e.target.nodeName == 'A')
             {
-                e.target.setAttribute('disabled', 'disabled');
-                e.target.classList.add('disabled', 'bg-primary');
-                /* mensaje.text = e.target.getAttribute('palabra').replace('2', ''); */
-            }
-            else if(e.target.nodeName == 'IMG')
-            {
-                e.target.parentElement.setAttribute('disabled', 'disabled');
-                e.target.parentElement.classList.add('disabled','bg-primary');
-                /* mensaje.text = e.target.parentElement.getAttribute('palabra').replace('2', ''); */
-            }
-            /* mensaje.rate = 0.8;
-            speechSynthesis.speak(mensaje); */
+                if(e.target.classList.contains('bg-primary') == false && e.target.classList.contains('bg-danger') == false && e.target.classList.contains('bg-success') == false){
+                    e.target.classList.add( 'bg-primary');
+                    e.target.classList.add('puesto');
+                }else if(e.target.classList.contains('bg-primary')){
+                    e.target.classList.remove( 'bg-primary');
+                    e.target.classList.remove( 'puesto');
+                }else if(e.target.classList.contains('bg-danger')){
+                    e.target.classList.remove( 'bg-danger');
+                    e.target.classList.remove( 'puesto');
+                }else if(e.target.classList.contains('bg-success')){
+                    e.target.classList.remove( 'bg-success');
+                    e.target.classList.remove( 'puesto');
+                }
+            }   
+
 
         })
 
@@ -1763,7 +2129,7 @@
             let incorrectas = 0;
             [...document.getElementById('botonesp').children].map( e=>{
 
-                if(e.classList.contains('disabled'))
+                if(e.classList.contains('puesto'))
                 {
                     if(correctasp.includes(e.getAttribute('palabra')))
                     {
@@ -1778,7 +2144,7 @@
                     }
                 }
 
-                if(!e.classList.contains('disabled') && correctasp.includes(e.getAttribute('palabra')))
+                if(!e.classList.contains('puesto') && correctasp.includes(e.getAttribute('palabra')))
                 {
                     faltantes++;
                 }
@@ -1862,14 +2228,19 @@
 
             if(e.target.nodeName == 'A')
             {
-                e.target.setAttribute('disabled', 'disabled');
-                e.target.classList.add('disabled', 'bg-primary');
-                /* mensaje.text = e.target.getAttribute('palabra').replace('2', ''); */
-            }
-            else if(e.target.nodeName == 'IMG')
-            {
-                e.target.parentElement.setAttribute('disabled', 'disabled');
-                e.target.parentElement.classList.add('disabled','bg-primary');
+                if(e.target.classList.contains('bg-primary') == false && e.target.classList.contains('bg-danger') == false && e.target.classList.contains('bg-success') == false){
+                    e.target.classList.add( 'bg-primary');
+                    e.target.classList.add('puesto');
+                }else if(e.target.classList.contains('bg-primary')){
+                    e.target.classList.remove( 'bg-primary');
+                    e.target.classList.remove( 'puesto');
+                }else if(e.target.classList.contains('bg-danger')){
+                    e.target.classList.remove( 'bg-danger');
+                    e.target.classList.remove( 'puesto');
+                }else if(e.target.classList.contains('bg-success')){
+                    e.target.classList.remove( 'bg-success');
+                    e.target.classList.remove( 'puesto');
+                }
                 /* mensaje.text = e.target.parentElement.getAttribute('palabra').replace('2', ''); */
             }
             /* mensaje.rate = 0.8;
@@ -1882,7 +2253,7 @@
             let incorrectas = 0;
             [...document.getElementById('botonespsilaba').children].map( e=>{
 
-                if(e.classList.contains('disabled'))
+                if(e.classList.contains('puesto'))
                 {
                     if(correctassilabasp.includes(e.getAttribute('palabra')))
                     {
@@ -1897,7 +2268,7 @@
                     }
                 }
 
-                if(!e.classList.contains('disabled') && correctassilabasp.includes(e.getAttribute('palabra')))
+                if(!e.classList.contains('puesto') && correctassilabasp.includes(e.getAttribute('palabra')))
                 {
                     faltantes++;
                 }
@@ -1998,18 +2369,21 @@
 
             if(e.target.nodeName == 'A')
             {
-                e.target.setAttribute('disabled', 'disabled');
-                e.target.classList.add('disabled', 'bg-primary');
-                /* mensaje.text = e.target.getAttribute('palabra').replace('2', ''); */
-            }
-            else if(e.target.nodeName == 'IMG')
-            {
-                e.target.parentElement.setAttribute('disabled', 'disabled');
-                e.target.parentElement.classList.add('disabled','bg-primary');
+                if(e.target.classList.contains('bg-primary') == false && e.target.classList.contains('bg-danger') == false && e.target.classList.contains('bg-success') == false){
+                    e.target.classList.add( 'bg-primary');
+                    e.target.classList.add('puesto');
+                }else if(e.target.classList.contains('bg-primary')){
+                    e.target.classList.remove( 'bg-primary');
+                    e.target.classList.remove( 'puesto');
+                }else if(e.target.classList.contains('bg-danger')){
+                    e.target.classList.remove( 'bg-danger');
+                    e.target.classList.remove( 'puesto');
+                }else if(e.target.classList.contains('bg-success')){
+                    e.target.classList.remove( 'bg-success');
+                    e.target.classList.remove( 'puesto');
+                }
                 /* mensaje.text = e.target.parentElement.getAttribute('palabra').replace('2', ''); */
             }
-            /* mensaje.rate = 0.8;
-            speechSynthesis.speak(mensaje); */
 
         });
 
@@ -2018,7 +2392,7 @@
             let incorrectas = 0;
             [...document.getElementById('botonesppalabra').children].map( e=>{
 
-                if(e.classList.contains('disabled'))
+                if(e.classList.contains('puesto'))
                 {
                     if(e.getAttribute('palabra') == modelo_elegidop)
                     {
@@ -2033,7 +2407,7 @@
                     }
                 }
 
-                if(!e.classList.contains('disabled') && e.getAttribute('palabra') == modelo_elegidop)
+                if(!e.classList.contains('puesto') && e.getAttribute('palabra') == modelo_elegidop)
                 {
                     faltantes++;
                 }
@@ -2081,6 +2455,7 @@
     {{-- letra q --}}
     <script>
         //inicio letras
+
         let letrasq = ['z', 'b', 'y', 'g', 's', 'l', 'm', 'p','q','r', 'j', 'u', 'd', 'b'];
         let correctasq = ['q'];
 
@@ -2118,23 +2493,22 @@
 
         document.getElementById('botonesq').addEventListener('click', (e)=>{
             
-            /* let mensaje = new SpeechSynthesisUtterance();
-            mensaje.voice = speechSynthesis.getVoices()[0];
-            */
             if(e.target.nodeName == 'A')
             {
-                e.target.setAttribute('disabled', 'disabled');
-                e.target.classList.add('disabled', 'bg-primary');
-                /* mensaje.text = e.target.getAttribute('palabra').replace('2', ''); */
+                if(e.target.classList.contains('bg-primary') == false && e.target.classList.contains('bg-danger') == false && e.target.classList.contains('bg-success') == false){
+                    e.target.classList.add( 'bg-primary');
+                    e.target.classList.add('puesto');
+                }else if(e.target.classList.contains('bg-primary')){
+                    e.target.classList.remove( 'bg-primary');
+                    e.target.classList.remove( 'puesto');
+                }else if(e.target.classList.contains('bg-danger')){
+                    e.target.classList.remove( 'bg-danger');
+                    e.target.classList.remove( 'puesto');
+                }else if(e.target.classList.contains('bg-success')){
+                    e.target.classList.remove( 'bg-success');
+                    e.target.classList.remove( 'puesto');
+                }
             }
-            else if(e.target.nodeName == 'IMG')
-            {
-                e.target.parentElement.setAttribute('disabled', 'disabled');
-                e.target.parentElement.classList.add('disabled','bg-primary');
-                /* mensaje.text = e.target.parentElement.getAttribute('palabra').replace('2', ''); */
-            }
-            /* mensaje.rate = 0.8;
-            speechSynthesis.speak(mensaje); */
 
         })
 
@@ -2242,14 +2616,19 @@
 
             if(e.target.nodeName == 'A')
             {
-                e.target.setAttribute('disabled', 'disabled');
-                e.target.classList.add('disabled', 'bg-primary');
-                /* mensaje.text = e.target.getAttribute('palabra').replace('2', ''); */
-            }
-            else if(e.target.nodeName == 'IMG')
-            {
-                e.target.parentElement.setAttribute('disabled', 'disabled');
-                e.target.parentElement.classList.add('disabled','bg-primary');
+                if(e.target.classList.contains('bg-primary') == false && e.target.classList.contains('bg-danger') == false && e.target.classList.contains('bg-success') == false){
+                    e.target.classList.add( 'bg-primary');
+                    e.target.classList.add('puesto');
+                }else if(e.target.classList.contains('bg-primary')){
+                    e.target.classList.remove( 'bg-primary');
+                    e.target.classList.remove( 'puesto');
+                }else if(e.target.classList.contains('bg-danger')){
+                    e.target.classList.remove( 'bg-danger');
+                    e.target.classList.remove( 'puesto');
+                }else if(e.target.classList.contains('bg-success')){
+                    e.target.classList.remove( 'bg-success');
+                    e.target.classList.remove( 'puesto');
+                }
                 /* mensaje.text = e.target.parentElement.getAttribute('palabra').replace('2', ''); */
             }
             /* mensaje.rate = 0.8;
@@ -2378,14 +2757,19 @@
 
             if(e.target.nodeName == 'A')
             {
-                e.target.setAttribute('disabled', 'disabled');
-                e.target.classList.add('disabled', 'bg-primary');
-                /* mensaje.text = e.target.getAttribute('palabra').replace('2', ''); */
-            }
-            else if(e.target.nodeName == 'IMG')
-            {
-                e.target.parentElement.setAttribute('disabled', 'disabled');
-                e.target.parentElement.classList.add('disabled','bg-primary');
+                if(e.target.classList.contains('bg-primary') == false && e.target.classList.contains('bg-danger') == false && e.target.classList.contains('bg-success') == false){
+                    e.target.classList.add( 'bg-primary');
+                    e.target.classList.add('puesto');
+                }else if(e.target.classList.contains('bg-primary')){
+                    e.target.classList.remove( 'bg-primary');
+                    e.target.classList.remove( 'puesto');
+                }else if(e.target.classList.contains('bg-danger')){
+                    e.target.classList.remove( 'bg-danger');
+                    e.target.classList.remove( 'puesto');
+                }else if(e.target.classList.contains('bg-success')){
+                    e.target.classList.remove( 'bg-success');
+                    e.target.classList.remove( 'puesto');
+                }
                 /* mensaje.text = e.target.parentElement.getAttribute('palabra').replace('2', ''); */
             }
             /* mensaje.rate = 0.8;
@@ -2498,24 +2882,22 @@
 
         document.getElementById('botonesf').addEventListener('click', (e)=>{
             
-            /* let mensaje = new SpeechSynthesisUtterance();
-            mensaje.voice = speechSynthesis.getVoices()[0];
-            */
             if(e.target.nodeName == 'A')
             {
-                e.target.setAttribute('disabled', 'disabled');
-                e.target.classList.add('disabled', 'bg-primary');
-                /* mensaje.text = e.target.getAttribute('palabra').replace('2', ''); */
+                if(e.target.classList.contains('bg-primary') == false && e.target.classList.contains('bg-danger') == false && e.target.classList.contains('bg-success') == false){
+                    e.target.classList.add( 'bg-primary');
+                    e.target.classList.add('puesto');
+                }else if(e.target.classList.contains('bg-primary')){
+                    e.target.classList.remove( 'bg-primary');
+                    e.target.classList.remove( 'puesto');
+                }else if(e.target.classList.contains('bg-danger')){
+                    e.target.classList.remove( 'bg-danger');
+                    e.target.classList.remove( 'puesto');
+                }else if(e.target.classList.contains('bg-success')){
+                    e.target.classList.remove( 'bg-success');
+                    e.target.classList.remove( 'puesto');
+                }
             }
-            else if(e.target.nodeName == 'IMG')
-            {
-                e.target.parentElement.setAttribute('disabled', 'disabled');
-                e.target.parentElement.classList.add('disabled','bg-primary');
-                /* mensaje.text = e.target.parentElement.getAttribute('palabra').replace('2', ''); */
-            }
-            /* mensaje.rate = 0.8;
-            speechSynthesis.speak(mensaje); */
-
         })
 
         document.getElementById('calificarbotonesf').addEventListener('click', ()=>{
@@ -2622,14 +3004,19 @@
 
             if(e.target.nodeName == 'A')
             {
-                e.target.setAttribute('disabled', 'disabled');
-                e.target.classList.add('disabled', 'bg-primary');
-                /* mensaje.text = e.target.getAttribute('palabra').replace('2', ''); */
-            }
-            else if(e.target.nodeName == 'IMG')
-            {
-                e.target.parentElement.setAttribute('disabled', 'disabled');
-                e.target.parentElement.classList.add('disabled','bg-primary');
+                if(e.target.classList.contains('bg-primary') == false && e.target.classList.contains('bg-danger') == false && e.target.classList.contains('bg-success') == false){
+                    e.target.classList.add( 'bg-primary');
+                    e.target.classList.add('puesto');
+                }else if(e.target.classList.contains('bg-primary')){
+                    e.target.classList.remove( 'bg-primary');
+                    e.target.classList.remove( 'puesto');
+                }else if(e.target.classList.contains('bg-danger')){
+                    e.target.classList.remove( 'bg-danger');
+                    e.target.classList.remove( 'puesto');
+                }else if(e.target.classList.contains('bg-success')){
+                    e.target.classList.remove( 'bg-success');
+                    e.target.classList.remove( 'puesto');
+                }
                 /* mensaje.text = e.target.parentElement.getAttribute('palabra').replace('2', ''); */
             }
             /* mensaje.rate = 0.8;
@@ -2758,14 +3145,19 @@
 
             if(e.target.nodeName == 'A')
             {
-                e.target.setAttribute('disabled', 'disabled');
-                e.target.classList.add('disabled', 'bg-primary');
-                /* mensaje.text = e.target.getAttribute('palabra').replace('2', ''); */
-            }
-            else if(e.target.nodeName == 'IMG')
-            {
-                e.target.parentElement.setAttribute('disabled', 'disabled');
-                e.target.parentElement.classList.add('disabled','bg-primary');
+                if(e.target.classList.contains('bg-primary') == false && e.target.classList.contains('bg-danger') == false && e.target.classList.contains('bg-success') == false){
+                    e.target.classList.add( 'bg-primary');
+                    e.target.classList.add('puesto');
+                }else if(e.target.classList.contains('bg-primary')){
+                    e.target.classList.remove( 'bg-primary');
+                    e.target.classList.remove( 'puesto');
+                }else if(e.target.classList.contains('bg-danger')){
+                    e.target.classList.remove( 'bg-danger');
+                    e.target.classList.remove( 'puesto');
+                }else if(e.target.classList.contains('bg-success')){
+                    e.target.classList.remove( 'bg-success');
+                    e.target.classList.remove( 'puesto');
+                }
                 /* mensaje.text = e.target.parentElement.getAttribute('palabra').replace('2', ''); */
             }
             /* mensaje.rate = 0.8;
@@ -2878,23 +3270,22 @@
 
         document.getElementById('botonest').addEventListener('click', (e)=>{
             
-            /* let mensaje = new SpeechSynthesisUtterance();
-            mensaje.voice = speechSynthesis.getVoices()[0];
-            */
             if(e.target.nodeName == 'A')
             {
-                e.target.setAttribute('disabled', 'disabled');
-                e.target.classList.add('disabled', 'bg-primary');
-                /* mensaje.text = e.target.getAttribute('palabra').replace('2', ''); */
+                if(e.target.classList.contains('bg-primary') == false && e.target.classList.contains('bg-danger') == false && e.target.classList.contains('bg-success') == false){
+                    e.target.classList.add( 'bg-primary');
+                    e.target.classList.add('puesto');
+                }else if(e.target.classList.contains('bg-primary')){
+                    e.target.classList.remove( 'bg-primary');
+                    e.target.classList.remove( 'puesto');
+                }else if(e.target.classList.contains('bg-danger')){
+                    e.target.classList.remove( 'bg-danger');
+                    e.target.classList.remove( 'puesto');
+                }else if(e.target.classList.contains('bg-success')){
+                    e.target.classList.remove( 'bg-success');
+                    e.target.classList.remove( 'puesto');
+                }
             }
-            else if(e.target.nodeName == 'IMG')
-            {
-                e.target.parentElement.setAttribute('disabled', 'disabled');
-                e.target.parentElement.classList.add('disabled','bg-primary');
-                /* mensaje.text = e.target.parentElement.getAttribute('palabra').replace('2', ''); */
-            }
-            /* mensaje.rate = 0.8;
-            speechSynthesis.speak(mensaje); */
 
         })
 
@@ -3002,14 +3393,19 @@
 
             if(e.target.nodeName == 'A')
             {
-                e.target.setAttribute('disabled', 'disabled');
-                e.target.classList.add('disabled', 'bg-primary');
-                /* mensaje.text = e.target.getAttribute('palabra').replace('2', ''); */
-            }
-            else if(e.target.nodeName == 'IMG')
-            {
-                e.target.parentElement.setAttribute('disabled', 'disabled');
-                e.target.parentElement.classList.add('disabled','bg-primary');
+                if(e.target.classList.contains('bg-primary') == false && e.target.classList.contains('bg-danger') == false && e.target.classList.contains('bg-success') == false){
+                    e.target.classList.add( 'bg-primary');
+                    e.target.classList.add('puesto');
+                }else if(e.target.classList.contains('bg-primary')){
+                    e.target.classList.remove( 'bg-primary');
+                    e.target.classList.remove( 'puesto');
+                }else if(e.target.classList.contains('bg-danger')){
+                    e.target.classList.remove( 'bg-danger');
+                    e.target.classList.remove( 'puesto');
+                }else if(e.target.classList.contains('bg-success')){
+                    e.target.classList.remove( 'bg-success');
+                    e.target.classList.remove( 'puesto');
+                }
                 /* mensaje.text = e.target.parentElement.getAttribute('palabra').replace('2', ''); */
             }
             /* mensaje.rate = 0.8;
@@ -3138,18 +3534,20 @@
 
             if(e.target.nodeName == 'A')
             {
-                e.target.setAttribute('disabled', 'disabled');
-                e.target.classList.add('disabled', 'bg-primary');
-                /* mensaje.text = e.target.getAttribute('palabra').replace('2', ''); */
+                if(e.target.classList.contains('bg-primary') == false && e.target.classList.contains('bg-danger') == false && e.target.classList.contains('bg-success') == false){
+                    e.target.classList.add( 'bg-primary');
+                    e.target.classList.add('puesto');
+                }else if(e.target.classList.contains('bg-primary')){
+                    e.target.classList.remove( 'bg-primary');
+                    e.target.classList.remove( 'puesto');
+                }else if(e.target.classList.contains('bg-danger')){
+                    e.target.classList.remove( 'bg-danger');
+                    e.target.classList.remove( 'puesto');
+                }else if(e.target.classList.contains('bg-success')){
+                    e.target.classList.remove( 'bg-success');
+                    e.target.classList.remove( 'puesto');
+                }
             }
-            else if(e.target.nodeName == 'IMG')
-            {
-                e.target.parentElement.setAttribute('disabled', 'disabled');
-                e.target.parentElement.classList.add('disabled','bg-primary');
-                /* mensaje.text = e.target.parentElement.getAttribute('palabra').replace('2', ''); */
-            }
-            /* mensaje.rate = 0.8;
-            speechSynthesis.speak(mensaje); */
 
         });
 
@@ -3217,4 +3615,4 @@
         //fin palabra
     </script>
     {{-- fin letra t --}}
-@stop
+@endsection
